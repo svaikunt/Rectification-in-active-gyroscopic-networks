@@ -24,10 +24,6 @@
 
 \title{Rectification of energy and motion in active gyroscopic networks}
 
-<<<<<<< HEAD
-\author{Zhenghan Liao, William Irvine, Suriyanarayanan Vaikuntanathan}
-\affiliation{Department of Chemistry and Physics and The James Franck Institute, University of Chicago, Chicago, IL, 60637}
-=======
 
 \author{Zhenghan Liao}
 \affiliation{Department of Chemistry, University of Chicago, Chicago, IL, 60637, USA}
@@ -35,7 +31,6 @@
 \affiliation{James Franck Institute, Enrico Fermi Institute and Department of Physics, University of Chicago, Chicago, IL, 60637, USA}
 \author{Suriyanarayanan Vaikuntanathan}
 \affiliation{James Franck Institute and Department of Chemistry, University of Chicago, Chicago, IL, 60637, USA}
->>>>>>> 03d2ad4a784685e3445df3693e58c190eca070ca
 
 
 \begin{abstract}
@@ -200,30 +195,29 @@ This Kirchoff's law puts a strong constraint on possible flux patterns among par
 Compared with an ordinary thermal spring-mass network which supports no energy fluxes in its equilibrium steady state, the extra components in our model are the Lorentz force and the correlation in the noise.
 This section shows that these two components, in combination with network geometry provide the minimal ingredients required to ensure sustained fluxes of energy in our model. 
 
-For easier identification of the roles and later generalizations, we rewrite the integral \eqnname~\eqref{eqn:flux_integral} as $\expval{J} = \int_{-\infty}^\infty \dd{\omega} h(\omega) J^{FT}(\omega)$, with $J^{FT}(\omega) \equiv -(T_a k/2\pi) \Re \tr G^+(\omega)A^{as}$ and $h(\omega)=1/(1+\omega^2\tau^2)$. Here, $J^{FT}(\omega)$ is the flux at Fourier frequency $\omega$, and is a property of the damped isolated network, and is independent of the noise (apart from a constant $T_a$).
-$h(\omega)$ is the the noise spectrum (apart from a prefactor), $\expval{\tilde{\eta}(\omega)\tilde{\eta}^*(\omega)} = 2\gamma T_a h(\omega) / t$.
+For easier identification of the roles and later generalizations, we rewrite the integral \eqnname~\eqref{eqn:flux_integral} as $\expval{J} = \int_{-\infty}^\infty \dd{\omega} h(\omega) J^{FT}(\omega)$, with $J^{FT}(\omega) \equiv -(T_a k/2\pi) \Re \tr G^+(\omega)A^{as}$ and $h(\omega)=1/(1+\omega^2\tau^2)$. Here, we note that $J^{FT}(\omega)$ is proportional to the the energy flux at Fourier frequency $\omega$ in an isolated damped variant of our network. The function $h(\omega)$ is the the noise spectrum (apart from a prefactor of $T_a$), $\expval{\tilde{\eta}(\omega)\tilde{\eta}^*(\omega)} = 2\gamma T_a h(\omega) / t$.
 
 To generate a nonzero flux, or equivalently make the integral nonzero, we need two requirements.
 Firstly, $J^{FT}(\omega)$ should not be zero everywhere.
 %This is indeed the case from numerical calculations of $J^{FT}(\omega)$ %\figurename~\ref{fig:Fourier_modes}a.
-In small $\gamma$ regime, a prescription for realizing $J^{FT}(\omega) \neq 0$ can be obtained by exploiting the connection between the eigenmodes of the isolated variants of our system and the eigenmodes of topological gyroscopic metamaterials~\cite{Nash2015TopologicalMechanics}. Specially, in the small damping region, the eigen-frequences of the damped and undamped systems are very close. The dynamics of the undamped system further map on to the dynamics of topological gyroscopic mematerials \texendash these have been shown to support chiral eigenmodes~\cite{Nash2015TopologicalMechanics} (\figurename~\ref{fig:Fourier_modes}b,c). The chiral eigenmodes can support a non-zero energy flux.  
+In small $\gamma$ regime, a prescription for realizing $J^{FT}(\omega) \neq 0$ can be obtained by exploiting the connection between the eigenmodes of the isolated variants of our system and the eigenmodes of topological gyroscopic metamaterials~\cite{Nash2015TopologicalMechanics}. Specifically, in the small damping region, the eigen-frequences of the damped and undamped systems are very close. As discussed previously, the dynamics of the undamped system map on to the dynamics of topological gyroscopic mematerials \textendash these have been shown to support chiral eigenmodes~\cite{Nash2015TopologicalMechanics} (\figurename~\ref{fig:Fourier_modes}b,c). The chiral eigenmodes can support a non-zero energy flux.  
 
 
 At larger $\gamma$'s, the Fourier modes of our damped isolated system are no longer the same as the chiral eigenmodes of gyroscopic metamaterials (\figurename~\ref{fig:Fourier_modes}b and d), but a connection between eigenmodes and energy fluxes can still be built (Supplemental Material).
-More generally, $J^{FT}(\omega) \neq 0$ is due to the nonreciprocity induced by the Lorentz force and lattice geometry. If $B=0$, the response $G^+$ is symmetric or reciprocal, and since $A^{as}$ is antisymmetric, the trace $\tr G^+(\omega) A^{as}=0$ at all $\omega$'s. Nonzero $B$ breaks the reciprocity of $G^+$, thus the trace can be nonzero.
+Taken together, $J^{FT}(\omega) \neq 0$ is due to the nonreciprocity induced by the Lorentz force and lattice geometry. If $B=0$, the response $G^+$ is symmetric or reciprocal, and since $A^{as}$ is antisymmetric, the trace $\tr G^+(\omega) A^{as}=0$ at all $\omega$'s. Nonzero $B$ and appropriate lattice geometry breaks the reciprocity of $G^+$, thus generating a nonzero energy flux. 
 
 Nonzero $J^{FT}(\omega)$ alone does not ensure a nonzero total flux, we further need that $h(\omega)$ should not be constant.
-If $h(\omega)$ is constant, it corresponds to a white noise, and the system would be in equilibrium. In this case, the integral is always zero regardless of the value of $J^{FT}(\omega)$, because the response function $G^+(\omega)$ has no pole in the lower-half plane due to causality, consequently the flux as a contour integral vanishes.
-The conclusion of vanishing flux under white noise can also be obtained from the Bohr-van Leeuwen theorem \cite{Pradhan2010NonexistenceClassical}.
+If $h(\omega)$ is constant, it corresponds to a white noise, and the system would be in equilibrium according to the Bohr-van Leeuwen theorem \cite{Pradhan2010NonexistenceClassical}. %In this case, the integral is always zero regardless of the value of $J^{FT}(\omega)$, because the response function $G^+(\omega)$ has no pole in the lower-half plane due to causality, consequently the flux as a contour integral vanishes.
+%The conclusion of vanishing flux under white noise can also be obtained from the Bohr-van Leeuwen theorem \cite{Pradhan2010NonexistenceClassical}.
 
-The $h(\omega)$ for OU noise is indeed nonconstant, and it puts more weight on smaller $\omega$'s.
-The requirement of non constant noise spectrum indicates a nonequipartition role of the active bath \cite{Lee2017FluctuationSpectra}.
-In fact the OU noise is just one choice of the non-white noise, and any nonconstant noise spectrum $h(\omega)$ is likely to shift the integral away from zero.
-However, $h(\omega)=1/(1+\omega^2\tau^2)$ is arguably the simplest nontrivial noise. Because it only has one pole in the lower-half complex plane, which makes the evaluation of the integral as simple as evaluating the integrand at only one point; in addition, $\tr G^+(\omega)A^{as}$ at this pole $\omega=-i/\tau$ is real, so one can skip the evaluation of the $\Re$ part in $J^{FT}(\omega)$. As a result, the flux as an integral \eqnname~\eqref{eqn:flux_integral} can be integrated to get formula \eqnname~\eqref{eqn:flux_residue}.
+The $h(\omega)$ for the fluctuation dissipation violating OU noise, $h(\omega)=1/(1+\omega^2\tau^2)$, provides more weightage to fluxes at smaller values of $\omega$. The resulting average flux can hence potentially be non-zero. We note that other forms of colored noise could have also served the same purpose. %We chose to work with the OU noise since i
+%The requirement of non constant noise spectrum indicates a nonequipartition role of the active bath \cite{Lee2017FluctuationSpectra}.
+%In fact the OU noise is just one choice of the non-white noise, and any nonconstant noise spectrum $h(\omega)$ is likely to shift the integral away from zero.
+%However, $h(\omega)=1/(1+\omega^2\tau^2)$ is arguably the simplest nontrivial noise. 
+%Because it only has one pole in the lower-half complex plane, which makes the evaluation of the integral as simple as evaluating the integrand at only one point; in addition, $\tr G^+(\omega)A^{as}$ at this pole $\omega=-i/\tau$ is real, so one can skip the evaluation of the $\Re$ part in $J^{FT}(\omega)$. As a result, the flux as an integral \eqnname~\eqref{eqn:flux_integral} can be integrated to get formula \eqnname~\eqref{eqn:flux_residue}.
 
-In conclusion, we see that the main ingredients for energy rectification are the $B$-field, geometry of the lattice, and a colored noise.
-The role of the $B$-field and lattice geometry is to induce chiral Fourier modes via breaking the reciprocity of response.
-The role of the colored noise is to excite these modes in a weighted manner.
+In summary, we see that the main ingredients for energy rectification are the $B$-field, geometry of the lattice, and a colored noise.
+The role of the $B$-field and lattice geometry is to induce chiral Fourier modes via breaking the reciprocity of response. The role of the colored noise is to excite these modes in a weighted manner.
 
 
 \section{Relationship between flux and network geometry} \label{sec:path}
