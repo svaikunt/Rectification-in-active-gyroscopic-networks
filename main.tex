@@ -270,8 +270,7 @@ The usual lowest-order paths are polygonal cycles with no loops (loops have the 
 where $\alpha$ is defined in Eq.~\ref{eq:alphadefine}, $n$ is the number of nodes and $\theta_i$'s are outer angles (\figurename~\ref{fig:path_sum}b). 
 
 For polygon networks, this formula gives a direct relationship between the lowest-order flux and the network geometry, and all parameters are condensed into a geometric angle $\alpha$. As an example, flux in an arbitrary triangle is $J \propto k^3 \sin\theta_1\sin\theta_2\sin\theta_3 + \mathcal{O}(k^4)$, whose $k^3$ term is always positive or CCW.
-For complex networks, this formula tells that its lowest-order flux can be viewed as a result of combining the flux of its constituent polygons together, as illustrated in \figurename~\ref{fig:path_sum}c. This is because the flux of a polygonal path \eqnname~\eqref{eqn:flux_path_polygon} is not affected by any side chains on the nodes, and $J^\text{path}_\text{polygon}$ for a polygon in a complex network is the same as $J^\text{path}_\text{polygon}$ for the polygon when standalone. Using this view of combination, it is easy to understand the boundary-localized flux in honeycomb networks (\figurename~\ref{fig:model_and_result}f), and more generally, flux pattern in arbitrary networks.
-
+For complex networks, this formula tells that its lowest-order flux can be viewed as a result of combining the flux of its constituent polygons together, as illustrated in \figurename~\ref{fig:path_sum}c. This is because the flux of a polygonal path \eqnname~\eqref{eqn:flux_path_polygon} is not affected by any side chains on the nodes, and $J^\text{path}_\text{polygon}$ for a polygon in a complex network is the same as $J^\text{path}_\text{polygon}$ for the polygon when standalone. 
 %Unlike in polygonal paths, paths with loops are affected by side-chains.
 %One situation is when the polygon path itself vanishes. In \figurename~\ref{fig:path_sum}d,e, the flux of lowest order path, square, is zero, so the main contribution comes from the path with length $5$, as shown in \figurename~\ref{fig:path_sum}f. Through the loop in this path, the orientation of the side-chain controls the flux direction in the main square, without changing the geometry of the main cycle (as in \figurename~\ref{fig:model_and_result}c-e).
 
@@ -280,8 +279,7 @@ For complex networks, this formula tells that its lowest-order flux can be viewe
 %While the hexagon path constitutes the lowest-order path at the boundary, it vanishes for $n_l\ge 1$ due to cancellations. The first non-vanishing pair of paths for $n_l=1$ is shown in \figurename~\ref{fig:path_decay}d, in which the loop exploits the asymmetry between the bulk side (has a vertical bond at the blue loop) and the boundary side (has no vertical bonds at the red loop). For every increment of one layer, the length of paths increases by $4$. So the flux at layer $n_l$ is on the order of $k^{4n_l+3}$, which exhibits an exponential decay $e^{-(n_l-1)/d_l}$.
 %Through the calculation of these paths, one gets the decay length $d_l = -1/\log[4(k/k_0)^4(\sin(\theta+\alpha)\sin(\theta-\alpha))^2]$. From this result, we see that the cusp at $\theta=\alpha$ in \figurename~\ref{fig:path_decay}c is due to the term $\sin(\theta-\alpha)$. In fact, at the special point $\theta=\alpha$, paths like \figurename~\ref{fig:path_decay}d vanish, and one needs to consider even high-order paths.
 
-\subsection{Localization of energy fluxes from diagrammatic theory}
-In some situations, the contribution of polygonal paths vanish, and higher order paths with loops become dominant. Consider for instance the paths contributing to flux along a link in a honeycomb-like network (\figurename~\ref{fig:path_decay}). Away from the boundary, the dominant lower order path contributions to the energy flux cancel each other. The size of the leading order path that contributes to the energy flux along a link increases as a function of the distance of the link from boundary. Such a scaling results in an exponential localization of the energy flux at the boundary of the lattice (\figurename~\ref{fig:path_decay}b). 
+Starting from the  diagrammatic expansion, the presence of localized energy fluxes in such networks can be understood. Consider for instance the paths contributing to flux along a link in a honeycomb-like network (\figurename~\ref{fig:path_decay}). Away from the boundary, the dominant lower order path contributions to the energy flux cancel each other. The size of the leading order path that contributes to the energy flux along a link increases as a function of the distance of the link from boundary. Such a scaling results in an exponential localization of the energy flux at the boundary of the lattice (\figurename~\ref{fig:path_decay}b). 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.45\textwidth]{5_path_decay.pdf}
@@ -293,6 +291,8 @@ In some situations, the contribution of polygonal paths vanish, and higher order
     }
     \label{fig:path_decay}
 \end{figure}
+
+More generally, using these decompositions, it is easy to program energy flux patterns in networks of arbitrary complexity. Our diagrammatic expansion hence allows us to go beyond the need for de novo calculations suggested by our previous expressions. 
 
 %\subsection{Effect of parameters}
 %For a fixed network geometry, originally the flux is affected by $7$ parameters, however, \eqnname~\eqref{eqn:flux_path_polygon} tells us that these parameters can be condensed to one $\alpha$.
@@ -318,7 +318,7 @@ In some situations, the contribution of polygonal paths vanish, and higher order
     \label{fig:swimmer}
 \end{figure}
 
-The energy flux has been our main focus so far. In this section, we show that this energy flux can be coupled to fluid pumping.
+The energy flux has been our main focus so far. In this section, we show that this energy flux can be used to rectify motion. 
 In the first step, we couple the active gyroscopic network to a passive material, and show that energy flux can be driven through the passive segment.
 Since the energy flux indicates some nonreciprocal motion, we then use this motion as a swimming protocol to make a three-sphere swimmer \cite{Golestanian2008AnalyticResults} swim.
 After this, we examine the scenario of immersing the passive segment into a fluid and argue that it is possible to pump the fluid.
