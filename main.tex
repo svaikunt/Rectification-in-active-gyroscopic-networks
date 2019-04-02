@@ -332,15 +332,15 @@ Numerical calculation (\figurename~\ref{fig:swimmer}b) and simulations (Suppleme
 
 
 \subsection{Nonreciprocal motion as a swimming protocol}
-The energy flux through the passive segment indicates some nonreciprocal motion. One area that utilizes this nonreciprocal motion is low Reynolds number ($Re$) swimming.
-We use a linear three-sphere swimmer setup \cite{Golestanian2008AnalyticResults} described as follows. The swimmer as \figurename~\ref{fig:swimmer}e is immersed in a low $Re$ fluid. When the swimmer changes the lengths of its two legs according to some protocol, which is described by a constant part $L$ plus a varying part $\Delta L_i$ for $i=1,2$, the time-averaged swimming speed is (\eqnname~(12) in \cite{Golestanian2008AnalyticResults})
+The energy flux through the passive segment indicates some nonreciprocal motion{\bf Is there a reference for this statement ?}. One area {\bf by area do you mean geometric area ? }that utilizes{\bf the word ``utilizes" is probably not the right choice here}  this nonreciprocal motion is low Reynolds number ($Re$) swimming {\bf rewrite sentence ! }.
+We use a linear three-sphere swimmer setup \cite{Golestanian2008AnalyticResults} described as follows{\bf have you defined ``a linear three-sphere swimmer" before ? Why is this showing up suddenly. Tough to understand}. The swimmer as \figurename~\ref{fig:swimmer}e is immersed in a low $Re$ fluid. When the swimmer changes the lengths of its two legs according to some protocol, which is described by a constant part $L$ plus a varying part $\Delta L_i$ for $i=1,2$, the time-averaged swimming speed is (\eqnname~(12) in \cite{Golestanian2008AnalyticResults})
 \begin{equation} \label{eqn:swimmer_speed}
     V_s = \frac{7a}{24L^2} \expval{\Delta L_1 \Delta \Dot{L_2} - \Delta \Dot{L_1} \Delta{L_2}},
 \end{equation}
 where $a$ is the radius of the bead. Assumptions for this equation are $a/L \ll 1, \Delta L_i/L \ll 1$, and total external force on the swimmer is zero.
 
-We set the swimming protocol to be the motions of the three passive particles in active networks like \figurename~\ref{fig:swimmer}b (except that here we allow $k_g$ of ballistic particles to be nonzero),
-and compute $V_s$ of the swimmer and compare it with the energy flux $\expval{J}$ from the active network.
+{\bf why are you doing this ? Why is there no backaction from fluid ? Are you going to do that later ? Justify this ! } We set the swimming protocol to be the motions of the three passive particles in active networks like \figurename~\ref{fig:swimmer}b (except that here we allow $k_g$ of ballistic particles to be nonzero),
+and compute $V_s$ of the swimmer and compare it with the energy flux $\expval{J}$ from the active network {\bf rewrite sentence, too long and unwieldy. Clarify ``we set the swimming protocol to be \dots in active networks" }.
 The $V_s-\expval{J}$ plot in \figurename~\ref{fig:swimmer}d shows that, the swimmer using our protocol can swim, and the speed $V_s$ is proportional to $\expval{J}$. Moreover, this proportionality constant does not depend on the network geometry.
 In fact, this constant can be calculated using a modified path analysis (Supplementary Material),
 \begin{equation} \label{eqn:swimmer_propto}
@@ -349,10 +349,10 @@ In fact, this constant can be calculated using a modified path analysis (Supplem
 where $k_0 = k_g + m/\tau^2$ ($B,\gamma=0$ for the ballistic part).
 This result \eqnname~\eqref{eqn:swimmer_propto} holds beyond small-$k$ regime because all paths are considered (\figurename~\ref{fig:swimmer}e, and Supplementary Material).
 \figurename~\ref{fig:swimmer}d and \eqnname~\eqref{eqn:swimmer_propto} together establish that one can dictate swimmer's speed from the energy flux of active networks.
-Similar proportionality between $V_s$ and $J$ can be expected for other types of three-sphere swimmers, such as one where one sphere is much larger than the other two \cite{Golestanian2008ThreesphereLowReynoldsnumber}. This is because $V_s$ is proportional to the area enclosed in the $\Delta L_i$ space \cite{Golestanian2009StochasticLow}, and this area is proportional to $J$ (Supplemental Material).
+Similar proportionality between $V_s$ and $J$ can be expected for other types of three-sphere swimmers, such as one where one sphere is much larger than the other two \cite{Golestanian2008ThreesphereLowReynoldsnumber}. This is because $V_s$ is proportional to the area enclosed in the $\Delta L_i$ space \cite{Golestanian2009StochasticLow}, and this area is proportional to $J$ (Supplemental Material){\bf this seems to be an important statement but currently the writing is not good.  Again it is not clear why you are focussing on ``three-sphere-swimmers". What if we have 4 or 5 or 6 ? Will your results hold ?}.
 
 \subsection{Coupling energy flux to fluid pumping}
-Now we take a step further to consider a scenario where we immerse the ballistic segment in a fluid. Since the segment is tethered by $k_g$ and is connected to the tethered active part, it cannot swim indefinitely. However, a tethered swimmer is able to pump the fluid \cite{Leoni2009BasicSwimmer}. To see whether the ballistic segment can also pump the fluid as the swimmer, we need to discuss how the tethering force and the added fluid affects the dynamics of the segment.
+Now we take a step further to consider a scenario where we immerse the ballistic segment in a fluid {\bf The reader might be confused at this point, doesn't the work of the previous section implicitly suggest immersion? Clarify} . Since the segment is tethered by $k_g$ and is connected to the tethered active part, it cannot swim indefinitely. However, a tethered swimmer is able to pump the fluid \cite{Leoni2009BasicSwimmer}. To see whether the ballistic segment can also pump the fluid as the swimmer, we need to discuss how the tethering force and the added fluid affects the dynamics of the segment.
 
 In the presence of tethering forces, \eqnname~\eqref{eqn:swimmer_speed} for $V_s$ needs to be modified.
 Ref. \cite{Golestanian2008AnalyticResults} discussed swimmer with a constant external force $F$, and its \eqnname~(39) says the modified swimming speed $V_s(F) = V_s + F/(6\pi\eta_f a)$, where $\eta_f$ is fluid's dynamic viscosity.
