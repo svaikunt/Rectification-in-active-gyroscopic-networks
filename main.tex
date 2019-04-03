@@ -368,12 +368,12 @@ This tells us that we can first consider the untethered case, then go to the tet
 In the presence of an added fluid, we would like that the original dynamics is not altered too much, otherwise both the energy flux and the correlation in \eqnname~\eqref{eqn:swimmer_speed} would be distorted, and one cannot utilize the $V_s \propto -\expval{J}$ result.
 So we need a regime where the fluid, in spite of having a low $Re$, is perturbative.
 To make the fluid perturbative, we need the dissipation rate due to the viscous force to be much smaller than the energy flux through the segment. This can be expressed as $\eta_f a v^2 \ll J$, where $v$ is the velocity of the bead, $J$ is the energy flux in the absence of the fluid.
-To satisfy low $Re$ condition, one needs $Re = \frac{\rho_f a v}{\eta_f} \ll 1$, where $\rho_f$ is fluid's density.
+To satisfy low $Re$ condition, one needs $Re = \rho_f a v /\eta_f \ll 1$, where $\rho_f$ is fluid's density.
 Writing these two conditions together, one gets $J \gg \eta_f a v^2 \gg \rho_f a^2 v^3$.
 This condition ignored hydrodynamic interactions between the beads, because it is a higher-order perturbation with the order of $a/L$.
 As a numerical example, this condition can be satisfied by setting $k=5\times 10^{-5} kg/s^2, k_g=1\times 10^{-6} kg/s^2$ for springs (value of optical trap), $a=10^{-6}m$ for all beads (size used in \cite{Leoni2009BasicSwimmer}), $T_a=10^{-18} J, \tau=1s$ for the active bath \cite{Wu2000ParticleDiffusion}, $\rho_f=10^3kg/m^3, \eta_f=10^{-3}kg/(m\cdot s)$ for liquid (water), and $B=10^{-5} kg/s$ for the $B$-field.
 Then from numerical calculations, $v=3.8\times 10^{-6}m/s$, and the three scales are $J=5\times 10^{-19}J/s, \eta_f av^2=1.4\times 10^{-22}J/s, a^2v^3\rho_f=5.4\times 10^{-29}J/s$.
-The only suspicious parameter is $B$, which seems to be too strong in order to make $J$ sizable. To make practical use of this model, one should consider Lorentz-like force substitutes, such as gyroscopes.
+The only suspicious parameter is $B$, which seems to be too strong in order to make $J$ sizable. To make practical use of this model, one should consider Lorentz force substitutes, such as gyroscopes.
 
 These discussions together suggest that, if the passive part is immersed in a perturbative fluid, it can generate fluid flows.
 Assuming the relaxation timescale of the active network is much faster than the timescale of swimming due to the small $V_s(F)$, one can expect the following process. Initially the passive part experiences $\expval{F}=0$, so it swims with speed $V_s$; as the part drifts, $\expval{F}$ increases and acts in the direction of $-V_s$; when $\expval{F} \approx -6\pi\eta_f a V_s$, the swimmer is stalled. The stalled swimmer pumps fluid in direction $-V_s \propto \expval{J}$.
