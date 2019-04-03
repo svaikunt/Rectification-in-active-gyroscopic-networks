@@ -9,13 +9,15 @@
  10pt, twocolumn
 ]{revtex4-1}
 
+
+
 \usepackage{graphicx}% Include figure files
 \graphicspath{{./figures/}} % path to figures
 \usepackage{dcolumn}% Align table columns on decimal point
 \usepackage{bm}% bold math
 \usepackage{hyperref}% add hypertext capabilities
 \usepackage{physics} % package for physics symbols
-
+\usepackage{color}
 \begin{document}
 % define commands
 \newcommand{\eqnname}{Eqn.}
@@ -317,11 +319,13 @@ More generally, using these decompositions, it is easy to program energy flux pa
 %Since the energy flux indicates some nonreciprocal motion, we then use this motion as a swimming protocol to make a three-sphere swimmer swim.
 %After this, we examine the scenario of immersing the passive segment into a fluid and argue that it is possible to pump the fluid.
 
-The rectification of energy has been our main focus so far. In this section, we exploit the energy flux to rectify motion in viscous fluids.
-In particular, we discuss the scenario of immersing a segment of the chiral active network into a fluid and illustrate the possibility to pump the fluid.
-To make its dynamics cleaner, the segment is set to be passive, or in other words, it does not experience Lorentz force or active bath.
-A few preparatory steps are needed before immersion.
-First we demonstrate that the passive segment, when coupled to an active network, supports energy flux.
+
+%of immersing a segment of the chiral active network into a fluid and illustrate the possibility to pump the fluid.
+The rectification of energy has been our main focus so far. In this section, we \textcolor{red}{show that it possible to}exploit the energy flux to rectify motion \textcolor{red}{when our model systems are allowed to interact with a } viscous fluid.
+In particular, we \textcolor{red}{consider scenarios where a viscous fluid is allowed to interact with a segment of our chiral active network and show that such interaction can result in either a pumping or a propulsion mechanism}. \textcolor{red}{This section is setup as follows.} 
+\textcolor{First we demonstrate that a {\it passive} segment \textendash this segment does not experience Lorentz force or active bath \textendash when coupled to our chiral active network, still supports an energy flux. Next, we consider cases where the above described passive segment  of the network is allowed to interact with a viscous fluid. For analytically tractability, we first assume that the back
+
+
 Next we show that the motion of this segment can be used as a swimming protocol, and make a low Reynolds number ($Re$) swimmer swim. Using the diagrammatic theory introduced in \secname~\ref{sec:path}, we will derive that the swimming speed is proportional to the energy flux.
 With these preparations, we then discuss the possibility that, the passive segment when immersed in a fluid can act as a stalled swimmer and pump the fluid.
 
