@@ -322,32 +322,30 @@ Using these results, we finally discuss the possibility that the energy conducti
 
 
 \subsection{Energy flux in a passive segment coupled to an active network}
-In conventional heat conductions, a passive harmonic chain is placed between two thermal baths with different temperatures, and it supports an energy flux or heat flux (\figurename~\ref{fig:swimmer}a).
-Analogously, we can study whether a nonzero averaged energy flux can also be generated in the same passive material, but replacing the temperature bias with our chiral active network (\figurename~\ref{fig:swimmer}b).
-Numerical calculation (\figurename~\ref{fig:swimmer}b) and simulations (Supplemental Video and Supplemental Material) show that the passive segment does support energy fluxes.
+In conventional heat conduction, a passive harmonic chain is placed between two thermal baths with different temperatures, and it supports an energy flux or heat flux (\figurename~\ref{fig:swimmer}a).
+As a consequence of the time reversal symmetry violations in our chiral active networks, we find that a nonzero averaged energy flux can also be generated in the above mentioned passive material, when it is connected to our chiral active network (\figurename~\ref{fig:swimmer}b,Supplemental Video and Supplemental Material).
 From the Supplemental Video, the flux through the passive segment is in general stochastic. Although the direction of flux is from left to right on average, the instantaneous flux can also transport from right to left. During the period when $J$ is large, $J$ exhibits successive peaks, indicating a large energy flow from left to right. The spacing between the peaks matches the sound speed of the passive chain.
 
 
 \subsection{Nonreciprocal motion as a swimming protocol}
-The energy fluxes through the passive segment, especially the successive flux peaks observed in the above simulation, seem to suggest a stochastic version of wave-like motions. The wave-like motions, in the context of low $Re$ swimmers, is one type of swimming strategies \cite{Taylor1951AnalysisSwimming,Golestanian2008AnalyticResults}. Thus the motions of the passive segment could potentially be exploited as a swimming strategy.
+The energy fluxes through the passive segment, especially the successive flux peaks observed in the above simulation, seem to suggest that stochastic wave like collective oscillations are responsible for energy transfer. System with such wave-like collective motions, when placed in contact with a viscous fluid can act as low $Re$ swimmers, a consequence of Purcell's scallop theorem \cite{Taylor1951AnalysisSwimming,Golestanian2008AnalyticResults}. Thus, the energy conducting oscillations in the  passive segment could potentially be exploited as a swimming strategy.
 
-The swimmer model we choose is a linear three-sphere swimmer \cite{Golestanian2008AnalyticResults}, because it is a model with minimal components, and it can readily adopt the motion of our passive segment. The swimmer as \figurename~\ref{fig:swimmer}e is immersed in a low $Re$ fluid. When the swimmer changes the lengths of its two legs according to some prescribed protocol, which is described by a constant part $L$ plus a varying part $\Delta L_i(t)$ for $i=1,2$, the time-averaged swimming speed is (\eqnname~(12) in \cite{Golestanian2008AnalyticResults})
+To pursue this idea, we consider a minimal passive elastic segment with three spheres arranged in a linear configuration and connected by springs~\cite{Golestanian2008AnalyticResults}. We imagine instances where passive elastic object is disconnected from the chiral active network and immersed in a  low $Re$ fluid~ \figurename~\ref{fig:swimmer}. When the lengths of the two springs connecting the spheres, $L_1,L_2$ is varied according to some prescribed protocol, which is described by a constant part $L$ plus a varying part $\Delta L_i(t)$ for $i=1,2$, the time-averaged swimming speed is (\eqnname~(12) in \cite{Golestanian2008AnalyticResults})
 \begin{equation} \label{eqn:swimmer_speed}
     V_s = \frac{7a}{24L^2} \expval{\Delta L_1 \Delta \Dot{L_2} - \Delta \Dot{L_1} \Delta{L_2}},
 \end{equation}
 where $a$ is the radius of the bead. Assumptions for this equation are $a/L \ll 1, \Delta L_i/L \ll 1$, and total external force on the swimmer is zero.
 
-One can imagine first recording the motions of passive particles in Supplemental Video, then use this recording as a prescribed protocol of the swimmer.
-We compute $V_s$ of the swimmer and compare it to the energy flux $\expval{J}$ through the passive segment.
-The $V_s-\expval{J}$ plot in \figurename~\ref{fig:swimmer}d shows that, the swimmer using our protocol can swim, and the speed $V_s$ is proportional to $\expval{J}$. Moreover, this proportionality constant does not depend on the network geometry.
-In fact, this constant can be calculated using a modified path analysis (Supplementary Material),
+We now imagine using the recording the motions of the passive segment when it is connected to our chiral active network (\figurename~\ref{fig:swimmer}b) and not coupled to a viscous fluid. This recorded motion can be used a protocol for modulating the configuration of an equivalent {\it swimmer} passive segment that is placed in a viscous fluid. 
+We compute $V_s$ of the swimmer using Eq.~\ref{eq:n:swimmer_speed} and find that it is in fact proportional to the energy flux, $\expval{J}$, conducted through the passive segment when it is coupled to the chiral active network (\figurename~\ref{fig:swimmer}d). The non reciprocal motions that lead to energy fluxes can also be used as a protocol to generate motion in a low $Re$ fluid. 
+The proportionality constant between the swim speed, $V_s$ and the energy flux, $\expval{J}$, can be calculated using a modified path analysis technique(Supplementary Material),
 \begin{equation} \label{eqn:swimmer_propto}
     \frac{V_s}{7a/24L^2} = -\frac{k_0}{k} \frac{\expval{J}}{k/2},
 \end{equation}
 where $k_0 = k_g + m/\tau^2$ ($B,\gamma=0$ for the passive part).
 This result \eqnname~\eqref{eqn:swimmer_propto} holds beyond small-$k$ regime because all orders of paths are considered (\figurename~\ref{fig:swimmer}e, and Supplementary Material).
 \figurename~\ref{fig:swimmer}d and \eqnname~\eqref{eqn:swimmer_propto} together establish that one can dictate swimmer's speed from the energy flux of active networks.
-Similar proportionality between $V_s$ and $J$ can be expected for other types of three-sphere swimmers, such as one where one sphere is much larger than the other two \cite{Golestanian2008ThreesphereLowReynoldsnumber}. This is because $V_s$ is proportional to the area enclosed in the $\Delta L_i$ space \cite{Golestanian2009StochasticLow}, and this area is proportional to $J$ (Supplemental Material){\bf this seems to be an important statement but currently the writing is not good}.
+Similar proportionality between $V_s$ and $J$ can be expected for other types of three-sphere swimmers, such as one where one sphere is much larger than the other two \cite{Golestanian2008ThreesphereLowReynoldsnumber}. This is because the swim speed $V_s$ is generically proportional to the area enclosed in the $\Delta L_i$ space \cite{Golestanian2009StochasticLow}. This area is also proportional to the energy flux $J$ (Supplemental Material). 
 
 \subsection{Coupling energy flux to fluid pumping}
 Now we consider the scenario where the passive segment is immersed in a fluid. Since the segment is tethered by $k_g$ and is connected to the tethered active part, it cannot swim indefinitely. However, a tethered swimmer is able to pump the fluid \cite{Leoni2009BasicSwimmer}. To see whether the passive segment can also pump the fluid as the swimmer, we need to discuss how the tethering force and the added fluid affects the dynamics of the segment.
