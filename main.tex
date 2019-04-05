@@ -337,7 +337,7 @@ To pursue this idea, we consider a minimal passive elastic segment with three sp
 where $a$ is the radius of the bead. Assumptions for this equation are $a/L \ll 1, \Delta L_i/L \ll 1$, and total external force on the swimmer is zero.
 
 We now imagine using the recording the motions of the passive segment when it is connected to our chiral active network (\figurename~\ref{fig:swimmer}b) and not coupled to a viscous fluid. This recorded motion can be used a protocol for modulating the configuration of an equivalent {\it swimmer} passive segment that is placed in a viscous fluid. 
-We compute $V_s$ of the swimmer using Eq.~\ref{eq:n:swimmer_speed} and find that it is in fact proportional to the energy flux, $\expval{J}$, conducted through the passive segment when it is coupled to the chiral active network (\figurename~\ref{fig:swimmer}d). The non reciprocal motions that lead to energy fluxes can also be used as a protocol to generate motion in a low $Re$ fluid. 
+We compute $V_s$ of the swimmer using Eq.~\ref{eqn:swimmer_speed} and find that it is in fact proportional to the energy flux, $\expval{J}$, conducted through the passive segment when it is coupled to the chiral active network (\figurename~\ref{fig:swimmer}d). The non reciprocal motions that lead to energy fluxes can also be used as a protocol to generate motion in a low $Re$ fluid. 
 The proportionality constant between the swim speed, $V_s$ and the energy flux, $\expval{J}$, can be calculated using a modified path analysis technique(Supplementary Material),
 \begin{equation} \label{eqn:swimmer_propto}
     \frac{V_s}{7a/24L^2} = -\frac{k_0}{k} \frac{\expval{J}}{k/2},
@@ -348,14 +348,14 @@ This result \eqnname~\eqref{eqn:swimmer_propto} holds beyond small-$k$ regime be
 Similar proportionality between $V_s$ and $J$ can be expected for other types of three-sphere swimmers, such as one where one sphere is much larger than the other two \cite{Golestanian2008ThreesphereLowReynoldsnumber}. This is because the swim speed $V_s$ is generically proportional to the area enclosed in the $\Delta L_i$ space \cite{Golestanian2009StochasticLow}. This area is also proportional to the energy flux $J$ (Supplemental Material). 
 
 \subsection{Coupling energy flux to fluid pumping}
-Now we consider the scenario where the passive segment is immersed in a fluid. Since the segment is tethered by $k_g$ and is connected to the tethered active part, it cannot swim indefinitely. However, a tethered swimmer is able to pump the fluid \cite{Leoni2009BasicSwimmer}. To see whether the passive segment can also pump the fluid as the swimmer, we need to discuss how the tethering force and the added fluid affects the dynamics of the segment.
+Finally, we now consider the scenario where the passive segment is immersed in a fluid. Since the segment is tethered by $k_g$ and is connected to the tethered active part, it cannot swim indefinitely. However, a tethered, stalled swimmers can potentially pump the fluid \cite{Leoni2009BasicSwimmer}. To see whether our passive segment can act as a stalled swimmer and pump the fluid, we need to discuss how the tethering force and the coupling to the fluid affects the dynamics of the segment.
 
 In the presence of tethering forces, \eqnname~\eqref{eqn:swimmer_speed} for $V_s$ needs to be modified.
 Ref. \cite{Golestanian2008AnalyticResults} discussed swimmer with a constant external force $F$, and its \eqnname~(39) says the modified swimming speed $V_s(F) = V_s + F/(6\pi\eta_f a)$, where $\eta_f$ is fluid's dynamic viscosity.
 Since this result is obtained under linearized hydrodynamics, it also applies to our stochastic case granted that we replace $F$ by its averaged value $\expval{F}$.
 This tells us that we can first consider the untethered case, then go to the tethered case using the above formula.
 
-In the presence of an added fluid, we would like that the original dynamics is not altered too much, otherwise both the energy flux and the correlation in \eqnname~\eqref{eqn:swimmer_speed} would be distorted, and one cannot utilize the $V_s \propto -\expval{J}$ result.
+In the presence of an added fluid, we would like that the original dynamics is not altered too much, otherwise both the energy flux and the correlation in \eqnname~\eqref{eqn:swimmer_propto} would be distorted, and one cannot utilize the $V_s \propto -\expval{J}$ result.
 So we need a regime where the fluid, in spite of having a low $Re$, is perturbative.
 To make the fluid perturbative, we need the dissipation rate due to the viscous force to be much smaller than the energy flux through the segment. This can be expressed as $\eta_f a v^2 \ll J$, where $v$ is the characteristic velocity of the bead, $J$ is the energy flux in the absence of the fluid.
 To satisfy low $Re$ condition, one needs $Re = \rho_f a v /\eta_f \ll 1$, where $\rho_f$ is fluid's density.
