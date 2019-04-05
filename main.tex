@@ -79,7 +79,7 @@ Taken together, our results establish a new set of design principles for rectifi
 The remainder of this paper is organized as follows:
 In \secname~\ref{sec:model}-\ref{sec:flux}, we introduce our model active chiral system, provide a microscopic definition for the energy flux, and present numerical results.
 In \secname~\ref{sec:linear_response}-\ref{sec:path} we analytically identify the ingredients for rectification of energy fluxes and construct a diagrammatic approach that reveals a relationship between energy flux and network geometries.
-Finally in \secname~\ref{sec:swimmer} we show implications of the rectification in the context of low Reynolds number swimming or pumping. {\bf the intro of the last section is made more brief}
+Finally in \secname~\ref{sec:swimmer} we show implications of the rectification in the context of low Reynolds number swimming or pumping. %{\bf the intro of the last section is made more brief}
 
 \section{Model} \label{sec:model}
 
@@ -132,7 +132,7 @@ The observable we mainly focus on is the time-averaged energy flux between parti
     \expval{J_{ij}} = \expval{\frac{1}{2} (\mathbf{v}_j \cdot \mathbf{F}_{ij} - \mathbf{v}_i \cdot \mathbf{F}_{ji})}
     = \expval{\mathbf{v}_j \cdot \mathbf{F}_{ij}}.
 \end{equation}
-To arrive at this formula, first we define the energy of a particle as the sum of its kinetic energy, on-site potential energy, and one half of the bond energies \cite{Lepri2003ThermalConduction}. Then we write down the energy balance relations using ideas from stochastic energetics~\cite{Sekimoto1998LangevinEquation} {\bf used Sekimoto's own phrase "energetics"}. Finally we identify the energy exchanged due to particle-particle interactions as the energy flux $\expval{J_{ij}}$. A detailed derivation is provided in the supplemental material.
+To arrive at this formula, first we define the energy of a particle as the sum of its kinetic energy, on-site potential energy, and one half of the bond energies \cite{Lepri2003ThermalConduction}. Then we write down the energy balance relations using ideas from stochastic energetics~\cite{Sekimoto1998LangevinEquation}. Finally we identify the energy exchanged due to particle-particle interactions as the energy flux $\expval{J_{ij}}$. A detailed derivation is provided in the supplemental material.
 We note that the energy flux can simply be interpreted as the rate at which work is done on particle $j$ by particle $i$.
 Since this microscopic work is due to particles' stochastic motions, rather than due to an external control, the energy flux can also be interpreted as a heat flux \cite{Sekimoto1998LangevinEquation,Lepri2003ThermalConduction}. The energy fluxes are identitically equal to zero for a system at equilibrium.
 
@@ -190,10 +190,10 @@ This Kirchoff's law puts a strong constraint on possible flux patterns among par
     \label{fig:Fourier_modes}
 \end{figure}
 
-{\bf Note to Suri: Geometry is mentioned not in the beginning, but when relating to William's work in the small gamma regime. As you said, readers who know William's work may know that geometry is also important. But This reader may be a small body, thus I aim at general readers in the beginning, and address the geometry later for the specialists.}
+%{\bf Note to Suri: Geometry is mentioned not in the beginning, but when relating to William's work in the small gamma regime. As you said, readers who know William's work may know that geometry is also important. But This reader may be a small body, thus I aim at general readers in the beginning, and address the geometry later for the specialists.}
 
 Compared with an ordinary thermal spring-mass network, which supports no energy fluxes in its equilibrium steady state, our model contains two extra components, the Lorentz force and the correlation in the noise.
-We show that these two components provide the minimal ingredients required to ensure energy rectification in our model.
+We first show that these two components provide two necessary ingredients required to ensure energy rectification in our model.
 
 We interpret the functions $J^{FT}(\omega), h(\omega)$ in \eqnname~\eqref{eqn:flux_integral} as follows.
 The function $J^{FT}(\omega)$ is proportional to the the energy flux at Fourier frequency $\omega$ in an isolated damped variant of our network.
@@ -201,15 +201,21 @@ The function $h(\omega)$ is proportional to the the noise spectrum, $\expval{\ti
 
 To generate a nonzero flux, or equivalently make the integral nonzero, we need two requirements.
 Firstly, $J^{FT}(\omega)$ should not be zero everywhere.
-If $B=0$, the response $G^+$ is symmetric or reciprocal, and since $A^{as}$ is antisymmetric, the trace $\tr G^+(\omega) A^{as}=0$ at all $\omega$'s. Nonzero $B$ breaks the reciprocity of $G^+$, thus can generate a nonzero $J^{FT}(\omega)$, or generate chiral Fourier modes.
-In small $\gamma$ regime, the existence of these chiral modes can be heuristically seen {\bf may need a better expression than "heuristically seen"} by exploiting the connection between the damped isolated variants of our system and the undamped isolated gyroscopic metamaterials~\cite{Nash2015TopologicalMechanics}.
-Specifically, the slightly damped variant would resonate near the eigen-frequencies of the undamped metamaterials, and exhibit Fourier modes that are close to the eigenmodes of the undamped system (\figurename~\ref{fig:Fourier_modes}b,c). These eigenmodes have been shown to support chiral wave propagations~\cite{Nash2015TopologicalMechanics}, thus the Fourier modes can also support nonzero energy fluxes.
-In Ref.\cite{Nash2015TopologicalMechanics}, the chirality of eigenmodes is dependent on the network geometry. Here we defer the discussion of network geometries to the next section, because in our model the effect of geometry is not as crucial as Lorentz-like force $B$ and active bath $\tau$, and the effect is too diverse to be discussed in parallel with $B$ and $\tau$. {\bf may need a more smooth explanation on the geometry}
-At larger $\gamma$'s, the Fourier modes of our damped isolated variant are no longer close to the chiral eigenmodes of gyroscopic metamaterials (compare \figurename~\ref{fig:Fourier_modes}b and d), but a connection between eigenmodes and energy fluxes can still be built (Supplemental Material).
+If $B=0$, the response $G^+$ is symmetric or reciprocal, and since $A^{as}$ is antisymmetric, the trace $\tr G^+(\omega) A^{as}=0$ at all values of $\omega$. Nonzero $B$ breaks the reciprocity of $G^+$, thus can generate a nonzero $J^{FT}(\omega)$, or generate chiral Fourier modes.
+
+
+%In Ref.\cite{Nash2015TopologicalMechanics}, the chirality of eigenmodes is dependent on the network geometry. Here we defer the discussion of network geometries to the next section, because in our model the effect of geometry is not as crucial as Lorentz-like force $B$ and active bath $\tau$, and the effect is too diverse to be discussed in parallel with $B$ and $\tau$. 
+
 
 Nonzero $J^{FT}(\omega)$ alone does not ensure a nonzero flux, we further need that $h(\omega)$ should not be constant.
 If $h(\omega)$ is constant, it corresponds to a white noise, and the system would be in equilibrium according to the Bohr-van Leeuwen theorem \cite{Pradhan2010NonexistenceClassical}.
 The $h(\omega)$ for the fluctuation dissipation violating OU noise, $h(\omega)=1/(1+\omega^2\tau^2)$, provides more weightage to fluxes at smaller values of $\omega$. The resulting average flux can hence potentially be nonzero. We note that other forms of colored noise could have also served the same purpose.
+
+In small $\gamma$ regime, the existence of these chiral modes can further be heuristically explained by exploiting the connection between the slightly damped isolated variants of our system and the undamped isolated gyroscopic metamaterials~\cite{Nash2015TopologicalMechanics}.
+Specifically, the slightly damped variant would resonate near the eigen-frequencies of the undamped metamaterials, and exhibit Fourier modes that are close to the eigenmodes of the undamped system (\figurename~\ref{fig:Fourier_modes}b,c). These eigenmodes have been shown to support chiral propagating waves~\cite{Nash2015TopologicalMechanics} that can support energy fluxes. Consequently, we infer that the in the slightly damped (low $\gamma$) regimes, $J^FT(\omega)\neq 0$ as long as the corresponding eigenmodes in the undamped variant are chiral. At larger $\gamma$'s, the Fourier modes of our damped isolated variant are no longer close to the chiral eigenmodes of gyroscopic metamaterials (compare \figurename~\ref{fig:Fourier_modes}b and d), but a connection between eigenmodes and energy fluxes can still be built (Supplemental Material).
+
+
+
 %In this case, the integral is always zero regardless of the value of $J^{FT}(\omega)$, because the response function $G^+(\omega)$ has no pole in the lower-half plane due to causality, consequently the flux as a contour integral vanishes.
 %The conclusion of vanishing flux under white noise can also be obtained from the Bohr-van Leeuwen theorem \cite{Pradhan2010NonexistenceClassical}.
 
@@ -219,7 +225,7 @@ The $h(\omega)$ for the fluctuation dissipation violating OU noise, $h(\omega)=1
 %However, $h(\omega)=1/(1+\omega^2\tau^2)$ is arguably the simplest nontrivial noise.
 %Because it only has one pole in the lower-half complex plane, which makes the evaluation of the integral as simple as evaluating the integrand at only one point; in addition, $\tr G^+(\omega)A^{as}$ at this pole $\omega=-i/\tau$ is real, so one can skip the evaluation of the $\Re$ part in $J^{FT}(\omega)$. As a result, the flux as an integral \eqnname~\eqref{eqn:flux_integral} can be integrated to get formula \eqnname~\eqref{eqn:flux_residue}.
 
-In summary, we see that the main ingredients for energy rectification are the $B$-field, geometry of the lattice, and a colored noise.
+In summary, we see that $B$-field, and a colored noise are two necessary ingredients to 
 The role of the $B$-field and lattice geometry is to induce chiral Fourier modes via breaking the reciprocity of response. The role of the colored noise is to excite these modes in a weighted manner.
 
 
