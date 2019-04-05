@@ -69,20 +69,17 @@ Designs of mechanical metamaterials have achieved unconventional mechanical prop
 %In contrast to the increasing studies on mechanical properties, one less explored topic is the effect of thermal fluctuations{\bf rewrite sentence, awkward construction}. This effect is usually irrelevant, because the energy scale of the metamaterials is much larger than that of thermal fluctuations. However, fluctuations are inevitable if the system is made in micro-scale \cite{Blees2015GrapheneKirigami}.
 % Indeed, some recent works have found an interesting interplay between thermal \cite{Rocklin2018FoldingMechanisms,Pedro2018TopologicalProtection} or nonequilibium \cite{Woodhouse2018AutonomousActuation} fluctuations and the zero mode, which show promises in studying the effect of fluctuations.
 
- In this paper we show how notions of time reversal symmetry violation in chiral topological metamaterials can be combined with violations of the fluctuation dissipation relation by \textit{active} particles to rectify energy and mass flows. The active bath we use is the active Ornstein-Uhlenbeck particle (AOUP) model \cite{Fodor2016HowFar}, which consists of a constant friction and an Ornstein-Uhlenbeck (OU) noise. The AOUP model has experienced a growing interest in recent years, because of its theoretical simplicity and its ability to capture many nonequilibrium and active matter phenomena.
+In this paper we show how notions of time reversal symmetry violation in chiral topological metamaterials can be combined with violations of the fluctuation dissipation relation by \textit{active} particles to rectify energy and mass flows. The active bath we use is the active Ornstein-Uhlenbeck particle (AOUP) model \cite{Fodor2016HowFar}, which consists of a constant friction and an Ornstein-Uhlenbeck (OU) noise. The AOUP model has experienced a growing interest in recent years, because of its theoretical simplicity and its ability to capture many nonequilibrium and active matter phenomena.
 For instance, it has been experimentally found that, colloids in a bacteria bath can be well-modeled by the AOUP model \cite{Wu2000ParticleDiffusion}; this finding helped realized previously proposed thermal ratchet models \cite{Magnasco1993ForcedThermal} in experiments with bacterial baths. \cite{Koumakis2013TargetedDelivery}
 
- Our central result shows how a combination of time reversal symmetry violations due to chirality and interactions in a model system, and time reversal symmetry violations implicit in the fluctuations of the bath that the model system is in contact with, can help support rectification. In particular, we find that our combined system can support a directed flux of energy across the network. Unlike conventional energy flows, our energy flow is not supported by a temperature gradient. Moreover, the \textit{active gyroscopic} network can in fact pump energy through an otherwise isolated elastic object. We also show that the microscopic mechanisms responsible for this energy flow can also potentially allow the \textit{active gyroscopic} network to swim in and exert forces on a viscous fluid. We analytically and numerically demonstrate these results for a wide variety of network geometries thus establishing the generality of our results. In particular, we construct an intuitive diagrammatic approach for computing the energy flux (and consequently the swim speed) that shows how our results can readily applied to tailor flows in arbitrarily complex networks.
+Our central result shows how a combination of time reversal symmetry violations due to chirality and interactions in a model system, and time reversal symmetry violations implicit in the fluctuations of the bath that the model system is in contact with, can help support rectification. In particular, we find that our combined system can support a directed flux of energy across the network. Unlike conventional energy flows, our energy flow is not supported by a temperature gradient. Moreover, the \textit{active gyroscopic} network can in fact pump energy through an otherwise isolated elastic object. We also show that the microscopic mechanisms responsible for this energy flow can also potentially allow the \textit{active gyroscopic} network to swim in and exert forces on a viscous fluid. We analytically and numerically demonstrate these results for a wide variety of network geometries thus establishing the generality of our results. In particular, we construct an intuitive diagrammatic approach for computing the energy flux (and consequently the swim speed) that shows how our results can readily applied to tailor flows in arbitrarily complex networks.
 
 Taken together, our results establish a new set of design principles for rectification of energy, motion and forces in chiral many body systems. Our design principles, unlike many existing prescriptions, exploit inherent asymmetries in the geometry and interactions of the material to achieve rectification.
 
-
 The remainder of this paper is organized as follows:
-In \secname~\ref{sec:model}-\ref{sec:flux}, we introduce our model active chiral system, and provide a microscopic definition for the energy flux.
-In \secname~\ref{sec:linear_response}-\ref{sec:path} we analytically identify the ingredients for rectification of energy fluxes and construct a diagrammatic approach that reveals the relationship between energy flux and network geometries.
-Finally in \secname~\ref{sec:swimmer} we show how the rectified energy flows created by our system can pump energy through a material. We also show how the microscopic fluctuations that accompany a non-zero energy flux can be rectified by a viscous fluid at low Reynolds numbers. Such rectification can either allow our model systems to swim or pump fluid when their centre of mass is held fixed.
-%Finally, in \secname~\ref{sec:conclusion} we
-
+In \secname~\ref{sec:model}-\ref{sec:flux}, we introduce our model active chiral system, provide a microscopic definition for the energy flux, and present numerical results.
+In \secname~\ref{sec:linear_response}-\ref{sec:path} we analytically identify the ingredients for rectification of energy fluxes and construct a diagrammatic approach that reveals a relationship between energy flux and network geometries.
+Finally in \secname~\ref{sec:swimmer} we show implications of the rectification in the context of low Reynolds number swimming or pumping. {\bf the intro of the last section is made more brief}
 
 \section{Model} \label{sec:model}
 
@@ -114,8 +111,6 @@ Here the force is linearized by assuming the natural length of springs are much 
 The third term $\bm{v}_i\times\bm{B}$ is the Lorentz-like force (the electric charge is absorbed in $\bm{B}$), and we set $\bm{B} = -B\mathbf{\hat{z}}$.
 The construction of our model system is motivated by the recently constructed topological gyroscopic metamaterials \cite{Nash2015TopologicalMechanics}. Indeed, in the linearized regime, the equations of our model system are equivalent to the equations of motion of the gyroscopic metamaterials~\cite{Lee2018TopologicalDynamics}.
 
-%We used Lorentz force instead of gyroscopes because the former is more convenient {\bf may need a better explanation}.
-
 The last two terms describe the active bath, which consists of friction $-\gamma v_i$ and an Ornstein-Uhlenbeck (OU) colored noise $\eta_i$~\cite{Fodor2016HowFar}.
 The colored noise has finite correlation time $\tau$ and strength $T_a$ ($T_a$ has the unit of energy)
 \begin{equation} \label{eqn:noise_correlation}
@@ -137,15 +132,13 @@ The observable we mainly focus on is the time-averaged energy flux between parti
     \expval{J_{ij}} = \expval{\frac{1}{2} (\mathbf{v}_j \cdot \mathbf{F}_{ij} - \mathbf{v}_i \cdot \mathbf{F}_{ji})}
     = \expval{\mathbf{v}_j \cdot \mathbf{F}_{ij}}.
 \end{equation}
-To arrive at this formula, first we define the energy of a particle as the sum of its kinetic energy, on-site potential energy, and one half of the bond energies \cite{Lepri2003ThermalConduction}. Then we write down the energy balance relations using ideas from stochastic thermodynamics~\cite{Sekimoto1998LangevinEquation}. Finally we identify the energy exchanged due to particle-particle interactions as the energy flux $\expval{J_{ij}}$. A detailed derivation is provided in the supplemental material.
+To arrive at this formula, first we define the energy of a particle as the sum of its kinetic energy, on-site potential energy, and one half of the bond energies \cite{Lepri2003ThermalConduction}. Then we write down the energy balance relations using ideas from stochastic energetics~\cite{Sekimoto1998LangevinEquation} {\bf used Sekimoto's own phrase "energetics"}. Finally we identify the energy exchanged due to particle-particle interactions as the energy flux $\expval{J_{ij}}$. A detailed derivation is provided in the supplemental material.
 We note that the energy flux can simply be interpreted as the rate at which work is done on particle $j$ by particle $i$.
 Since this microscopic work is due to particles' stochastic motions, rather than due to an external control, the energy flux can also be interpreted as a heat flux \cite{Sekimoto1998LangevinEquation,Lepri2003ThermalConduction}. The energy fluxes are identitically equal to zero for a system at equilibrium.
 
-For our linearized systems, starting \eqnname~\eqref{eqn:GLE_single}, \eqref{eqn:noise_eom}, the energy fluxes can be readily computed numerically \cite{Gardiner2009ItoCalculus,Ceriotti2010ColoredNoiseThermostats}, given the equation of motion  (Supplemental Material).
-A collection of numerical results are shown in \figurename~\ref{fig:model_and_result}. We see nonzero energy rectification or energy fluxes can be sustained in our chiral active system (\figurename~\ref{fig:model_and_result}b), and the flux direction or pattern changes with the network geometry (\figurename~\ref{fig:model_and_result}c-f). Using a linear response theory, we now obtain analytical expressions for the energy flux. These expressions reveal how a combination of geometry, chirality, and non-equilibrium activity in the bath, are responsible for sustaining energy fluxes.
-
-% Numerical calculations of $\expval{J}$ are performed using Mathematica \cite{WolframResearch2018MathematicaVersion}
-
+Starting from the linear equations \eqnname~\eqref{eqn:GLE_single}, \eqref{eqn:noise_eom}, the energy fluxes can be solved numerically using methods introduced in \cite{Gardiner2009ItoCalculus,Ceriotti2010ColoredNoiseThermostats} (Supplemental Material).
+A collection of numerical results are shown in \figurename~\ref{fig:model_and_result}. We see nonzero energy rectification or energy fluxes can be generated in our chiral active system (\figurename~\ref{fig:model_and_result}b), and the flux direction or pattern changes with the network geometry (\figurename~\ref{fig:model_and_result}c-f).
+Using a linear response theory, we now develop analytical expressions for the energy flux. These expressions reveal how a combination of chirality, nonequilibrium activity, and network geometry is responsible for generating energy fluxes.
 
 
 \section{Linear response theory for energy flux} \label{sec:linear_response}
@@ -156,20 +149,23 @@ A collection of numerical results are shown in \figurename~\ref{fig:model_and_re
 
 %define the Fourier transform (FT) of a variable $f$ over a time period $t$ as $\tilde{f}(\omega) = \frac{1}{t} \int_0^t dt'\ f(t')e^{-i\omega t'}$, and represent the displacement of all particles by a column vector $z=\sum_i \ket{i}\otimes z_i$, with $\ket{i}$ denoting the 2D subspace of $i$,
 %then the FT of the equation of motion \eqnname~\eqref{eqn:GLE_single} becomes
+
 We begin by writing the equations of motion, \eqnname~\eqref{eqn:GLE_single}, in frequency space,
 \begin{gather} \label{eqn:response}
     \tilde{z}(\omega) = G^+(\omega) \tilde{\eta}(\omega), \\
-    G^{+}(\omega) \equiv [K + i\omega(\gamma I + BA) - m\omega^2I]^{-1},
+    G^{+}(\omega) \equiv [K + i\omega(\gamma I + BA) - m\omega^2I]^{-1}.
 \end{gather}
-where we have represented the displacement of all particles by a column vector $z=\sum_i \ket{i}\otimes z_i$, with $\ket{i}$ denoting the 2D subspace of $i$, $\tilde{z}(\omega)$ denotes the Fourier transform of $z$, $\tilde{\eta}(\omega)$ is the Fourier transform of the OU noise, $G^+$ is a response matrix, matrix $K$ encodes all on-site and spring forces $F$ according to $F=-Kz$, and $A$ is an antisymmetric matrix $A=\sum_i \ket{i}\bra{i}\otimes \mqty(0 & 1 \\ -1 & 0)$. This equation describes how the displacement $z$ responses to the noise $\tilde{\eta}$.
+We represented the displacement of all particles by a column vector $z=\sum_i \ket{i}\otimes z_i$, with $\ket{i}$ denoting the 2D subspace of $i$, $\tilde{z}(\omega)$ denotes the Fourier transform of $z$. $\tilde{\eta}(\omega)$ is the Fourier transform of the OU noise, $G^+$ is the response matrix, matrix $K$ encodes all on-site and spring forces $F$ according to $F=-Kz$, and $A$ is an antisymmetric matrix $A=\sum_i \ket{i}\bra{i}\otimes \mqty(0 & 1 \\ -1 & 0)$. This equation describes how the displacement $z$ responses to the noise $\tilde{\eta}$.
 
 Following the procedure in \cite{Kundu2011LargeDeviations}, the flux defined in \eqnname~\eqref{eqn:flux_def} can be expressed using $G^+$ as a spectral integral (Supplemental Material)
-\begin{equation} \label{eqn:flux_integral}
-    \expval{J} = \int_{-\infty}^\infty \dd{\omega} \frac{1}{1+\omega^2\tau^2} [-\frac{T_a k}{2\pi} \Re \tr G^+(\omega)A^{as}] ,
-\end{equation}
+\begin{align} \label{eqn:flux_integral}
+    \expval{J} = \int_{-\infty}^\infty \dd{\omega} h(\omega) J^{FT}(\omega), \\
+    J^{FT}(\omega) \equiv -\frac{T_a k}{2\pi} \Re \tr G^+(\omega)A^{as},
+    h(\omega) = \frac{1}{1+\omega^2\tau^2},
+\end{align}
 where $A^{as}$ is an antisymmetric matrix
 $A^{as} = -\ket{i}\bra{j} \otimes e_{ij}e_{ji}^T + \ket{j}\bra{i} \otimes e_{ji}e_{ij}^T$.
-The response function $G^+(\omega)$ has no pole in the lower-half complex plane, but the colored noise introduces one pole at $\omega = -i/\tau$. Using the residue theorem we get a compact expression for the energy flux in terms of the geometry of the lattice, chirality, and statistics of the OU noise (Supplemental Material)
+The response function $G^+(\omega)$ has no pole in the lower-half complex plane, but the colored noise introduces one pole at $\omega = -i/\tau$. Using the residue theorem we get a compact expression for the energy flux (Supplemental Material)
 \begin{equation} \label{eqn:flux_residue}
     \frac{\expval{J}}{T_a/\tau} = -\frac{k}{2} \tr G^+(-\frac{i}{\tau})A^{as} .
 \end{equation}
@@ -194,25 +190,30 @@ This Kirchoff's law puts a strong constraint on possible flux patterns among par
     \label{fig:Fourier_modes}
 \end{figure}
 
-Compared with an ordinary thermal spring-mass network which supports no energy fluxes in its equilibrium steady state, the extra components in our model are the Lorentz force and the correlation in the noise.
-This section shows that these two components, in combination with network geometry provide the minimal ingredients required to ensure sustained fluxes of energy in our model.
+{\bf Note to Suri: Geometry is mentioned not in the beginning, but when relating to William's work in the small gamma regime. As you said, readers who know William's work may know that geometry is also important. But This reader may be a small body, thus I aim at general readers in the beginning, and address the geometry later for the specialists.}
 
-For easier identification of the roles and later generalizations, we rewrite the integral \eqnname~\eqref{eqn:flux_integral} as $\expval{J} = \int_{-\infty}^\infty \dd{\omega} h(\omega) J^{FT}(\omega)$, with $J^{FT}(\omega) \equiv -(T_a k/2\pi) \Re \tr G^+(\omega)A^{as}$ and $h(\omega)=1/(1+\omega^2\tau^2)$. Here, we note that $J^{FT}(\omega)$ is proportional to the the energy flux at Fourier frequency $\omega$ in an isolated damped variant of our network. The function $h(\omega)$ is the the noise spectrum (apart from a prefactor of $T_a$), $\expval{\tilde{\eta}(\omega)\tilde{\eta}^*(\omega)} = 2\gamma T_a h(\omega) / t$.
+Compared with an ordinary thermal spring-mass network, which supports no energy fluxes in its equilibrium steady state, our model contains two extra components, the Lorentz force and the correlation in the noise.
+We show that these two components provide the minimal ingredients required to ensure energy rectification in our model.
+
+We interpret the functions $J^{FT}(\omega), h(\omega)$ in \eqnname~\eqref{eqn:flux_integral} as follows.
+The function $J^{FT}(\omega)$ is proportional to the the energy flux at Fourier frequency $\omega$ in an isolated damped variant of our network.
+The function $h(\omega)$ is proportional to the the noise spectrum, $\expval{\tilde{\eta}(\omega)\tilde{\eta}^*(\omega)} = 2\gamma T_a h(\omega) / t$.
 
 To generate a nonzero flux, or equivalently make the integral nonzero, we need two requirements.
 Firstly, $J^{FT}(\omega)$ should not be zero everywhere.
-%This is indeed the case from numerical calculations of $J^{FT}(\omega)$ %\figurename~\ref{fig:Fourier_modes}a.
-In small $\gamma$ regime, a prescription for realizing $J^{FT}(\omega) \neq 0$ can be obtained by exploiting the connection between the eigenmodes of the isolated variants of our system and the eigenmodes of topological gyroscopic metamaterials~\cite{Nash2015TopologicalMechanics}. Specifically, in the small damping region, the resonant frequencies of the damped and eigen-frequencies of the undamped system are very close. As discussed previously, the dynamics of the undamped system map on to the dynamics of topological gyroscopic mematerials \textendash these have been shown to support chiral eigenmodes~\cite{Nash2015TopologicalMechanics} (\figurename~\ref{fig:Fourier_modes}b,c). The chiral eigenmodes can support a non-zero energy flux. {\bf needs more work}
+If $B=0$, the response $G^+$ is symmetric or reciprocal, and since $A^{as}$ is antisymmetric, the trace $\tr G^+(\omega) A^{as}=0$ at all $\omega$'s. Nonzero $B$ breaks the reciprocity of $G^+$, thus can generate a nonzero $J^{FT}(\omega)$, or generate chiral Fourier modes.
+In small $\gamma$ regime, the existence of these chiral modes can be heuristically seen {\bf may need a better expression than "heuristically seen"} by exploiting the connection between the damped isolated variants of our system and the undamped isolated gyroscopic metamaterials~\cite{Nash2015TopologicalMechanics}.
+Specifically, the slightly damped variant would resonate near the eigen-frequencies of the undamped metamaterials, and exhibit Fourier modes that are close to the eigenmodes of the undamped system (\figurename~\ref{fig:Fourier_modes}b,c). These eigenmodes have been shown to support chiral wave propagations~\cite{Nash2015TopologicalMechanics}, thus the Fourier modes can also support nonzero energy fluxes.
+In Ref.\cite{Nash2015TopologicalMechanics}, the chirality of eigenmodes is dependent on the network geometry. Here we defer the discussion of network geometries to the next section, because in our model the effect of geometry is not as crucial as Lorentz-like force $B$ and active bath $\tau$, and the effect is too diverse to be discussed in parallel with $B$ and $\tau$. {\bf may need a more smooth explanation on the geometry}
+At larger $\gamma$'s, the Fourier modes of our damped isolated variant are no longer close to the chiral eigenmodes of gyroscopic metamaterials (compare \figurename~\ref{fig:Fourier_modes}b and d), but a connection between eigenmodes and energy fluxes can still be built (Supplemental Material).
 
-At larger $\gamma$'s, the Fourier modes of our damped isolated system are no longer close to the chiral eigenmodes of gyroscopic metamaterials (\figurename~\ref{fig:Fourier_modes}b and d), but a connection between eigenmodes and energy fluxes can still be built (Supplemental Material).
-{\bf needs more transitions}
-Taken together, $J^{FT}(\omega) \neq 0$ is due to the nonreciprocity induced by the Lorentz force and lattice geometry. If $B=0$, the response $G^+$ is symmetric or reciprocal, and since $A^{as}$ is antisymmetric, the trace $\tr G^+(\omega) A^{as}=0$ at all $\omega$'s. Nonzero $B$ and appropriate lattice geometry breaks the reciprocity of $G^+$, thus generating a nonzero energy flux.
-
-Nonzero $J^{FT}(\omega)$ alone does not ensure a nonzero total flux, we further need that $h(\omega)$ should not be constant.
-If $h(\omega)$ is constant, it corresponds to a white noise, and the system would be in equilibrium according to the Bohr-van Leeuwen theorem \cite{Pradhan2010NonexistenceClassical}. %In this case, the integral is always zero regardless of the value of $J^{FT}(\omega)$, because the response function $G^+(\omega)$ has no pole in the lower-half plane due to causality, consequently the flux as a contour integral vanishes.
+Nonzero $J^{FT}(\omega)$ alone does not ensure a nonzero flux, we further need that $h(\omega)$ should not be constant.
+If $h(\omega)$ is constant, it corresponds to a white noise, and the system would be in equilibrium according to the Bohr-van Leeuwen theorem \cite{Pradhan2010NonexistenceClassical}.
+The $h(\omega)$ for the fluctuation dissipation violating OU noise, $h(\omega)=1/(1+\omega^2\tau^2)$, provides more weightage to fluxes at smaller values of $\omega$. The resulting average flux can hence potentially be nonzero. We note that other forms of colored noise could have also served the same purpose.
+%In this case, the integral is always zero regardless of the value of $J^{FT}(\omega)$, because the response function $G^+(\omega)$ has no pole in the lower-half plane due to causality, consequently the flux as a contour integral vanishes.
 %The conclusion of vanishing flux under white noise can also be obtained from the Bohr-van Leeuwen theorem \cite{Pradhan2010NonexistenceClassical}.
 
-The $h(\omega)$ for the fluctuation dissipation violating OU noise, $h(\omega)=1/(1+\omega^2\tau^2)$, provides more weightage to fluxes at smaller values of $\omega$. The resulting average flux can hence potentially be non-zero. We note that other forms of colored noise could have also served the same purpose. %We chose to work with the OU noise since i
+
 %The requirement of non constant noise spectrum indicates a nonequipartition role of the active bath \cite{Lee2017FluctuationSpectra}.
 %In fact the OU noise is just one choice of the non-white noise, and any nonconstant noise spectrum $h(\omega)$ is likely to shift the integral away from zero.
 %However, $h(\omega)=1/(1+\omega^2\tau^2)$ is arguably the simplest nontrivial noise.
@@ -235,7 +236,7 @@ The role of the $B$-field and lattice geometry is to induce chiral Fourier modes
     \label{fig:path_sum}
 \end{figure}
 
-In this section we develop a diagrammatic expansion of the energy flux. This expansion provides a simple intuitive method to compute energy fluxes and reveals a relationship between flux and network geometry. The {\it{small}} parameter of our expansion will be the spring constant $k$ of the interparticle interactions. We first expand the above derived expressions for the energy flux in small-$k$ regime and show that it can be expressed as sum over paths traversed along the network (\eqnname~\eqref{eqn:flux_path}). Our perturbation theory assigns a geometry dependent pre-factor for each path, thus allowing us to construct a diagrammatic representation for the rectified energy fluxes (Eq \eqnname~\eqref{eqn:flux_path_polygon}). The central results of this section, Eq.~\ref{eqn:flux_path}, Eq.~\ref{eqn:flux_path_polygon} provide compact expressions that elucidate how geometry, $B$ field and $\tau$ can combine to generate energy flows in networks with arbitrarily complex topologies.
+In this section we develop a diagrammatic expansion of the energy flux. This expansion provides a simple intuitive method to compute energy fluxes and reveals a relationship between flux and network geometry. The {\it{small}} parameter of our expansion will be the spring constant $k$ of the interparticle interactions. We first expand the above derived expressions for the energy flux \eqnname~\eqref{eqn:flux_residue} in small-$k$ regime and show that it can be expressed as a sum over paths traversed along the network (\eqnname~\eqref{eqn:flux_path}). Our perturbation theory assigns a geometry dependent pre-factor for each path, thus allowing us to construct a diagrammatic representation for the rectified energy fluxes (\eqnname~\eqref{eqn:flux_path_polygon}). The central results of this section, Eq.~\ref{eqn:flux_path}, Eq.~\ref{eqn:flux_path_polygon} provide compact expressions that elucidate how geometry and other parameters can combine to generate energy flows in networks with arbitrarily complex geometry and topologies.
 %Our diagrammatic theory identifies the important features of the network and active bath that control the energy flux.
 
 %We then also show two situations where polygon paths vanish and higher-order paths (with loops) become dominant.
@@ -251,28 +252,28 @@ As a result, the total flux can be written as a sum over the flux of paths (\fig
 
 The path rules are as follows.
 For the flux from $i$ to $j$, valid paths are $l=i\rightarrow j\rightarrow l_3\rightarrow l_4\rightarrow \dots \rightarrow l_n\rightarrow i$, where $l_a$ and $l_b$ either has to be bonded or $l_a=l_b$. Paths that contain equal numbers of $i\rightarrow j$ and $j\rightarrow i$ do not contribute (e.g. path $i\rightarrow j\rightarrow i$), because either the path itself vanishes or it cancels with another path. As a result of this, paths appear as cycles.
-The term $S_l$ is defined as $S_l \equiv (\frac{k}{k_0})^n \tr R_\alpha (-K_s)_{i l_n} \cdots R_\alpha (-K_s)_{l_3j} R_\alpha (-K_s)_{ji}$,
-where $k_0\equiv \sqrt{(k_{g,\tau})^2 + (B/\tau)^2}$ sets the characteristic scale with dimension $k$,
-\begin{equation}
-\label{eq:alphadefine}
-\alpha = \arctan{\frac{B/\tau}{k_{g,\tau}}}
+The term $S_l$ is defined as $S_l \equiv (\frac{k}{k_0})^n \tr R_\alpha (-K_s)_{i l_n} \cdots R_\alpha (-K_s)_{l_3j} R_\alpha (-K_s)_{ji}$.
+In this definition, $k_0\equiv \sqrt{(k_g+\gamma/\tau+m/\tau^2)^2 + (B/\tau)^2}$ sets the characteristic scale with dimension $k$. $R_\alpha$ is a CCW rotation by angle $\alpha$, defined as
+\begin{equation} \label{eqn:path_alpha_def}
+    \alpha = \arcsin{\frac{B/\tau}{k_0}}.
 \end{equation}
-is a geometric factor, $R_\alpha$ is a CCW rotation by angle $\alpha$, and $(K_s)_{l_b l_a} \equiv \frac{1}{k}\bra{l_b}(K-k_gI)\ket{l_a}$ is the geometric factor of spring force on $l_b$ due to the displacement of $l_a$.
+The factor $\alpha$ condenses all parameters into one angle, which is then allowed to directly interact with the network geometry and regulate the energy flux {\bf need to write better}. $(K_s)_{l_b l_a} \equiv \frac{1}{k}\bra{l_b}(K-k_gI)\ket{l_a}$ is a non-dimensionalized spring force on $l_b$ due to the displacement of $l_a$.
 $-l$ means $l$ in the reversed order.
 The interval of convergence depends on the geometry of the whole network as well as the parameter $\alpha$. The typical value of the upper bound of $\frac{k}{k0}$ ranges between $0.3$ and $0.6$.
 
 The paths can be represented using diagrams, from which the flux $J^\text{path}_l$ can be calculated easily. For instance, the first diagram in \figurename~\ref{fig:path_sum}a represents the path $1\rightarrow 2\rightarrow 3\rightarrow 1$. To calculate $S_l$, one writes $(-K_s)_{l_bl_a}$ for each arrow $l_a\rightarrow l_b$, $R_\alpha$ for each node $l_a$, then multiply these matrices in the reversed order, and calculate the trace, e.g. $S_{1\rightarrow 2\rightarrow 3\rightarrow 1} = (\frac{k}{k_0})^3 \tr R_\alpha (-K_s)_{13} R_\alpha (-K_s)_{32} R_\alpha (-K_s)_{21}$. To get $S_{-l}$, one takes the result of $S_l$ and replace $\alpha$ by $-\alpha$. Finally, $J^\text{path}_l$ can be calculated from the difference between $S_l$ and $S_{-l}$.
 
-\subsection{An example calculation: Polygonal paths}
+\subsection{From polygons to arbitrary networks}
 Path with length $n$ is on the order $(\frac{k}{k_0})^n$, so that in the small $k$ regime, the main contribution to the flux comes from the lowest-order paths.
 The usual lowest-order paths are polygonal cycles with no loops (loops have the form $l_a\rightarrow l_a$), in which case, the formula for $J^\text{path}_l$ \eqnname~\eqref{eqn:flux_path} reduces to a simple form (Supplemental Material)
 \begin{equation} \label{eqn:flux_path_polygon}
     J^\text{path}_\text{polygon} = \frac{1}{2} (\frac{k}{k_0})^n (\prod_i \cos(\theta_i - \alpha) - \prod_i \cos(\theta_i + \alpha)),
 \end{equation}
-where $\alpha$ is defined in Eq.~\ref{eq:alphadefine}, $n$ is the number of nodes and $\theta_i$'s are outer angles (\figurename~\ref{fig:path_sum}b).
+where $\alpha$ is defined in \eqnname~\eqref{eqn:path_alpha_def}, $n$ is the number of nodes and $\theta_i$'s are outer angles (\figurename~\ref{fig:path_sum}b).
+This formula illustrates that, given a network geometry $\theta_i$s, the flux pattern to the lowest order is a function of simply one condensed parameter $\alpha$, as opposed to the original $7$  parameters $m, k_g, k, B, \gamma, \tau, T_a$.
 
-For polygon networks, this formula gives a direct relationship between the lowest-order flux and the network geometry, and all parameters are condensed into a geometric angle $\alpha$. As an example, flux in an arbitrary triangle is $J \propto k^3 \sin\theta_1\sin\theta_2\sin\theta_3 + \mathcal{O}(k^4)$, whose $k^3$ term is always positive or CCW.
-For complex networks, this formula tells that its lowest-order flux can be viewed as a result of combining the flux of its constituent polygons together, as illustrated in \figurename~\ref{fig:path_sum}c. This is because the flux of a polygonal path \eqnname~\eqref{eqn:flux_path_polygon} is not affected by any side chains on the nodes, and $J^\text{path}_\text{polygon}$ for a polygon in a complex network is the same as $J^\text{path}_\text{polygon}$ for the polygon when standalone.
+For polygon networks, \eqnname~\eqref{eqn:flux_path_polygon} gives a direct relationship between the lowest-order flux and the network geometry. As an example, flux in an arbitrary triangle is $J \propto k^3 \sin\theta_1\sin\theta_2\sin\theta_3 + \mathcal{O}(k^4)$, whose $k^3$ term is always positive or CCW.
+For complex networks, \eqnname~\eqref{eqn:flux_path_polygon} implys that its lowest-order flux can be viewed as a result of combining the flux of its constituent polygons, as illustrated in \figurename~\ref{fig:path_sum}c. This is because the flux of a polygonal path \eqnname~\eqref{eqn:flux_path_polygon} is not affected by any side chains on the nodes, and $J^\text{path}_\text{polygon}$ for a polygon in a complex network is the same as $J^\text{path}_\text{polygon}$ for the polygon when standalone.
 %Unlike in polygonal paths, paths with loops are affected by side-chains.
 %One situation is when the polygon path itself vanishes. In \figurename~\ref{fig:path_sum}d,e, the flux of lowest order path, square, is zero, so the main contribution comes from the path with length $5$, as shown in \figurename~\ref{fig:path_sum}f. Through the loop in this path, the orientation of the side-chain controls the flux direction in the main square, without changing the geometry of the main cycle (as in \figurename~\ref{fig:model_and_result}c-e).
 
@@ -281,7 +282,8 @@ For complex networks, this formula tells that its lowest-order flux can be viewe
 %While the hexagon path constitutes the lowest-order path at the boundary, it vanishes for $n_l\ge 1$ due to cancellations. The first non-vanishing pair of paths for $n_l=1$ is shown in \figurename~\ref{fig:path_decay}d, in which the loop exploits the asymmetry between the bulk side (has a vertical bond at the blue loop) and the boundary side (has no vertical bonds at the red loop). For every increment of one layer, the length of paths increases by $4$. So the flux at layer $n_l$ is on the order of $k^{4n_l+3}$, which exhibits an exponential decay $e^{-(n_l-1)/d_l}$.
 %Through the calculation of these paths, one gets the decay length $d_l = -1/\log[4(k/k_0)^4(\sin(\theta+\alpha)\sin(\theta-\alpha))^2]$. From this result, we see that the cusp at $\theta=\alpha$ in \figurename~\ref{fig:path_decay}c is due to the term $\sin(\theta-\alpha)$. In fact, at the special point $\theta=\alpha$, paths like \figurename~\ref{fig:path_decay}d vanish, and one needs to consider even high-order paths.
 
-Starting from the  diagrammatic expansion, the presence of localized energy fluxes in such networks can be understood. Consider for instance the paths contributing to flux along a link in a honeycomb-like network (\figurename~\ref{fig:path_decay}). Away from the boundary, the dominant lower order path contributions to the energy flux cancel each other. The size of the leading order path that contributes to the energy flux along a link increases as a function of the distance of the link from boundary. Such a scaling results in an exponential localization of the energy flux at the boundary of the lattice (\figurename~\ref{fig:path_decay}b).
+Starting from the  diagrammatic expansion, the presence of localized energy fluxes in some networks (\figurename~\ref{fig:model_and_result}) can be understood. Consider for instance the paths contributing to flux along an edge in a honeycomb-like network (\figurename~\ref{fig:path_decay}). Away from the boundary, the dominant lower order path contributions to the energy flux cancel each other. The size of the leading order path that contributes to the energy flux along a link increases as a function of the distance of the link from boundary. Such a scaling results in an exponential localization of the energy flux at the boundary of the lattice (\figurename~\ref{fig:path_decay}b).
+
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.45\textwidth]{5_path_decay.pdf}
@@ -304,7 +306,7 @@ More generally, using these decompositions, it is easy to program energy flux pa
 	\includegraphics[width=0.45\textwidth]{7_swimmer.pdf}
     \caption{Active network dynamics as a swimming protocol.
     (a) Conventional heat conduction in a chain with temperature differences at two ends. The temperature difference drives a heat flow through a passive material (boxed in gray).
-    (b) Similar to (a), the active gyroscopic network can also drive a heat flow through a passive segment. In the simulation setup, the separation between active particles (boxed in red) is large compared with the length-scale of their displacements, and their parameters are: $m,k_g,\gamma=0.1, k=10$, others are $1$. Passive particles (boxed in gray) are restrained to 1D, and their $\gamma,T_a,k_g$ are set to $0$.
+    (b) Similar to (a), the active gyroscopic network can also drive a heat flow through a passive segment. In the simulation setup, the separation between active particles (boxed in red) is large compared with the length-scale of their displacements, and their parameters are: $m,k_g,\gamma=0.1, k=10$, others are $1$. Passive particles (boxed in gray) are constrained to 1D, and their $\gamma,T_a,k_g$ are set to $0$.
     (c) Three-sphere swimmer model from \cite{Golestanian2008AnalyticResults}. In order to swim, the swimmer vary the lengths of its two legs according to some protocol.
     (d) Swimmer's speed $V_s$ is directly proportional to the energy flux $\expval{J}$ in the active network. The proportionality constant is $-k_0/k$, which is independent of the network geometry. The series of dots for each $-k_0/k$ are obtained by varying the labelled angles (by red disk sectors) in pentagon networks or square+tail networks.
     (e) One example of $J_{31}^s$ path (red) and $J_{12}^s$ path (blue). Ballistic particles are boxed in gray, and the active ones are boxed in red.
@@ -312,26 +314,16 @@ More generally, using these decompositions, it is easy to program energy flux pa
     \label{fig:swimmer}
 \end{figure}
 
-% The energy flux has been our main focus so far. In this section, we show that this energy flux can be used to rectify motion.
-% In the first step, we couple the active gyroscopic network to a passive material, and show that energy flux can be driven through the passive elastic object
-% Next, noting that the presence of the energy flux requires non-reciprocal motion, we allow the passive elastic object to interact with a highly viscous fluid. We show that the non-reciprocal motion of the constituent particles of the passive elastic object in the viscous fluid can provide a mechanism for propulsion \cite{Golestanian2008AnalyticResults}. Indeed, using the above derived diagrammatic theory, we show that the swim speed of our model system in a viscous fluid is in fact proportional to the energy flux rate. In this manner, designed rectified energy flows can in turn be used to rectify motion and exert forces.
+{\bf explanation of protocol is deferred to the swimming subsection. For the opening, maybe a brief intro is enough.}
+The rectification of energy has been our main focus so far. In this section, we show that it possible to exploit the energy flux to rectify motions when our model systems are allowed to interact with a viscous fluid.
+We begin by demonstrating that a {\it passive} segment \textendash this segment does not experience Lorentz force or active bath so that it is completely ordinary \textendash when coupled to our chiral active network, supports an energy flux.
+Next we show that the motion of this segment can be used as a swimming protocol, and make a low Reynolds number ($Re$) swimmer swim. Using the diagrammatic theory introduced in \secname~\ref{sec:path}, we show that the swimming speed is in fact proportional to the energy flux.
+Using these results, we finally discuss the possibility that the passive segment, when immersed in a fluid can act as a stalled swimmer and pump the fluid.
 
-%Since the energy flux indicates some nonreciprocal motion, we then use this motion as a swimming protocol to make a three-sphere swimmer swim.
-%After this, we examine the scenario of immersing the passive segment into a fluid and argue that it is possible to pump the fluid.
-
-
-%of immersing a segment of the chiral active network into a fluid and illustrate the possibility to pump the fluid.
-The rectification of energy has been our main focus so far. In this section, we \textcolor{red}{show that it possible to} exploit the energy flux to rectify motion \textcolor{red}{when our model systems are allowed to interact with a } viscous fluid.
-In particular, we \textcolor{red}{consider scenarios where a viscous fluid is allowed to interact with a segment of our chiral active network and show that such interaction can result in either a pumping or a propulsion mechanism}.
- 
-\textcolor{red}{We begin by demonstrating that a {\it passive} rod like segment \textendash this segment does not experience Lorentz force or active bath \textendash when coupled to our chiral active network, still supports an energy flux. Next, we consider cases where the above described passive rod segment  of the network is allowed to interact with a viscous fluid. For analytically tractability, we first imagine cases where solve for the dynamics of the passive segment as it conducts energy. We then use these dynamics as input for a protocol to modify the configuration of an elastic object in contact with a viscous fluid. We imagine that the elastic object is identical in make to the above described passive segment, except that it is not attached or tethered through any potentials. We show that the imposed protocol to modify the configuration of the elastic object actually causes the elastic object to {\it swim} in the viscous fluid. Using the diagrammatic theory introduced in \secname~\ref{sec:path}, we show that the swim speed is in fact proportional to the energy flux rate associated with the dynamics that was used to generate the time dependent protocol. Using these results, we finally discuss the possibility that the passive segment, when immersed in a fluid can act as a stalled swimmer and pump the fluid.}
-
-%Next we show that the motion of this segment can be used as a swimming protocol, and make a low Reynolds number ($Re$) swimmer swim. Using the diagrammatic theory introduced in \secname~\ref{sec:path}, we will derive that the swimming speed is proportional to the energy flux.
-%With these preparations, we then discuss the possibility that, the passive segment when immersed in a fluid can act as a stalled swimmer and pump the fluid.
 
 \subsection{Energy flux in a passive segment coupled to an active network}
-In the conventional heat conduction, if a passive harmonic chain is placed between two thermal baths with different temperatures, it supports a nonzero averaged energy flux or heat flux (\figurename~\ref{fig:swimmer}a).
-Analogously, we can study whether an energy flux can also be generated in the same passive material, but replacing the temperature bias with our chiral active network (\figurename~\ref{fig:swimmer}b).
+In conventional heat conductions, a passive harmonic chain is placed between two thermal baths with different temperatures, and it supports an energy flux or heat flux (\figurename~\ref{fig:swimmer}a).
+Analogously, we can study whether a nonzero averaged energy flux can also be generated in the same passive material, but replacing the temperature bias with our chiral active network (\figurename~\ref{fig:swimmer}b).
 Numerical calculation (\figurename~\ref{fig:swimmer}b) and simulations (Supplemental Video and Supplemental Material) show that the passive segment does support energy fluxes.
 From the Supplemental Video, the flux through the passive segment is in general stochastic. Although the direction of flux is from left to right on average, the instantaneous flux can also transport from right to left. During the period when $J$ is large, $J$ exhibits successive peaks, indicating a large energy flow from left to right. The spacing between the peaks matches the sound speed of the passive chain.
 
@@ -339,14 +331,14 @@ From the Supplemental Video, the flux through the passive segment is in general 
 \subsection{Nonreciprocal motion as a swimming protocol}
 The energy fluxes through the passive segment, especially the successive flux peaks observed in the above simulation, seem to suggest a stochastic version of wave-like motions. The wave-like motions, in the context of low $Re$ swimmers, is one type of swimming strategies \cite{Taylor1951AnalysisSwimming,Golestanian2008AnalyticResults}. Thus the motions of the passive segment could potentially be exploited as a swimming strategy.
 
-The swimmer model we choose is a linear three-sphere swimmer \cite{Golestanian2008AnalyticResults}, because it is a model with minimal components, and it can readily adopt the motion of our passive segment. The swimmer as \figurename~\ref{fig:swimmer}e is immersed in a low $Re$ fluid. When the swimmer changes the lengths of its two legs according to some protocol, which is described by a constant part $L$ plus a varying part $\Delta L_i$ for $i=1,2$, the time-averaged swimming speed is (\eqnname~(12) in \cite{Golestanian2008AnalyticResults})
+The swimmer model we choose is a linear three-sphere swimmer \cite{Golestanian2008AnalyticResults}, because it is a model with minimal components, and it can readily adopt the motion of our passive segment. The swimmer as \figurename~\ref{fig:swimmer}e is immersed in a low $Re$ fluid. When the swimmer changes the lengths of its two legs according to some prescribed protocol, which is described by a constant part $L$ plus a varying part $\Delta L_i(t)$ for $i=1,2$, the time-averaged swimming speed is (\eqnname~(12) in \cite{Golestanian2008AnalyticResults})
 \begin{equation} \label{eqn:swimmer_speed}
     V_s = \frac{7a}{24L^2} \expval{\Delta L_1 \Delta \Dot{L_2} - \Delta \Dot{L_1} \Delta{L_2}},
 \end{equation}
 where $a$ is the radius of the bead. Assumptions for this equation are $a/L \ll 1, \Delta L_i/L \ll 1$, and total external force on the swimmer is zero.
 
-We set the swimming protocol to be the motions of the three passive particles (\figurename~\ref{fig:swimmer}b, except that here we allow $k_g$ of passive particles to be nonzero),
-compute $V_s$ of the swimmer and compare it to the energy flux $\expval{J}$ through the passive segment.
+One can imagine first recording the motions of passive particles in Supplemental Video, then use this recording as a prescribed protocol of the swimmer.
+We compute $V_s$ of the swimmer and compare it to the energy flux $\expval{J}$ through the passive segment.
 The $V_s-\expval{J}$ plot in \figurename~\ref{fig:swimmer}d shows that, the swimmer using our protocol can swim, and the speed $V_s$ is proportional to $\expval{J}$. Moreover, this proportionality constant does not depend on the network geometry.
 In fact, this constant can be calculated using a modified path analysis (Supplementary Material),
 \begin{equation} \label{eqn:swimmer_propto}
@@ -367,13 +359,15 @@ This tells us that we can first consider the untethered case, then go to the tet
 
 In the presence of an added fluid, we would like that the original dynamics is not altered too much, otherwise both the energy flux and the correlation in \eqnname~\eqref{eqn:swimmer_speed} would be distorted, and one cannot utilize the $V_s \propto -\expval{J}$ result.
 So we need a regime where the fluid, in spite of having a low $Re$, is perturbative.
-To make the fluid perturbative, we need the dissipation rate due to the viscous force to be much smaller than the energy flux through the segment. This can be expressed as $\eta_f a v^2 \ll J$, where $v$ is the velocity of the bead, $J$ is the energy flux in the absence of the fluid.
+To make the fluid perturbative, we need the dissipation rate due to the viscous force to be much smaller than the energy flux through the segment. This can be expressed as $\eta_f a v^2 \ll J$, where $v$ is the characteristic velocity of the bead, $J$ is the energy flux in the absence of the fluid.
 To satisfy low $Re$ condition, one needs $Re = \rho_f a v /\eta_f \ll 1$, where $\rho_f$ is fluid's density.
 Writing these two conditions together, one gets $J \gg \eta_f a v^2 \gg \rho_f a^2 v^3$.
 This condition ignored hydrodynamic interactions between the beads, because it is a higher-order perturbation with the order of $a/L$.
 As a numerical example, this condition can be satisfied by setting $k=5\times 10^{-5} kg/s^2, k_g=1\times 10^{-6} kg/s^2$ for springs (value of optical trap), $a=10^{-6}m$ for all beads (size used in \cite{Leoni2009BasicSwimmer}), $T_a=10^{-18} J, \tau=1s$ for the active bath \cite{Wu2000ParticleDiffusion}, $\rho_f=10^3kg/m^3, \eta_f=10^{-3}kg/(m\cdot s)$ for liquid (water), and $B=10^{-5} kg/s$ for the $B$-field.
-Then from numerical calculations, $v=3.8\times 10^{-6}m/s$, and the three scales are $J=5\times 10^{-19}J/s, \eta_f av^2=1.4\times 10^{-22}J/s, a^2v^3\rho_f=5.4\times 10^{-29}J/s$.
-The only suspicious parameter is $B$, which seems to be too strong in order to make $J$ sizable. To make practical use of this model, one should consider Lorentz force substitutes, such as gyroscopes.
+From numerical calculations, $v=3.8\times 10^{-6}m/s$, and the three scales are $J=5\times 10^{-19}J/s, \eta_f av^2=1.4\times 10^{-22}J/s, a^2v^3\rho_f=5.4\times 10^{-29}J/s$, which does exhibit scale separations.
+If the separation between beads is $L=10^{-7}m$, calculated pumping speed is $1\times 10^{-8} m/s$.
+This speed can be scaled up by increasing $T_a$.
+The only suspicious parameter is $B$, which seems too strong in order to make $J$ sizable. To make practical use of this model, one should consider Lorentz force substitutes, such as gyroscopes.
 
 These discussions together suggest that, if the passive part is immersed in a perturbative fluid, it can generate fluid flows.
 Assuming the relaxation timescale of the active network is much faster than the timescale of swimming due to the small $V_s(F)$, one can expect the following process. Initially the passive part experiences $\expval{F}=0$, so it swims with speed $V_s$; as the part drifts, $\expval{F}$ increases and acts in the direction of $-V_s$; when $\expval{F} \approx -6\pi\eta_f a V_s$, the swimmer is stalled. The stalled swimmer pumps fluid in direction $-V_s \propto \expval{J}$.

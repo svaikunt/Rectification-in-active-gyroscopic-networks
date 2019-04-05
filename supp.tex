@@ -125,10 +125,11 @@ and arrive at a reduced expresion
 
 
 \section{Algebraic method for solving the energy flux}
-One straightforward method to compute the flux $J$ is as follows.
+A numerical method to compute the flux $J$ is as follows.
 A system is determined by the network geometry and parameters $m, k_g, k, B, \gamma, \tau, T_a$.
 Given the equation of motion \eqnname~\eqref{eqnS:SDE_general},\eqref{eqnS:SDE_X}-\eqref{eqnS:SDE_sigma}, one can numerically solve for the covariance $C=\expval{XX^T}$ from the matrix equation $\mu C + C \mu^T = \sigma\sigma^T$ \cite{Gardiner2009ItoCalculus,Ceriotti2010ColoredNoiseThermostats}.
 Finally, the flux \eqnname~\eqref{eqnS:flux_Jij}, which is bilinear in $x$ and $v$, can be extracted from the covariance $C$.
+Numerical calculations of $\expval{J}$ are performed using Mathematica \cite{WolframResearch2018MathematicaVersion}
 
 
 \section{Energy flux from linear response theory}
@@ -431,7 +432,7 @@ Since $UV^T = I$ from orthonormality, this sum vanishes
 
 
 \section{Path summation of energy flux}
-To derive the path summation formula \eqnname~\eqref{eqn:flux_path} and the path rules, we start from \eqnname~\eqref{eqnS:flux_residue}, expand $k=0$ to get \eqnname~\eqref{eqnS:smallk_expand}, discuss the convergence radius in \eqnname~\eqref{eqnS:smallk_convergence}, then insert resolution of identity to make each term representable by a path as in \eqnname~\eqref{eqnS:smallk_Sl}, and arrive at the path summation formula in \eqref{eqnS:smallk_path_sum}.
+To derive the path summation formula \eqnname~\eqref{eqn:flux_path} and the path rules, we start from \eqnname~\eqref{eqnS:flux_residue}, expand to orders of the spring constant $k$ around $k=0$ to get \eqnname~\eqref{eqnS:smallk_expand}, discuss the convergence radius in \eqnname~\eqref{eqnS:smallk_convergence}, then insert resolution of identity to make each term representable by a path as in \eqnname~\eqref{eqnS:smallk_Sl}, and arrive at the path summation formula in \eqref{eqnS:smallk_path_sum}.
 We also provide a convenient way to calculate $S_{-l}$ in \eqnname~\eqref{eqnS:smallk_S-l}, and a heuristic interpretation of $S_l$ in \eqnname~\eqref{eqnS:smallk_path_vector}.
 
 \subsection{Derivation of path summation formula}
