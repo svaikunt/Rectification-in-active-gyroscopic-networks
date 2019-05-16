@@ -119,7 +119,8 @@ In \secname~\ref{sec:model}-\ref{sec:flux}, we introduce our model active chiral
 In \secname~\ref{sec:linear_response}-\ref{sec:path} we analytically identify the ingredients for rectification of energy fluxes and construct a diagrammatic approach that reveals a relationship between energy flux and network geometries.
 Finally in \secname~\ref{sec:swimmer} we show implications of the rectification in the context of low Reynolds number swimming or pumping.
 
-\section{Model} \label{sec:model}
+\section{Model systems and energy flux} \label{sec:model}
+%\section{Energy flux definition and results} \label{sec:flux}
 
 \begin{figure}[ht]
 	\centering
@@ -164,7 +165,6 @@ The friction $-\gamma v_i$ and OU noise $\eta_i$ break fluctuation-dissipation r
 The active bath reduces to the familiar Langevin bath in the $\tau \rightarrow 0$ limit.
 
 
-\section{Energy flux definition and results} \label{sec:flux}
 
 The observable we mainly focus on is the time-averaged energy flux between particles at steady state. For a system with pairwise interactions and on-site potentials, the energy flux $\expval{J_{ij}}$ from particle $i$ to $j$ reads
 \begin{equation} \label{eqn:flux_def}
@@ -211,11 +211,12 @@ This Kirchoff's law puts a strong constraint on possible flux patterns among par
 Compared with an ordinary thermal spring-mass network, which supports no energy fluxes in its equilibrium steady state, our model contains two extra components, the Lorentz force and the correlation in the noise.
 We first show that these two components provide two necessary ingredients required to ensure energy rectification in our model.
 
-We interpret the functions $J^{FT}(\omega), h(\omega)$ in \eqnname~\eqref{eqn:flux_integral} as follows.
+As a prerequisite, we note that the functions $J^{FT}(\omega), h(\omega)$ in \eqnname~\eqref{eqn:flux_integral} can be interpreted as follows.
 The function $J^{FT}(\omega)$ is proportional to the the energy flux at Fourier frequency $\omega$ in an isolated damped variant of our network.
 The function $h(\omega)$ is proportional to the the noise spectrum, $\expval{\tilde{\eta}(\omega)\tilde{\eta}^*(\omega)} = 2\gamma T_a h(\omega) / t$.
 
-To generate a nonzero flux, or equivalently make the integral nonzero, we need two requirements.
+
+\subsection{Lorentz force and non-equilibrium activity are necessary for the generation of an energy flux} To generate a nonzero flux, or equivalently make the integral nonzero, we need two requirements.
 Firstly, $J^{FT}(\omega)$ should not be zero everywhere.
 If $B=0$, the response $G^+$ is symmetric or reciprocal, and since $A^{as}$ is antisymmetric, the trace $\tr G^+(\omega) A^{as}=0$ at all values of $\omega$. Nonzero $B$ breaks the reciprocity of $G^+$, thus can generate a nonzero $J^{FT}(\omega)$, or generate chiral Fourier modes.
 
@@ -226,11 +227,12 @@ The $h(\omega)$ for the fluctuation dissipation violating OU noise, $h(\omega)=1
 In summary, we see that $B$-field, and a colored noise are two necessary ingredients to generate flux in our model chiral systems.
 The role of the $B$-field is to breaking the reciprocity of response and generate Fourier modes such that $J^{FT}(\omega)\neq 0$. The role of the colored noise is to excite these modes in a weighted manner.
 
+\subsection{Energy flux can be tuned as a function of lattice geometry} 
 Apart from the these two ingredients, the geometry of the network also plays an important role.
-Indeed in the small $\gamma$ regime, the existence of chiral modes with $J^{FT}(\omega)\neq 0$ can further be heuristically explained by exploiting the connection between the slightly damped isolated variants of our system and the undamped isolated gyroscopic metamaterials~\cite{Nash2015TopologicalMechanics,Mitchell2018AmorphousTopological}.
+Indeed in the small $\gamma$ regime, the existence of chiral modes with $J^{FT}(\omega)\neq 0$ can be heuristically explained by exploiting the connection between the slightly damped isolated variants of our system and the undamped isolated gyroscopic metamaterials~\cite{Nash2015TopologicalMechanics,Mitchell2018AmorphousTopological}.
 Specifically, the slightly damped variant would resonate near the eigen-frequencies of the undamped metamaterials, and exhibit Fourier modes that are close to the eigenmodes of the undamped system (\figurename~\ref{fig:Fourier_modes}a,b). Consequently, we infer that $J^FT(\omega)\neq 0$ as long as the corresponding eigenmodes in the undamped variant are chiral. As discussed in  \cite{Nash2015TopologicalMechanics}, the geometry of the network plays a crucial role in generating the chiral eigenmodes.
 At larger $\gamma$'s, the Fourier modes of our damped isolated variant are no longer close to the chiral eigenmodes of gyroscopic metamaterials (\figurename~\ref{fig:Fourier_modes}a,c), but a connection between eigenmodes and energy fluxes can still be built (Supplemental Material).
-In the next section, we further elaborate the role of geometry. Specifically, the central results of the next section provide compact expressions that elucidate the role played by geometry. These expressions account for the contribution to the flux from all the Fourier modes.
+In the next section, we further elaborate the role of geometry. Specifically, the central results of the next section provide compact expressions that elucidate the role played by geometry, Lorentz forces and non-equilibrium activity. These expressions account for the contribution to the flux from all the Fourier modes.
 
 \begin{figure}[ht]
 	\centering
