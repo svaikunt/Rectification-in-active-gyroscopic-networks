@@ -129,7 +129,7 @@ Finally in \secname~\ref{sec:passive}-\ref{sec:swimmer} we show that when the pa
     \caption{
     The model and the energy flux in exemplary networks.
     (a) Schematic of the model, a spring-mass network with Lorentz-like force and active bath on each particle.
-    (b) Averaged energy flux from numerical calculations for a few typical networks. The flux direction and pattern can be controlled by the network geometry. In these figures, gray lines and dots represent the mechanical equilibrium structure of the network, and the size of the arrows is proportional to the magnitude of the averaged energy flux. The arrows are colored blue if it is counter-clockwise (CCW), red if clockwise (CW), and gray for fluxes not on the boundary. The numerical simulations were performed with all parameters set to $1$.
+    (b) Averaged energy flux from numerical calculations for a few typical networks. The flux direction and pattern can be controlled by the network geometry. In these figures, gray lines and dots represent the mechanical equilibrium structure of the network, and the size of the arrows is proportional to the magnitude of the averaged energy flux. The arrows are colored blue if it is counter-clockwise (CCW), red if clockwise (CW), and gray for fluxes not on the boundary. The numerical calculations were performed with all parameters set to $1$.
     }
     \label{fig:model_and_result}
 \end{figure}
@@ -173,7 +173,9 @@ The observable we mainly focus on is the time-averaged energy flux between parti
 \end{equation}
 To arrive at this formula, we first define the energy of a particle as the sum of its kinetic energy, on-site potential energy, and one half of the bond energies \cite{Lepri2003ThermalConduction}. Then we write down the energy balance relations using ideas from stochastic energetics~\cite{Sekimoto1998LangevinEquation}. Finally we identify the energy exchanged due to particle-particle interactions as the energy flux $\expval{J_{ij}}$ (derived in detail in the supplementary material).
 We note that the energy flux can simply be interpreted as the rate at which work is done on particle $j$ by particle $i$.
-Since this microscopic work is due to particles' stochastic motions, rather than due to an external control, the energy flux can also be interpreted as a heat flux \cite{Sekimoto1998LangevinEquation,Lepri2003ThermalConduction}. The averaged energy fluxes are identically equal to zero for a system at equilibrium. We also note that the energy fluxes satisfy Kirchoff's law, $\sum_i \expval{J_{ij}} = 0$, i.e. on average there is no energy exchange between particles and the active bath. To derive the Kirchoff's law, we calculate the average heat exchange between particle $i$ and the active bath $\expval{\bm{v}_i \cdot \bm{\eta}_i - \gamma \bm{v}_i \cdot \bm{v}_i}$, and following procedures in \cite{Kundu2011LargeDeviations}, this heat exchange can be shown to be zero.
+Since this microscopic work is due to particles' stochastic motions, rather than due to an external control, the energy flux can also be interpreted as a heat flux \cite{Sekimoto1998LangevinEquation,Lepri2003ThermalConduction}. The averaged energy fluxes are identically equal to zero for a system at equilibrium. 
+
+We also note that the energy fluxes satisfy Kirchoff's law, $\sum_i \expval{J_{ij}} = 0$, i.e. on average there is no energy exchange between particles and the active bath. To derive the Kirchoff's law, we calculate the average heat exchange between particle $i$ and the active bath $\expval{\bm{v}_i \cdot \bm{\eta}_i - \gamma \bm{v}_i \cdot \bm{v}_i}$, and following procedures in \cite{Kundu2011LargeDeviations}, this heat exchange can be shown to be zero.
 The Kirchoff's law puts a strong constraint on possible energy flux patterns among particles, and some corollaries immediately follow, such as networks with no cycles cannot have nonzero flux, and fluxes of all bonds in a polygon network (as in \figurename~\ref{fig:model_and_result}b) are equal.
 
 Starting from the linear equations \eqnname~\eqref{eqn:GLE_single}, \eqref{eqn:noise_eom}, the energy fluxes can be solved numerically using methods introduced in \cite{Gardiner2009ItoCalculus,Ceriotti2010ColoredNoiseThermostats} (Supplemental Material).
@@ -223,15 +225,15 @@ We first show that these two components provide two necessary ingredients requir
     Both Lorentz-like force and colored noise are needed to generate nonzero fluxes.
     The role of Lorentz-like force is to provide chiral Fourier modes ($J^{FT}(\omega)\neq 0$). If $B=0$, $J^{FT}(\omega)$ is zero everywhere. 
     The role of colored noise is to provide weighted excitation $h(\omega)\neq \text{const.}$, which makes a non-vanishing averaged flux $\expval{J}$ possible.
-    The numerical simulations were performed with $m,k_g,\gamma,k, T_a=1$. 
+    The numerical calculations were performed with $m,k_g,\gamma,k, T_a=1$. 
     }
     \label{fig:ingredients}
 \end{figure}
 We begin with \eqnname~\eqref{eqn:flux_integral} that represents the averaged flux in terms of functions $J^{FT}(\omega), h(\omega)$. In particular, we note that the function $J^{FT}(\omega)$ is proportional to the energy flux at Fourier frequency $\omega$ in an isolated damped variant of our network while the function $h(\omega)$ is proportional to the the noise spectrum, $\expval{\tilde{\eta}(\omega)\tilde{\eta}^*(\omega)} = 2\gamma T_a h(\omega) / t$.
 
-To generate a nonzero flux, or equivalently make the integral in nonzero \eqnname~\eqref{eqn:flux_integral}, we need two requirements (\figurename~\ref{fig:ingredients}).
+To generate a nonzero flux, or equivalently make the integral nonzero in \eqnname~\eqref{eqn:flux_integral}, we need two requirements (\figurename~\ref{fig:ingredients}).
 Firstly, $J^{FT}(\omega)$ should not be zero everywhere.
-In the absence of a magnetic field, $B=0$, it can be easily shown from Eq.~\ref{eqn:flux_integral} that $J^{FT}(\omega)=0$. Indeed, the response function $G^+$ is symmetric or reciprocal in this case, and since $A^{as}$ is antisymmetric, the trace $\tr G^+(\omega) A^{as}=0$ at all values of $\omega$. Nonzero $B$ breaks the reciprocity of $G^+$, and can thus generate a nonzero $J^{FT}(\omega)$. 
+In the absence of a magnetic field, $B=0$, it can be easily shown from \eqnname~\ref{eqn:flux_integral} that $J^{FT}(\omega)=0$. Indeed, the response function $G^+$ is symmetric or reciprocal in this case, and since $A^{as}$ is antisymmetric, the trace $\tr G^+(\omega) A^{as}=0$ at all values of $\omega$. Nonzero $B$ breaks the reciprocity of $G^+$, and can thus generate a nonzero $J^{FT}(\omega)$. 
 
 Nonzero $J^{FT}(\omega)$ alone does not ensure a nonzero averaged energy flux, we further require that $h(\omega)$ not be constant.
 Indeed, noise characterized by a constant $h(\omega)$ function corresponds to fluctuation dissipation preserving white noise. In such cases, our model system would be in equilibrium even in the presence of a magnetic field according to the Bohr-van Leeuwen theorem \cite{Pradhan2010NonexistenceClassical}.
@@ -318,9 +320,9 @@ At the outset, given the long ranged nature of elastic fluctuations, one might e
 \label{sec:passiveflux}
 We expect that our parity violating metamaterial can still generate energy fluxes when some nodes along the transmission pathway are made {\it passive} (i.e. uncoupled from the active bath and magnetic field).
 Mimicking conventional paradigms to study heat conduction, which consider a passive chain between two thermal baths with different temperatures (\figurename~\ref{fig:simulation}a), we connect a passive harmonic chain to our active parity violating metamaterial (\figurename~\ref{fig:simulation}a).
-We indeed find that our active parity violating metamaterial is able to generate a nonzero averaged energy flux through the passive material (\figurename~\ref{fig:simulation}, Supplemental Video). The instantaneous flux transmitted across the bonds on the passive segment are plotted in \figurename~\ref{fig:simulation}b (accompanying Supplemental Video). The instantaneous flux exhibits stochastic fluctuations. Large values of the instantaneous flux are transmitted across bonds sequentially in a wave like manner (\figurename~\ref{fig:simulation}b(inset)). This is reflected in the successive peaks in the instantaneous flux profile across the bonds of the passive segment.  The spacing between the peaks matches the sound speed in the passive chain. This result, in combination with the results of the previous sections, shows how one design active parity violating metamaterials that can act as heat pumps and support heat transport in passive materials even in the absence of any temperature gradients. 
+We indeed find that our active parity violating metamaterial is able to generate a nonzero averaged energy flux through the passive material (\figurename~\ref{fig:simulation}, Supplemental Video). The instantaneous flux transmitted across the bonds on the passive segment are plotted in \figurename~\ref{fig:simulation}b (accompanying Supplemental Video). The instantaneous flux exhibits stochastic fluctuations. Large values of the instantaneous flux are transmitted across bonds sequentially in a wave like manner (\figurename~\ref{fig:simulation}b). This is reflected in the successive peaks in the instantaneous flux profile across the bonds of the passive segment.  The spacing between the peaks matches the sound speed in the passive chain. This result, in combination with the results of the previous sections, shows how one design active parity violating metamaterials that can act as energy pumps and support energy transport in passive materials even in the absence of any temperature gradients. 
 
-In effect, these results demonstrate how parity violating metamaterials can rectify non-equilibrium fluctuations in potentially novel ways. In the next section, we show that these rectified energy flows can in turn be used, in principle, to exert forces and rectify motion. In particular, the energy fluxes through the passive segment, especially the successive flux peaks observed in the above simulation, seem to suggest that stochastic wave like collective oscillations are responsible for the energy transfer. System with nonreciprocal wave-like fluctuations when placed in contact with a viscous fluid, can act as low $Re$ swimmers \cite{Taylor1951AnalysisSwimming,Purcell1977LifeLow,Golestanian2008AnalyticResults}. Thus, the nonreciprocal motion in the passive segment could potentially be exploited as a strategy to enable locomotion. 
+In effect, these results demonstrate how parity violating metamaterials can rectify non-equilibrium fluctuations in potentially novel ways. In the next section, we show that these rectified energy flows can in turn be used, in principle, to exert forces and rectify motion. In particular, the energy fluxes through the passive segment, especially the successive flux peaks observed in the above simulation, seem to suggest that stochastic wave like collective oscillations play an important role in the energy transfer process. System with nonreciprocal wave-like fluctuations when placed in contact with a viscous fluid, can act as low $Re$ swimmers \cite{Taylor1951AnalysisSwimming,Purcell1977LifeLow,Golestanian2008AnalyticResults}. Thus, the nonreciprocal motion in the passive segment could potentially be exploited as a strategy to enable locomotion. 
 
 
 
@@ -337,7 +339,7 @@ In effect, these results demonstrate how parity violating metamaterials can rect
     }
     \label{fig:simulation}
 \end{figure}
-% ? why say forces
+
 \section{Non-reciprocal motions responsible of energy fluxes can be used to generate forces} \label{sec:swimmer}
 
 
@@ -352,7 +354,7 @@ We first use the motion of this segment as input to construct a time dependent p
 	\includegraphics[width=0.48\textwidth]{swimmer.pdf}
     \caption{Utilization of non-equilibrium parity violating dynamics to power swimming and pumping in low Reynolds number ($Re$) media.
     (a) The energy flux in the active parity violating network is accompanied by nonreciprocal motions of the particles (i,ii). Using these nonreciprocal motions as input, a three bead linear object can be made to swim through a low Reynolds number ($Re$) medium (iii). Our analytical results in (b) below show that the swim speed $V_s$ is in fact proportional to the energy flux $\expval{J}$ The nonreciprocal motion is a schematic for illustration purposes, and the real data is much more noisy. (iv) Finally by immersing the passive segment into a low Reynolds fluid, the nonreciprocal motions can be used to pump the fluid. In this manner, the energy fluxes can be rectified for locomotion and force generation. 
-    (b) Swimmer's speed $V_s$ is proportional to the energy flux $\expval{J}$ in the active network. The proportionality constant is $-k_0/k$, which is independent of the network geometry. The series of dots for each $-k_0/k$ are obtained by varying the labelled angles (by red disk sectors) in pentagon networks or square+tail networks.
+    (b) Swimmer's speed $V_s$ is proportional to the energy flux $\expval{J}$ in the active network. The proportionality constant is $-k_0/k$, which is independent of the network geometry. The series of dots for each $-k_0/k$ are obtained by varying the labelled angles (by red disk sectors) in pentagon networks or square+tail networks. The parameters chosen for the numerical calculations are $m,k_g=0.1$, $\tau=1$, $k=5$ for $k_0/k=0.04$ and $k=10$ for $k_0/k=0.02$. For the active part, $\gamma=0.1, B,T_a=1$. For the passive segment, $\gamma,B,T_a=0$.
     }
     \label{fig:swimmer}
 \end{figure}
@@ -411,7 +413,7 @@ For these parameters, we obtain $v=3.8\times 10^{-6}m/s$, and the three relevant
 If the separation between beads is $L=10^{-7}m$, the swim speed calculated from \eqnname~\eqref{eqn:swimmer_propto} is $1\times 10^{-8} m/s$. 
 The swim speed can provide an estimate of the potential speed at which the fluid can be pumped due to the energy fluxes. 
 This speed can be scaled up by increasing $T_a$.
-We note the extremely high value of the $B$ field required to make $J$ sizable. To make practical use of this model, we anticipate that it will become necessary to instead consider models with interacting gyroscopes~\cite{Nash2015TopologicalMechanics} or Coriolis forces \cite{Kahlert2012MagnetizingComplex}. Large Lorentz force analogues are easier to achieve in these cases. 
+We note the extremely high value of the $B$ field required to generate a sizable averaged flux $\langle J \rangle$. To make practical use of this model, we anticipate that it will become necessary to instead consider models with interacting gyroscopes~\cite{Nash2015TopologicalMechanics} or Coriolis forces \cite{Kahlert2012MagnetizingComplex}. Large Lorentz force ($B$) analogues are easier to achieve in these cases. 
 
 % Finally, in performing this analysis we have ignored the tethering of the passive segment by $k_g$ and due to its connection to the tethered active metamaterial. Due to these constraints, it cannot swim indefinitely. However, a tethered stalled swimmer can still potentially pump the fluid \cite{Leoni2009BasicSwimmer,Golestanian2008AnalyticResults} at a rate $-V_s$. Then, the above described analysis can provide an estimate of the potential speed at which the fluid can be pumped due to the energy fluxes. 
 
@@ -460,7 +462,7 @@ In conclusion, we have established a general set of design principles for rectif
 
 
 \section*{Acknowledgements}
-This work was primarily supported by NSF DMR- MRSEC 1420709. SV acknowledges support from the Sloan Foundation, startup funds from the University of Chicago and support from the National Science Foundation under award number DMR-1848306. WTMI Acknowledges support from  NSF EFRI NewLAW grant 1741685 and the Packard foundation. 
+This work was primarily supported by NSF DMR- MRSEC 1420709. SV acknowledges support from the Sloan Foundation, startup funds from the University of Chicago and support from the National Science Foundation under award number DMR-1848306. WTMI Acknowledges support from NSF EFRI NewLAW grant 1741685 and the Packard foundation. 
 
 \bibliography{reference}
 
