@@ -29,7 +29,7 @@
 
 \author{Zhenghan Liao}
 \affiliation{Department of Chemistry, University of Chicago, Chicago, IL, 60637, USA}
-\author{William Irvine}
+\author{William T. M. Irvine}
 \affiliation{Department of Physics, University of Chicago, Chicago, IL 60637, USA}
 \affiliation{James Franck Institute, University of Chicago, Chicago, IL 60637, USA}
 \affiliation{ Enrico Fermi Institute, University of Chicago, Chicago, IL, 60637, USA}
@@ -45,75 +45,12 @@ Uncovering new design principles for rectification of stochastic fluctuations ha
 \maketitle
 
 \section{Introduction} \label{sec:intro}
-% ==============================================================================
-% Suri's intro
-% One of the longstanding problems in non-equilibrium statistical mechanics concerns uncovering principles for the rectification of energy and motion in many body microscopic systems~\cite{seifert2012stochastic,coskun2012great}. The Feynman Ratchet and pawl model, and its associated generalizations, have elucidated how a combination of spatial asymmetry and non-equilibrium forcing can lead to rectification of current and work generation in simple low dimensional model systems~\cite{jarzynski1999feynman}. Brownian ratchet models have also provided a framework to understand how molecular motors and biophysical polymers like actin transmit and exert forces~\cite{mogilner1996cell}. New theoretical results, such as the no pumping theorems have provided a minimal set of constraints for changing the kinetic rates in a ratchet model to ensure rectification~\cite{Chernyak2008,Rahav2008,Sinitsyn2007}. Despite these advances, we still have very few design principles to engineer rectification in many body systems~\cite{seifert2012stochastic}. This is a current and relevant problem of interest, especially given the recent progress made in the in study of so called active matter systems where energy injection at the microscopic level results in larger scale reorganization ~\cite{marchetti2013hydrodynamics,souslov2017topological,Shankar2017}.In this paper, we attempt to address a limited version of the problem and show energy and motion can be rectified in a class of model systems composed of chiral metamaterials interacting with an active bath.
-%
-% Designs of mechanical metamaterials have achieved unconventional mechanical properties or functions in a wide range of systems \cite{Bertoldi2017FlexibleMechanical}. Examples include negative Poisson ratios in auxetic metamaterials \cite{Lakes2017NegativePoissonSRatio,Ren2018AuxeticMetamaterials}, topological zero modes in isostatic lattices \cite{Kane2013TopologicalBoundary,Lubensky2015PhononsElasticity,Paulose2015SelectiveBuckling}, unidirectional edge modes in topological gyroscopic metamaterials \cite{Nash2015TopologicalMechanics,Wang2015TopologicalPhononic,Mitchell2018AmorphousTopological}, and the allosteric effect in mechanical networks \cite{Rocks2017DesigningAllosteryinspired,Yan2017ArchitectureCoevolution,Flechsig2017DesignElastic}. In particular, studies of gyroscopic chiral metamaterials have shown how peculiar topological edge modes, where the energy circulates along the network boundary unidirectionally, can be supported in classical systems\cite{Nash2015TopologicalMechanics}. These topological chiral edge modes can be explained in terms of a violation of time reversal symmetry in the microscopic equations of motion of the interacting gyroscopes~\cite{Nash2015TopologicalMechanics,Mitchell2018AmorphousTopological}. Importantly, the violation of time reversal symmetry is controlled by an interplay between the spin of the gyroscopes and the geometry of the lattice.
-%
-% %In contrast to the increasing studies on mechanical properties, one less explored topic is the effect of thermal fluctuations{\bf rewrite sentence, awkward construction}. This effect is usually irrelevant, because the energy scale of the metamaterials is much larger than that of thermal fluctuations. However, fluctuations are inevitable if the system is made in micro-scale \cite{Blees2015GrapheneKirigami}.
-% % Indeed, some recent works have found an interesting interplay between thermal \cite{Rocklin2018FoldingMechanisms,Pedro2018TopologicalProtection} or nonequilibium \cite{Woodhouse2018AutonomousActuation} fluctuations and the zero mode, which show promises in studying the effect of fluctuations.
-%
-% In this paper we show how notions of time reversal symmetry violation in chiral topological metamaterials can be combined with violations of the fluctuation dissipation relation by \textit{active} particles to rectify energy and mass flows. The active bath we use is the active Ornstein-Uhlenbeck particle (AOUP) model \cite{Fodor2016HowFar}, which consists of a constant friction and an Ornstein-Uhlenbeck (OU) noise. The AOUP model has experienced a growing interest in recent years, because of its theoretical simplicity and its ability to capture many non-equilibrium and active matter phenomena.
-% For instance, it has been experimentally found that, colloids in a bacteria bath can be well-modeled by the AOUP model \cite{Wu2000ParticleDiffusion}; this finding helped realized previously proposed thermal ratchet models \cite{Magnasco1993ForcedThermal} in experiments with bacterial baths. \cite{Koumakis2013TargetedDelivery}
-%
-% Our central result shows how a combination of time reversal symmetry violations due to chirality and interactions in a model system, and time reversal symmetry violations implicit in the fluctuations of the bath that the model system is in contact with, can help support rectification. In particular, we find that our combined system can support a directed flux of energy across the network. Unlike conventional energy flows, our energy flow is not supported by a temperature gradient. Moreover, the \textit{active gyroscopic} network can in fact pump energy through an otherwise isolated elastic object. We also show that the microscopic mechanisms responsible for this energy flow can also potentially allow the \textit{active gyroscopic} network to swim in and exert forces on a viscous fluid. We analytically and numerically demonstrate these results for a wide variety of network geometries thus establishing the generality of our results. In particular, we construct an intuitive diagrammatic approach for computing the energy flux (and consequently the swim speed) that shows how our results can readily applied to tailor flows in arbitrarily complex networks.
-%
-% Taken together, our results establish a new set of design principles for rectification of energy, motion and forces in chiral many body systems. Our design principles, unlike many existing prescriptions, exploit inherent asymmetries in the geometry and interactions of the material to achieve rectification.
-% ==============================================================================
-
-%[{\bf New combined introduction: by Suri}] 
 
 Uncovering principles that can enable the rectification of stochastic fluctuations has been a long standing problem in non-equilibrium statistical mechanics ~\cite{Seifert2012StochasticThermodynamics,Coskun2011GreatExpectations}. The Feynman Ratchet and pawl model, and its associated generalizations, have elucidated how systems can rectify stochastic fluctuations and act as microscopic engines that perform work and exert forces~\cite{Jarzynski1999FeynmanRatchet}. Indeed such models have provided a framework to understand how biological molecular motors can convert the energy derived from the hydrolysis of energy rich molecules into mechanical work~\cite{Mogilner1996CellMotility,Chernyak2008PumpingRestriction,Rahav2008DirectedFlow,Sinitsyn2007UniversalGeometric}. While these advances provide powerful design principles, especially for rectification in single-body systems, we still have very few design principles to engineer rectification in many body systems~\cite{Seifert2012StochasticThermodynamics,Pietzonka2019AutonomousEngines}. Such principles can, for instance, identify methods to manipulate the flow of energy across materials without any imposed temperature biases~\cite{Zhu2016PersistentDirectional,Zhu2018TheoryManybody,Dubi2011ColloquiumHeat,Kanazawa2013HeatConduction,Martinez2017ColloidalHeat} and potentially facilitate the development of design principles for constructing synthetic molecular motor analogues. In this paper, we show how such rectification can be achieved in parity violating many body interacting systems. In particular, we show how a parity violating metamaterial~\cite{Nash2015TopologicalMechanics} can spontaneously rectify energy and motion in the absence of any imposed gradients, when it is allowed to interact with a bath of \textit{active} particles~\cite{Marchetti2013HydrodynamicsSoft,Koumakis2013TargetedDelivery,Woodhouse2018AutonomousActuation}. 
 
-%we show how phonons generated in a parity violating meta material~\cite{Nash2015TopologicalMechanics}, when allowed to interact with a bath of \textit{active} particles that consume energy to power their motion~\cite{Marchetti2013HydrodynamicsSoft,Souslov2017TopologicalSound,Shankar2017TopologicalSound}, can spontaneously rectify energy and motion in the absence of any externally imposed gradient. 
-
-%Our analytical calculations identify the important ingredients necessary for rectification. In particular, they show how a combination of non-equilibrium activity at the single particle level can exploit inherent asymmetries in the geometry and interactions of the chiral meta material to achieve rectification of energy and motion. %In this manner, our results 
-
-Our choice of parity violating metamaterial is inspired by a recent work where a metamaterial composed of interacting gyroscopes was introduced~\cite{Nash2015TopologicalMechanics}. These gyroscopic metamaterials were shown to support chiral topological edge modes. The appearance of topological chiral edge modes can be explained in terms of a violation of time reversal symmetry in the microscopic equations of motion of the interacting gyroscopes~\cite{Nash2015TopologicalMechanics,Mitchell2018AmorphousTopological}. Importantly, the violation of time reversal symmetry is controlled by an interplay between the spin of the gyroscopes and the geometry of the lattice.  %Isolated variants of the the parity violating meta material we consider were previously studied in Ref~\cite{Nash2015TopologicalMechanics}. where it was shown to support topological edge modes.
-
+Our choice of parity violating metamaterial is inspired by a recent work where a metamaterial composed of interacting gyroscopes was introduced~\cite{Nash2015TopologicalMechanics}. These gyroscopic metamaterials were shown to support chiral topological edge modes. The appearance of topological chiral edge modes can be explained in terms of a violation of time reversal symmetry in the microscopic equations of motion of the interacting gyroscopes~\cite{Nash2015TopologicalMechanics,Mitchell2018AmorphousTopological}. Importantly, the violation of time reversal symmetry is controlled by an interplay between the spin of the gyroscopes and the geometry of the lattice. 
 
 In the model systems considered in this paper, such parity violating metamaterials are allowed to interact with a bath of \textit{active} particles that violate the fluctuation dissipation relation~\cite{Fodor2016HowFar}. Our central result shows how a combination of time reversal symmetry violations due to chirality, interactions between the particles of the metamaterial, and time reversal symmetry violations implicit in the single particle fluctuations of the bath that the metamaterial is in contact with, can help rectify stochastic fluctuations. Indeed, naively coupling the topological chiral metamaterial to a heat bath does not result in any fluxes or symmetry breaking on account of the Bohr-van Leeuwen theorem \cite{Pradhan2010NonexistenceClassical} that forbids any non-equilibrium currents in thermalized magnetic systems. In contrast, we find that our model system can support a directed flux of energy across the network. Unlike conventional energy flows, our energy flow does not require a temperature gradient. Moreover, we show that the {parity violating active} network can in fact pump energy through an otherwise isolated elastic object. Finally, we also show that the microscopic mechanisms responsible for this energy flow can also potentially allow the {parity violating active} network to swim in and exert forces on a viscous fluid. We analytically and numerically demonstrate these results for a wide variety of network geometries thus establishing the generality of our results. In particular, we construct an intuitive diagrammatic approach for computing the energy flux (and consequently the swim speed) that shows how our results can readily applied to tailor flows in arbitrarily complex networks. Taken together, our results establish a new set of design principles for rectification of energy, motion and forces in non-equilibrium parity violating metamaterials. Our design principles, unlike many existing prescriptions, exploit inherent asymmetries in the geometry and interactions of the material to achieve rectification.
-
-
-
-%Our results establish a new set of design principles for rectification in many body systems. Our design principles, unlike many existing prescriptions, exploit inherent asymmetries in the geometry and interactions of the material to achieve rectification.
-
-
-%[{\bf Zhenghan: intro with focus on energy transport between identical terminals}]
-
-%Conventional heat transport is controlled by temperature biases, i.e., heat flows spontaneously from hot to cold.
-%Manipulating the heat flow under temperature biases or discovering new energy conduction mechanisms has been a vibrant area of research.
-%A classic discovery is the thermoelectric effect, where a heat flux can be induced by electric currents \cite{Dubi2011ColloquiumHeat}.
-%Recent advances in manipulating phonons include applying magnetic fields as in phonon Hall effect \cite{Strohm2005PhenomenologicalEvidence,Li2012ColloquiumPhononics}, exploiting nonlinearity as in thermal diodes \cite{Terraneo2002ControllingEnergy,Li2012ColloquiumPhononics}, coupling phonons to photons \cite{Seif2017ThermalManagement,Safavi-Naeini2019ControllingPhonons}, using time-periodic controls \cite{Li2008RatchetingHeat,Ren2010EmergenceControl,Ren2012GeometricHeat}, utilizing topological materials \cite{Rivas2017TopologicalHeat,Ronetti2017PolarizedHeat,Liu2017ModelTopological,Chien2018TopologicalQuantization}, and introducing nontrivial bath statistics \cite{Kanazawa2013HeatConduction,Morgado2016ThermostatisticsSmall,Martinez2017ColloidalHeat}.
-%In most examples, energy is transported between terminals that differ in temperature or other aspects.
-%In this paper, we ask how energy flows can be generated and controlled where all sites are identical. Such system will contribute a flexible way to manipulate energy flows. One can imagine that, in a network with a large number of sites, energy fluxes can be manipulated without having to adjust the temperature on each site.
-%In a different context of thermal radiation, energy flux between identical sites has been realized at a small scale using nonreciprocal magneto-optical nanoparticles \cite{Zhu2016PersistentDirectional,Zhu2018TheoryManybody,Ott2018CircularHeat}.
-%We approach the above question by combining chiral phonons from mechanical metamaterials \cite{Nash2015TopologicalMechanics} with nontrivial bath statistics from active matter \cite{Fodor2016HowFar}.
-%The resulting model is a network composed of identical chiral active sites, without applied temperature or other biases.
-%We show that this model can support energy transport between its sites, and the energy fluxes can be controlled by the geometry of the network. Furthermore, the same control principle applies to networks with arbitrary geometries and topologies.
-%The energy transport without obviously imposed biases can be termed as energy rectification. Unlike many rectification examples that can be understood at a few-body level such as Feynman's ratchet and pawl \cite{Feynman2015FeynmanLectures,Reimann2002BrownianMotors,Martinez2017ColloidalHeat}, this rectification belongs to a many-body class \cite{Asban2014NopumpingTheorem,Reichhardt2017RatchetEffects}. We further show that the energy rectification implicates motion rectification when the network is coupled to a low Reynolds number fluid.
-
-
-%[intro with focus on rectification in many-body systems]
-
-%One of the longstanding problems in non-equilibrium statistical mechanics concerns uncovering principles for the rectification of energy and motion in microscopic systems~\cite{Seifert2012StochasticThermodynamics,Coskun2011GreatExpectations}. The Feynman Ratchet and pawl model, and its associated generalizations, have elucidated how a combination of spatial asymmetry and non-equilibrium forcing can lead to rectification of current and work generation in simple low dimensional model systems~\cite{Jarzynski1999FeynmanRatchet}. Brownian ratchet models have also provided a framework to understand how molecular motors and biophysical polymers like actin transmit and exert forces~\cite{Mogilner1996CellMotility}. New theoretical results, such as the no pumping theorems have provided a minimal set of constraints for changing the kinetic rates in a ratchet model to ensure rectification~\cite{Chernyak2008PumpingRestriction,Rahav2008DirectedFlow,Sinitsyn2007UniversalGeometric}.
-%These advances provide powerful design principles, especially for rectifications in single-body systems.
-%However, we still have very few design principles to engineer rectification in many body systems~\cite{Seifert2012StochasticThermodynamics}. This is a current and relevant problem of interest, especially given the recent progress made in the in study of so called active matter systems where energy injection at the microscopic level results in larger scale reorganization ~\cite{Marchetti2013HydrodynamicsSoft,Souslov2017TopologicalSound,Shankar2017TopologicalSound}. In this paper, we attempt to address a limited version of the problem and show energy and motion can be rectified in a class of model systems composed of chiral metamaterials interacting with an active bath. Our results establish a new set of design principles for rectification in many body systems. Our design principles, unlike many existing prescriptions, exploit inherent asymmetries in the geometry and interactions of the material to achieve rectification.
-
-
-%[intro with focus on topological modes under excitations]
-
-%Developments of topological mechanics have endowed metamaterials with new properties, such as topological zero mode in isostatic lattices \cite{Kane2013TopologicalBoundary} and chiral edge mode in gyroscopic metamaterials \cite{Nash2015TopologicalMechanics,Wang2015TopologicalPhononic,Mitchell2018AmorphousTopological}.
-%These topological modes are usually studied in the context of isolated systems.
-%Some recent studies combine mechanical metamaterials with fluctuations, and found an interesting interplay between the zero mode and thermal \cite{Rocklin2018FoldingMechanismsa} or non-equilibrium \cite{Woodhouse2018AutonomousActuation} fluctuations.
-%In a similar spirit, we explore the combination of gyroscopic metamaterials \cite{Nash2015TopologicalMechanics} and fluctuations.
-%One may expect that in this case, the topological chiral modes, or more general chiral modes, in the isolated setup would be excited by the fluctuations, thus would trivially make the fluctuated system exhibit chiral energy transport. This is, however, not true.
-%If the fluctuation is thermal, the net result of these fluctuations does not support energy fluxes, due to the Bohr-van Leeuwen theorem.
-%Instead, we apply non-equilibrium fluctuations, and show that the resulting system supports energy fluxes. Furthermore, these fluxes can be controlled by network geometries.
-
-
-
 
 The remainder of this paper is organized as follows:
 In \secname~\ref{sec:model}, we introduce our model parity violating metamaterial and provide a microscopic definition for the energy flux.
@@ -123,7 +60,7 @@ Finally in \secname~\ref{sec:passive}-\ref{sec:swimmer} we show that when the pa
 \section{Model systems and energy flux} \label{sec:model}
 %\section{Energy flux definition and results} \label{sec:flux}
 
-\begin{figure}[ht]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=0.48\textwidth]{model_and_result.pdf}
     \caption{
@@ -134,8 +71,6 @@ Finally in \secname~\ref{sec:passive}-\ref{sec:swimmer} we show that when the pa
     \label{fig:model_and_result}
 \end{figure}
 
-% The simulations were 
- %   The flux magnitude is $5.42\times 10^{-6} T_a/\tau$ for hexagon network and $2.76\times 10^{-6} T_a/\tau$ for bowtie network. For complex networks, fluxes smaller than $1/10$ of the scale bar are not shown for clarity. The largest flux magnitude is $6.31\times 10^{-6} T_a/\tau$ for honeycomb network and $9.74\times 10^{-6} T_a/\tau$ for amorphous network. All parameters are set to $1$.
 Our model parity violating metamaterial is a spring-mass network with Lorentz-like force and active bath \cite{Fodor2016HowFar} on each site (\figurename~\ref{fig:model_and_result}a).
 The equation of motion reads
 \begin{equation} \label{eqn:GLE_single}
@@ -171,14 +106,11 @@ The observable we mainly focus on is the time-averaged energy flux between parti
     \expval{J_{ij}} = \expval{\frac{1}{2} (\mathbf{v}_j \cdot \mathbf{F}_{ij} - \mathbf{v}_i \cdot \mathbf{F}_{ji})}
     = \expval{\mathbf{v}_j \cdot \mathbf{F}_{ij}}.
 \end{equation}
-To arrive at this formula, we first define the energy of a particle as the sum of its kinetic energy, on-site potential energy, and one half of the bond energies \cite{Lepri2003ThermalConduction}. Then we write down the energy balance relations using ideas from stochastic energetics~\cite{Sekimoto1998LangevinEquation}. Finally we identify the energy exchanged due to particle-particle interactions as the energy flux $\expval{J_{ij}}$ (derived in detail in the supplementary material).
+To arrive at this formula, we first define the energy of a particle as the sum of its kinetic energy, on-site potential energy, and one half of the bond energies \cite{Lepri2003ThermalConduction}. Then we write down the energy balance relations using ideas from stochastic energetics~\cite{Sekimoto1998LangevinEquation}. Finally we identify the energy exchanged due to particle-particle interactions as the energy flux $\expval{J_{ij}}$ (derived in detail in the supplemental material \cite{SupplementalMaterial}).
 We note that the energy flux can simply be interpreted as the rate at which work is done on particle $j$ by particle $i$.
-Since this microscopic work is due to particles' stochastic motions, rather than due to an external control, the energy flux can also be interpreted as a heat flux \cite{Sekimoto1998LangevinEquation,Lepri2003ThermalConduction}. The averaged energy fluxes are identically equal to zero for a system at equilibrium. 
+Since this microscopic work is due to particles' stochastic motions, rather than due to an external control, the energy flux can also be interpreted as a heat flux \cite{Sekimoto1998LangevinEquation,Lepri2003ThermalConduction}. The averaged energy fluxes \eqnname~\eqref{eqn:flux_def} are identically equal to zero for a system at equilibrium with Boltzmann distribution.
 
-We also note that the energy fluxes satisfy Kirchoff's law, $\sum_i \expval{J_{ij}} = 0$, i.e. on average there is no energy exchange between particles and the active bath. To derive the Kirchoff's law, we calculate the average heat exchange between particle $i$ and the active bath $\expval{\bm{v}_i \cdot \bm{\eta}_i - \gamma \bm{v}_i \cdot \bm{v}_i}$, and following procedures in \cite{Kundu2011LargeDeviations}, this heat exchange can be shown to be zero.
-The Kirchoff's law puts a strong constraint on possible energy flux patterns among particles, and some corollaries immediately follow, such as networks with no cycles cannot have nonzero flux, and fluxes of all bonds in a polygon network (as in \figurename~\ref{fig:model_and_result}b) are equal.
-
-Starting from the linear equations \eqnname~\eqref{eqn:GLE_single}, \eqref{eqn:noise_eom}, the energy fluxes can be solved numerically using methods introduced in \cite{Gardiner2009ItoCalculus,Ceriotti2010ColoredNoiseThermostats} (Supplemental Material).
+Starting from the linear equations \eqnname~\eqref{eqn:GLE_single}, \eqref{eqn:noise_eom}, the energy fluxes can be solved numerically using methods introduced in \cite{Gardiner2009ItoCalculus,Ceriotti2010ColoredNoiseThermostats} (Supplemental Material \cite{SupplementalMaterial}).
 A collection of numerical results are shown in \figurename~\ref{fig:model_and_result}b. We see nonzero energy rectification or energy fluxes can be generated in our chiral active system, and the flux direction or pattern changes with the network geometry.
 Using a linear response theory, we now develop analytical expressions for the energy flux. These expressions reveal how a combination of chirality, non-equilibrium activity, and network geometry is responsible for generating energy fluxes.
 
@@ -191,7 +123,7 @@ We begin by writing the equations of motion, \eqnname~\eqref{eqn:GLE_single}, in
 \end{gather}
 Here, we have represented the displacement of all particles using a column vector $z=\sum_i \ket{i}\otimes z_i$, with $\ket{i}$ denoting the 2D subspace of particle $i$. $\tilde{z}(\omega)$ and $\tilde{\eta}(\omega)$ denote the Fourier transform of $z$ and the OU noise $\eta$, respectively. $G^+$ is the response matrix, in which matrix $K$ encodes all on-site and spring forces $F$ according to $F=-Kz$, and $A$ is an antisymmetric matrix $A=\sum_i \ket{i}\bra{i}\otimes \mqty(0 & 1 \\ -1 & 0)$. \eqnname~\eqref{eqn:response} describes how the displacement responds to the noise.
 
-Following the procedure in \cite{Kundu2011LargeDeviations}, the flux defined in \eqnname~\eqref{eqn:flux_def} can be expressed using $G^+$ as a spectral integral (Supplemental Material)
+Following the procedure in \cite{Kundu2011LargeDeviations}, the flux defined in \eqnname~\eqref{eqn:flux_def} can be expressed using $G^+$ as a spectral integral (Supplemental Material \cite{SupplementalMaterial})
 \begin{align}
     \expval{J} &= \int_{-\infty}^\infty \dd{\omega} h(\omega) J^{FT}(\omega), \label{eqn:flux_integral} \\
     J^{FT}(\omega) &\equiv -\frac{T_a k}{2\pi} \Re \tr G^+(\omega)A^{as}, \\
@@ -199,12 +131,15 @@ Following the procedure in \cite{Kundu2011LargeDeviations}, the flux defined in 
 \end{align}
 where $A^{as}$ is an antisymmetric matrix
 $A^{as} = -\ket{i}\bra{j} \otimes e_{ij}e_{ji}^T + \ket{j}\bra{i} \otimes e_{ji}e_{ij}^T$.
-The response function $G^+(\omega)$ has no pole in the lower-half complex plane, but the colored noise introduces one pole at $\omega = -i/\tau$. Using the residue theorem we get a compact expression for the energy flux (Supplemental Material)
+The response function $G^+(\omega)$ has no pole in the lower-half complex plane, but the colored noise introduces one pole at $\omega = -i/\tau$. Using the residue theorem we get a compact expression for the energy flux (Supplemental Material \cite{SupplementalMaterial})
 \begin{equation} \label{eqn:flux_residue}
     \frac{\expval{J}}{T_a/\tau} = -\frac{k}{2} \tr G^+(-\frac{i}{\tau})A^{as} .
 \end{equation}
 \eqnname~\eqref{eqn:flux_integral} and \eqref{eqn:flux_residue} will serve as our starting point to understand the energy flux. While they contain all the information required to compute energy fluxes, they have limited utility as design principles. Indeed, as written down, they require that the flux be recomputed de novo for each new network geometry and non-equilibrium bath activity. In the next sections, we show that it is possible to expand \eqnname~\eqref{eqn:flux_integral} and \eqref{eqn:flux_residue} in forms that reveals design principles for controlling energy fluxes.
 
+As an side, one important property that can be directly obtained from a similar linear response analysis is that the energy fluxes satisfy Kirchoff's law, $\sum_i \expval{J_{ij}} = 0$. The Kirchoff's law shows that on average there is no energy exchange between particles and the active bath. 
+To derive the Kirchoff's law, we calculate the average heat exchange between particle $i$ and the active bath $\expval{\bm{v}_i \cdot \bm{\eta}_i - \gamma \bm{v}_i \cdot \bm{v}_i}$, and following procedures in \cite{Kundu2011LargeDeviations}, this heat exchange can be shown to be zero.
+The Kirchoff's law puts a strong constraint on possible energy flux patterns among particles, and some corollaries immediately follow, such as networks with no cycles cannot have nonzero flux, and fluxes of all bonds in a polygon network (as in \figurename~\ref{fig:model_and_result}b) are equal.
 
 
 
@@ -217,7 +152,7 @@ We first show that these two components provide two necessary ingredients requir
 
 \subsection{Lorentz force and non-equilibrium activity are necessary for the generation of an energy flux} 
 
-\begin{figure}[ht]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=0.48\textwidth]{ingredients.pdf}
     \caption{
@@ -246,24 +181,12 @@ The role of the $B$-field is to break the reciprocity of response and generate F
 Apart from the these two ingredients, the geometry of the network also plays an important role.
 Indeed in the small $\gamma$ regime, the existence of chiral modes with $J^{FT}(\omega)\neq 0$ can be heuristically explained by exploiting the connection between the slightly damped isolated variants of our system and the undamped isolated gyroscopic metamaterials~\cite{Nash2015TopologicalMechanics,Mitchell2018AmorphousTopological}.
 Specifically, the slightly damped variant resonate near the eigen-frequencies of the undamped metamaterials, and hence exhibit Fourier modes that are close to the eigenmodes of the undamped system. Consequently, we infer that $J^{FT}(\omega)\neq 0$ as long as the corresponding eigenmodes in the undamped variant are chiral. As discussed in  \cite{Nash2015TopologicalMechanics}, the geometry of the network plays a crucial role in generating the chiral eigenmodes.
-At larger $\gamma$'s, the Fourier modes of our damped isolated variant are no longer close to the chiral eigenmodes of gyroscopic metamaterials, but a connection between eigenmodes and energy fluxes can still be built (Supplemental Material).
+At larger $\gamma$'s, the Fourier modes of our damped isolated variant are no longer close to the chiral eigenmodes of gyroscopic metamaterials, but a connection between eigenmodes and energy fluxes can still be built (Supplemental Material \cite{SupplementalMaterial}).
 In the next section, we further elaborate the role of geometry. Specifically, the central results of the next section provide compact expressions that elucidate the role played by geometry, Lorentz forces and non-equilibrium activity.
-% These expressions account for the contribution to the flux from all the Fourier modes.
-
-% \begin{figure}[ht]
-% 	\centering
-% 	\includegraphics[width=0.48\textwidth]{Fourier_modes.pdf}
-%     \caption{Comparison between a boundary-localized eigenmode of the undamped isolated network and the Fourier modes of the damped network at the same frequency. First order dynamics (by setting $m=0$) are used. All other parameters are set to $1$.
-%     (a) Eigenmode of undamped gyroscopic system. For the frequency chosen, the eigenmode is localized on the boundary. Blue disks represent the orbit of particles.
-%     (b) The Fourier mode of damped variant of our model at small $\gamma$ ($\gamma=0.001$) resembles the eigenmode.
-%     (c) The Fourier mode at larger $\gamma$ ($\gamma=1$) is no longer close to the eigenmode.
-%     }
-%     \label{fig:Fourier_modes}
-% \end{figure}
 
 
 \section{Relationship between flux and network geometry} \label{sec:path}
-\begin{figure}[ht]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=0.48\textwidth]{path_sum.pdf}
     \caption{Illustrations of our diagrammatic technique.
@@ -281,7 +204,7 @@ The diagrammatic technique is constructed by expanding the expressions for the e
 
 \subsection{Path summation and its rules}
 Starting from the flux formula \eqnname~\eqref{eqn:flux_residue}, one can expand the flux to different orders in the spring constant $k$. Then for each order, one can further collect contributions from various paths.
-As a result, the total flux can be written as a sum over the flux of paths (\figurename~\ref{fig:path_sum}a), (Supplemental Material)
+As a result, the total flux can be written as a sum over the flux of paths (\figurename~\ref{fig:path_sum}a), (Supplemental Material \cite{SupplementalMaterial})
 \begin{equation} \label{eqn:flux_path}
     \frac{\expval{J}}{T_a/\tau} = \sum_l J^\text{path}_l = \sum_l \frac{1}{2}(S_l - S_{-l}).
 \end{equation}
@@ -302,7 +225,7 @@ The paths can be represented using diagrams, from which the flux $J^\text{path}_
 
 \subsection{Contributions to energy flux from polygonal paths}
 Paths with length $n$ show up as terms of order $(k/k_0)^n$ in the energy flux expression. In the small $k$ regime, the main contribution to the flux comes from the lowest-order paths.
-The usual lowest-order paths are polygonal cycles with no loops (loops are self-connecting edges, $l_a\rightarrow l_a$). In this case, the formula for $J^\text{path}_l$ \eqnname~\eqref{eqn:flux_path} reduces to a simple form (Supplemental Material)
+The usual lowest-order paths are polygonal cycles with no loops (loops are self-connecting edges, $l_a\rightarrow l_a$). In this case, the formula for $J^\text{path}_l$ \eqnname~\eqref{eqn:flux_path} reduces to a simple form (Supplemental Material \cite{SupplementalMaterial})
 \begin{equation} \label{eqn:flux_path_polygon}
     J^\text{path}_\text{polygon} = \frac{1}{2} (\frac{k}{k_0})^n (\prod_i \cos(\theta_i - \alpha) - \prod_i \cos(\theta_i + \alpha)),
 \end{equation}
@@ -320,7 +243,7 @@ At the outset, given the long ranged nature of elastic fluctuations, one might e
 \label{sec:passiveflux}
 We expect that our parity violating metamaterial can still generate energy fluxes when some nodes along the transmission pathway are made {\it passive} (i.e. uncoupled from the active bath and magnetic field).
 Mimicking conventional paradigms to study heat conduction, which consider a passive chain between two thermal baths with different temperatures (\figurename~\ref{fig:simulation}a), we connect a passive harmonic chain to our active parity violating metamaterial (\figurename~\ref{fig:simulation}a).
-We indeed find that our active parity violating metamaterial is able to generate a nonzero averaged energy flux through the passive material (\figurename~\ref{fig:simulation}, Supplemental Video). The instantaneous flux transmitted across the bonds on the passive segment are plotted in \figurename~\ref{fig:simulation}b (accompanying Supplemental Video). The instantaneous flux exhibits stochastic fluctuations. Large values of the instantaneous flux are transmitted across bonds sequentially in a wave like manner (\figurename~\ref{fig:simulation}b). This is reflected in the successive peaks in the instantaneous flux profile across the bonds of the passive segment.  The spacing between the peaks matches the sound speed in the passive chain. This result, in combination with the results of the previous sections, shows how one design active parity violating metamaterials that can act as energy pumps and support energy transport in passive materials even in the absence of any temperature gradients. 
+We indeed find that our active parity violating metamaterial is able to generate a nonzero averaged energy flux through the passive material (\figurename~\ref{fig:simulation}, Supplemental Video \cite{SupplementalMaterial}). The instantaneous flux transmitted across the bonds on the passive segment are plotted in \figurename~\ref{fig:simulation}b (accompanying Supplemental Video \cite{SupplementalMaterial}). The instantaneous flux exhibits stochastic fluctuations. Large values of the instantaneous flux are transmitted across bonds sequentially in a wave like manner (\figurename~\ref{fig:simulation}b). This is reflected in the successive peaks in the instantaneous flux profile across the bonds of the passive segment.  The spacing between the peaks matches the sound speed in the passive chain. This result, in combination with the results of the previous sections, shows how one design active parity violating metamaterials that can act as energy pumps and support energy transport in passive materials even in the absence of any temperature gradients. 
 
 In effect, these results demonstrate how parity violating metamaterials can rectify non-equilibrium fluctuations in potentially novel ways. In the next section, we show that these rectified energy flows can in turn be used, in principle, to exert forces and rectify motion. In particular, the energy fluxes through the passive segment, especially the successive flux peaks observed in the above simulation, seem to suggest that stochastic wave like collective oscillations play an important role in the energy transfer process. System with nonreciprocal wave-like fluctuations when placed in contact with a viscous fluid, can act as low $Re$ swimmers \cite{Taylor1951AnalysisSwimming,Purcell1977LifeLow,Golestanian2008AnalyticResults}. Thus, the nonreciprocal motion in the passive segment could potentially be exploited as a strategy to enable locomotion. 
 
@@ -348,8 +271,8 @@ In effect, these results demonstrate how parity violating metamaterials can rect
 The rectification of energy has been our main focus so far. In this section, we show that it possible to exploit the energy flux to rectify motions when our model systems are allowed to interact with a viscous fluid (\figurename~\ref{fig:swimmer}a).
 We begin by considering the setup of the previous section where a {\it passive} segment is coupled to our active metamaterial, and consequently supports an energy flux.
 We first use the motion of this segment as input to construct a time dependent protocol to modulate the configuration of an equivalent segment that is disconnected from the network and placed in a viscous fluid. We find that doing so creates a low Reynolds number ($Re$) swimmer (or equivalently a pump if the network is held fixed). Using the diagrammatic theory introduced in \secname~\ref{sec:path}, we show that the swimming speed is in fact proportional to the energy flux. This calculation ignores any back action from the fluid on the dynamics of the segment. We consider the effect of these forces in \secname~\ref{sec:pumping} and discuss regimes in which our energy conducting passive segment can generate forces when immersed in a viscous fluid. Together, these results demonstrate how a parity violating active metamaterial can be manipulated to exert forces and power motion in nanoscale materials.  
-%Using these results, we finally discuss the possibility that the energy conducting passive segment attached to our active metamaterial, when immersed in a fluid, can act as a stalled swimmer and pump the fluid.
-\begin{figure}[h!]
+
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=0.48\textwidth]{swimmer.pdf}
     \caption{Utilization of non-equilibrium parity violating dynamics to power swimming and pumping in low Reynolds number ($Re$) media.
@@ -363,42 +286,24 @@ We first use the motion of this segment as input to construct a time dependent p
 
 \subsection{Nonreciprocal motion as a swimming protocol}
 
-
  We begin by considering a minimal passive elastic segment with three spheres arranged in a linear configuration~\cite{Golestanian2008AnalyticResults} (\figurename~\ref{fig:swimmer}a(iii)). We imagine instances where the passive elastic segment is disconnected from the parity violating metamaterial and immersed in a low-$Re$ fluid~\figurename~\ref{fig:swimmer}a(iii). When the lengths of the two springs connecting the spheres, $L_1(t) = L+\Delta L_1(t), L_2(t) = L+\Delta L_2(t)$ are varied according to some prescribed protocol, the time-averaged swimming speed is (\eqnname~(12) in \cite{Golestanian2008AnalyticResults})
 \begin{equation} \label{eqn:swimmer_speed}
     V_s = \frac{7a}{24L^2} \expval{\Delta L_1 \dv{\Delta L_2}{t} - \dv{\Delta L_1}{t} \Delta{L_2}},
 \end{equation}
 where $a$ is the radius of the bead. Assumptions for this equation are $a/L \ll 1, \Delta L_i/L \ll 1$, and total external force on the swimmer is zero.
 
-% \begin{figure*}[tbp]
-% 	\centering
-% 	\includegraphics[width=1.0\textwidth]{Figure5.pdf}
-%     \caption{
-%     (a)  The active gyroscopic network can drive energy through a passive segment. (b) The energy flux is accompanied by a nonreciprocal fluctuations in the positions of the particles. The nonreciprocal motion in (b) is a schematic for illustration purposes, and the real data is much more noisy. Using this nonreciprocal motion as a swimming protocol, a three bead linear object with inter-bead distances $L_1$ and $L_2$ can be made to swim in a viscous fluid.
-%     (c) The same principles can be used to immerse the passive segment in a viscous fluid and pump the fluid at a rate $V_s$.
-%     }
-%     \label{fig:swimmer}
-% \end{figure*}
 
 We now imagine recording the motions of the passive segment when it is connected to our parity violating metamaterial as in \secname~\ref{sec:passiveflux}(\figurename~\ref{fig:swimmer}a) and not coupled to a viscous fluid. This recorded motion can be used a protocol for modulating the configuration of an equivalent {\it swimmer} passive segment that is placed in a viscous fluid.
 We compute the swimming speed $V_s$ of the swimmer using \eqnname~\ref{eqn:swimmer_speed} and find that it is in fact proportional to the energy flux, $\expval{J}$, conducted through the passive segment when it is coupled to the chiral active network (\figurename~\ref{fig:swimmer}b). The nonreciprocal motions that is responsible for energy fluxes can also be used as a protocol to generate motion in a low $Re$ fluid.
-The proportionality constant between the swim speed, $V_s$ and the energy flux, $\expval{J}$, can be calculated using a modified path analysis technique (Supplementary Material),
+The proportionality constant between the swim speed, $V_s$ and the energy flux, $\expval{J}$, can be calculated using a modified path analysis technique (Supplemental Material \cite{SupplementalMaterial}),
 \begin{equation} \label{eqn:swimmer_propto}
     \frac{V_s}{7a/24L^2} = -\frac{k_0}{k} \frac{\expval{J}}{k/2},
 \end{equation}
 where $k_0 = k_g + m/\tau^2$ ($B,\gamma=0$ for the passive segment).
-This result \eqnname~\eqref{eqn:swimmer_propto} holds beyond small-$k$ regime because all orders of paths are considered (Supplementary Material).
+This result \eqnname~\eqref{eqn:swimmer_propto} holds beyond small-$k$ regime because all orders of paths are considered (Supplemental Material \cite{SupplementalMaterial}).
 \figurename~\ref{fig:swimmer}b and \eqnname~\eqref{eqn:swimmer_propto} together establish that one can relate the swim speed to the flux of energy in the parity violating metamaterial. 
-Similar proportionality between $V_s$ and $\expval{J}$ can be expected for other types of three-sphere swimmers, such as one where one sphere is much larger than the other two \cite{Golestanian2008ThreesphereLowReynoldsnumber}. This is because the swim speed $V_s$ is generically proportional to the area enclosed in the $\Delta L_i$ space \cite{Golestanian2009StochasticLow}. This area is also proportional to the energy flux $\expval{J}$ (Supplemental Material).
+Similar proportionality between $V_s$ and $\expval{J}$ can be expected for other types of three-sphere swimmers, such as one where one sphere is much larger than the other two \cite{Golestanian2008ThreesphereLowReynoldsnumber}. This is because the swim speed $V_s$ is generically proportional to the area enclosed in the $\Delta L_i$ space \cite{Golestanian2009StochasticLow}. This area is also proportional to the energy flux $\expval{J}$ (Supplemental Material \cite{SupplementalMaterial}).
 
-% \begin{figure}[tbp]
-% 	\centering
-% 	\includegraphics[width=.48\textwidth]{Figure6.pdf}
-%     \caption{
-%     The swim speed of a three bead linear object, $V_s$ as its arm length are modulated according to the dynamics of the corresponding passive segment connected to the active gyroscopic network is proportional to the energy flux $\expval{J}$ in the active network. The proportionality constant is $-k_0/k$, and is independent of the network geometry. The series of dots for each $-k_0/k$ are obtained by varying the labelled angles (by red disk sectors) in pentagon networks or square+tail networks.
-%     }
-%     \label{fig:swimmer2}
-% \end{figure}
 
 \subsection{Force generation in a viscous medium using the rectified energy fluxes}
 \label{sec:pumping}
@@ -415,55 +320,19 @@ The swim speed can provide an estimate of the potential speed at which the fluid
 This speed can be scaled up by increasing $T_a$.
 We note the extremely high value of the $B$ field required to generate a sizable averaged flux $\langle J \rangle$. To make practical use of this model, we anticipate that it will become necessary to instead consider models with interacting gyroscopes~\cite{Nash2015TopologicalMechanics} or Coriolis forces \cite{Kahlert2012MagnetizingComplex}. Large Lorentz force ($B$) analogues are easier to achieve in these cases. 
 
-% Finally, in performing this analysis we have ignored the tethering of the passive segment by $k_g$ and due to its connection to the tethered active metamaterial. Due to these constraints, it cannot swim indefinitely. However, a tethered stalled swimmer can still potentially pump the fluid \cite{Leoni2009BasicSwimmer,Golestanian2008AnalyticResults} at a rate $-V_s$. Then, the above described analysis can provide an estimate of the potential speed at which the fluid can be pumped due to the energy fluxes. 
-
 In summary, the results of this section show that the energy fluxes generated by our active parity violating metamaterial can be used to rectify motion and generate forces on the nanoscale. Our calculations also show how the forces generated by our metamaterial are in fact proportional to the energy fluxes. Hence, together with the results from the previous sections that show how energy fluxes in arbitrarily complex active metamaterial networks can be controlled, our results provide a broad framework to generate and modulate forces using active parity violating metamaterials.  
-
-%act like a stalled swimmer and pump fluid with the rate and direction being speicified by $-V_s \propto \expval{J}$. 
-
-%We would like to see whether our passive segment can, at least in theory, similarly act as a stalled swimmer and pump the fluid.
-%Specifically, we consider how the tethering force and the coupling to the fluid affects the dynamics of the segment.
-
-%In the presence of tethering forces, \eqnname~\eqref{eqn:swimmer_speed} for $V_s$ needs to be modified.
-%Ref. \cite{Golestanian2008AnalyticResults} discussed swimmer with a constant external force $F$, and its \eqnname~(39) says the modified swimming speed $V_s(F) = V_s + F/(6\pi\eta_f a)$, where $\eta_f$ is fluid's dynamic viscosity.
-%Since this result is obtained under linearized hydrodynamics, it also applies to our stochastic case granted that we replace $F$ by its averaged value $\expval{F}$.
-%This tells that we can first consider the untethered case, then adapt to the tethered case using the above formula.
-
-%In the presence of an added fluid, we desire that the original dynamics is not altered too much, otherwise both the energy flux and the correlation in \eqnname~\eqref{eqn:swimmer_propto} would be distorted, and the $V_s \propto -\expval{J}$ result cannot be utilized.
-%So we need a regime where the fluid, in spite of having a low $Re$, is perturbative.
-%To make the fluid perturbative, we require the dissipation rate due to the viscous force to be much smaller than the energy flux through the segment. This can be expressed as $\eta_f a v^2 \ll J$, where $v$ is the characteristic velocity of the bead, $J$ is the energy flux in the absence of the fluid.
-%To satisfy low $Re$ condition, one needs $Re = \rho_f a v /\eta_f \ll 1$, where $\rho_f$ is fluid's density.
-%Writing these two conditions together, one gets $J \gg \eta_f a v^2 \gg \rho_f a^2 v^3$.
-%This condition ignored hydrodynamic interactions between the beads, because it is a higher-order perturbation with the order of $a/L$.
-
-
-%These discussions together suggest that, if the passive part is immersed in a perturbative fluid, it can generate fluid flows.
-%Assuming the relaxation timescale of the active network is much faster than the timescale of swimming due to the small $V_s(F)$, one can expect the following process. Initially the passive part experiences $\expval{F}=0$, so it swims with an average speed $V_s$; as the part drifts, $\expval{F}$ increases and acts in the direction of $-V_s$; when $\expval{F} \approx -6\pi\eta_f a V_s$, the swimmer is stalled. The stalled swimmer pumps fluid in direction $-V_s \propto \expval{J}$.
 
 
 \section{Conclusion} \label{sec:conclusion}
 
 In conclusion, we have established a general set of design principles for rectifying energy and motion in non-equilibrium parity violating metamaterials. In particular, our central results show how a combination of time reversal symmetry violation due to the interactions and Lorentz forces in the metamaterial, and due to the non-equilibrium fluctuations of the active bath, can result in a general strategy for rectification of energy and motion. Extending these ideas to non-equilibrium parity violating metamaterials with non-linear interactions or materials composed of active chiral particles can potentially lead to new strategies for the construction of synthetic molecular motor analogues. These ideas will be considered in future work. 
 
-%We have established that, our active gyroscopic network can rectify energy and control its rectification through network geometries.
-%At last, we discuss possibilities to extend this model and provide outlooks.
-
-%In our theoretical treatment, the parameters are assumed uniform for all particles and bonds, which is not necessary. We only need $\tau,T_a$ to be uniform, and other parameters $m, k_g, k, B, \gamma$. can be nonuniform.
-%If we add an additional white noise to the equation of motion \eqnname~\eqref{eqn:GLE_single}, the energy flux is not affected. As a comparison, in models that use OUP for directed particle transport, the additional white noise would usually suppress the rectification \cite{Bartussek1996PreciseNumerics}.
-
-%From Fourier mode analysis (\secname~\ref{sec:fourier}), the ingredients for nonzero energy fluxes are nonreciprocal response and weighted excitation.
-%The nonreciprocal response is introduced by Lorentz-like forces, and it makes theory tractable, since this force does not do work on the particles and is linear. The disadvantage is that its experimental realization is not easy.
-%Inspired by these two ingredients, one can try other ways to achieve rectifications.
-%One way is to replace the active particle with Lorentz force by active rotors. In this case the equation for energy flux \eqnname~\eqref{eqn:flux_integral} would contain extra terms, and since rotors themselves are active, the active bath is not needed.
-%Another possible way is to introduce nonlinearity, as nonlinearity can make nonreciprocal metamaterials \cite{Coulais2017StaticNonreciprocitya}. This has been exploited to make thermal diodes \cite{Terraneo2002ControllingEnergy,Li2012ColloquiumPhononics}. One could imagine a setup that replaces the springs with these nonreciprocal materials, and add active bath but not Lorentz force to the connecting sites.
-
-% outlook
-% active matter + network structure. cite Woodhouse's work, search for others.
 
 
 \section*{Acknowledgements}
 This work was primarily supported by NSF DMR- MRSEC 1420709. SV acknowledges support from the Sloan Foundation, startup funds from the University of Chicago and support from the National Science Foundation under award number DMR-1848306. WTMI Acknowledges support from NSF EFRI NewLAW grant 1741685 and the Packard foundation. 
 
 \bibliography{reference}
+
 
 \end{document}

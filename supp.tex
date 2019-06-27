@@ -45,18 +45,28 @@
 \renewcommand{\bibnumfmt}[1]{[S#1]}
 \renewcommand{\citenumfont}[1]{S#1}
 
-\title{Supplemental Material}
 
-\author{empty}
-\affiliation{empty}
+\title{Supplemental Material: Rectification of energy and motion in non-equilibrium parity violating metamaterials}
+
+
+\author{Zhenghan Liao}
+\affiliation{Department of Chemistry, University of Chicago, Chicago, IL, 60637, USA}
+\author{William T. M. Irvine}
+\affiliation{Department of Physics, University of Chicago, Chicago, IL 60637, USA}
+\affiliation{James Franck Institute, University of Chicago, Chicago, IL 60637, USA}
+\affiliation{ Enrico Fermi Institute, University of Chicago, Chicago, IL, 60637, USA}
+\author{Suriyanarayanan Vaikuntanathan}
+\affiliation{Department of Chemistry, University of Chicago, Chicago, IL, 60637, USA}
+\affiliation{James Franck Institute, University of Chicago, Chicago, IL 60637, USA}
+
 
 \maketitle
 
-\tableofcontents
+% \tableofcontents
 
 \section{The formula for energy flux}
 In this section, we derive the formula for energy flux, \eqnname~\eqref{eqn:flux_def} in the main text.
-Here the force $F$ is a general conservative force, which does not need to be linear.
+The force $F$ in this section is a general conservative force, which does not need to be linear.
 The strategy to find the energy flux is that, first define the energy $E_i$ of particle $i$, then write down the energy balance relation, which expresses the infinitesimal energy change $\dd E_i$ using stochastic calculus, finally identify terms in $\dd E_i$ that is caused by neighboring particles as the energy transfer among particles.
 
 The energy of particle $i$ is defined as
@@ -65,17 +75,22 @@ E_i = \frac{1}{2}m_iv_i^Tv_i + U_{ii} + \frac{1}{2}\sum_{j\neq i}U_{ij},
 \end{equation}
 where the first term is the kinetic energy, the second term denotes the on-site potential, and the last term is the shared spring energy between the particle and its neighbors.
 
-To calculate $\dd E_i$, we use Ito's formula. Because we need the average of $\dd E_i$, and the stochastic term in Ito's calculus simply vanishes under time-average.
-For a stochastic differential equation (SDE) of variable $X$ with drift $\mu$ and diffusion $\sigma$
+We use Ito's formula to calculate $\dd E_i$. 
+Ito's calculus provides the advantage that the stochastic terms in $\dd E_i$ vanish under time-averaging.
+For a stochastic differential equation (SDE) of variable $X$(vector) with drift $\mu$(vector) and diffusion $\sigma$(matrix)
 \begin{equation} \label{eqnS:SDE_general}
 \dd X = \mu \dd t + \sigma \dd W ,
 \end{equation}
+where $\dd W$ is a vector consisting of standard Wiener processes,
 Ito's formula gives the SDE of function $f(X)$
 \begin{equation} \label{eqnS:SDE_ito}
-\dd f(X) = ((\nabla_X^Tf)\mu + \frac{1}{2}\tr[\sigma \sigma^T \nabla_X\nabla_X^Tf])\dd t + (\nabla_X^Tf) \sigma \dd W .
+\dd f(X) = ((\nabla_X^Tf)\mu + \frac{1}{2}\tr[\sigma \sigma^T \nabla_X\nabla_X^Tf])\dd t + (\nabla_X^Tf) \sigma \dd W,
 \end{equation}
+where $\nabla_X$ denotes the gradient with respect to $X$, the superscript $T$ denotes the transpose, and $\tr$ denotes the trace.
 
-For our system, we can represent $N$ particles by a column vector $z = \sum_{i=1}^N \ket{i}\otimes z_i$, with $\ket{i}$ denoting the 2D subspace of particle $i$, likewise for $v$ and $\eta$, then we get
+We begin by writting the equation of motion of our system \eqnname~\eqref{eqn:GLE_single} in the form of an SDE \eqnname~\eqref{eqnS:SDE_general}.
+We represent $N$ particles' position by a column vector $z = \sum_{i=1}^N \ket{i}\otimes z_i$, where $\ket{i}$ denotes the 2D subspace of particle $i$. Similar representations are also applied to $v$ and $\eta$. 
+Then we get
 \begin{align}
 X &= \pmqty{ z & v & \eta }^T, \label{eqnS:SDE_X}\\
 \mu &= \pmqty{ v \\
@@ -84,15 +99,16 @@ X &= \pmqty{ z & v & \eta }^T, \label{eqnS:SDE_X}\\
 \sigma &= \text{diag} \pmqty{0 & 0 & \frac{\sqrt{2\gamma T_a}}{\tau} I}, \label{eqnS:SDE_sigma}
 \end{align}
 where $U$ is the total energy of the system, $A$ is an antisymmetric matrix $A=\sum_i \ket{i}\bra{i}\otimes \mqty(0 & 1 \\ -1 & 0)$, and $\text{diag}()$ means a block-diagonal matrix.
-The function $f(X) = E_i(X)$ is the energy of particle $i$.
-The nonzero terms in the gradients of $E_i$ are
+
+Now we apply Ito's formula \eqnname~\eqref{eqnS:SDE_ito} to our system.
+Function $f(X)$ in \eqnname~\eqref{eqnS:SDE_ito} is now the energy of particle $i$, $E_i(X)$.
+The nonzero terms in the gradient of $E_i$ are
 \begin{align}
 \nabla_{z_i}E_i &= -(F_{ii} + \frac{1}{2}\sum_jF_{ji}), \\
 \nabla_{z_j}E_i &= -\frac{1}{2}F_{ij}, \\
 \nabla_{v_i}E_i &= m_iv_i.
 \end{align}
 
-Now we apply Ito's formula \eqnname~\eqref{eqnS:SDE_ito} to our system.
 The term $(\nabla_X^TE_i)\mu$ reads
 \begin{equation}
 \begin{split}
@@ -111,43 +127,40 @@ Finally, the energy change can be written as
 J_{ij} &= \frac{1}{2}(v_i + v_j)^T F_{ij}, \label{eqnS:flux_Jij} \\
 h_i &= -\gamma_i v_i^Tv_i +v_i^T\eta_i. \label{eqnS:flux_hi}
 \end{align}
-In the energy change $\dd E_i$, the term $J_{ij}$ involves particle $i$ and its neighbors, and $dh_i$ term involves $i$ and the bath. We identify $J_{ij}$ as the energy transferred per unit time from particle $i$ to $j$, and $h_i$ as the energy transferred from the bath to particle $i$.
+$J_{ij}$ is identified as the energy transferred per unit time from particle $i$ to $j$, and $h_i$ is identified as the energy transferred from the bath to particle $i$.
 
 As for the steady-state average of $J_{ij}$, one can use $\expval{\dd U_{ij} / \dd t =0}$ and the chain rule to simplify \eqnname~\eqref{eqnS:flux_Jij}
 \begin{equation}
     0 = v_i^T F_{ji} + v_j^T F_{ij}
     = -v_i^T F_{ij} + v_j^T F_{ij},
 \end{equation}
-and arrive at a reduced expresion
+and arrive at the expresion
 \begin{equation}
     \expval{J_{ij}} = \expval{v_j^T F_{ij}}.
 \end{equation}
 
 
 \section{Numerical method for solving the energy flux}
-A numerical method to compute the flux $J$ is as follows.
-A system is determined by the network geometry and parameters $m, k_g, k, B, \gamma, \tau, T_a$.
+One straightforward numerical method to compute the flux $J$ is as follows.
+Our system is determined by the network geometry and parameters $m, k_g, k, B, \gamma, \tau, T_a$.
 Given the equation of motion \eqnname~\eqref{eqnS:SDE_general},\eqref{eqnS:SDE_X}-\eqref{eqnS:SDE_sigma}, one can numerically solve for the covariance $C=\expval{XX^T}$ from the matrix equation $\mu C + C \mu^T = \sigma\sigma^T$ \cite{Gardiner2009ItoCalculus,Ceriotti2010ColoredNoiseThermostats}.
 Finally, the flux \eqnname~\eqref{eqnS:flux_Jij}, which is bilinear in $x$ and $v$, can be extracted from the covariance $C$.
 Numerical calculations of $\expval{J}$ are performed using Mathematica with custom code \cite{WolframResearch2018MathematicaVersion}
 
 
 \section{Energy flux from linear response theory}
-Following \cite{Kundu2011LargeDeviations}, we calculate the energy flux using linear response theory, which expresses the flux by the response function.
-We first arrive at the response function \eqnname~\eqref{eqnS:response}, then get a raw expression of flux using the response function \eqnname~\eqref{eqnS:flux_integral_raw}, finally simplify this expression and get \eqnname~\eqref{eqn:flux_integral} and \eqref{eqn:flux_residue} in the paper.
-After the derivation there will be some discussions on the result.
-
+Following \cite{Kundu2011LargeDeviations}, we derive the expression of the energy flux (\eqnname~\eqref{eqn:flux_integral} and \eqref{eqn:flux_residue} in the main text) using a spectral linear response theory.
 
 \subsection{Fourier modes for energy flux}
 
-We define Fourier transform (FT) as
+We define Fourier transform (FT) of a function $f(t)$ as
 \begin{align}
 \tilde{f}(\omega) &= \frac{1}{t} \int_0^t dt'\ f(t')e^{-i\omega t'},\quad
 \omega = \frac{2\pi n}{t} ,\\
 f(t) &= \sum_{\omega=-\infty}^{\infty} \tilde{f}(\omega) e^{i\omega t} .
 \end{align}
 
-From the equation of motion \eqnname~\eqref{eqnS:SDE_general},\eqref{eqnS:SDE_X}-\eqref{eqnS:SDE_sigma}, one can write down the FT of the whole system
+The FT of the equation of motion \eqnname~\eqref{eqnS:SDE_general},\eqref{eqnS:SDE_X}-\eqref{eqnS:SDE_sigma} reads
 \begin{align}
 \tilde{v}(\omega) &= i\omega \tilde{z}(\omega) ,\label{eqnS:FT_v}\\
 \tilde{z}(\omega) &= G^+(\omega) \tilde{\eta}(\omega) ,\label{eqnS:FT_z}\\
@@ -158,33 +171,31 @@ where $G^+$ is the response function
 G^{\pm}(\omega) = [K \pm i\omega(\gamma I + BA) - m\omega^2I]^{-1} .
 \end{equation}
 
-Now we turn to the energy flow.
-Since $J(t')$ has a bilinear form, its time integral $Q = \int_0^t \dd{t'} J(t')$ can be written as a sum of Fourier modes using Parseval's theorem,
-\begin{equation} \label{eqnS:qmode_sum}
-Q = t\sum_{\omega=-\infty}^{\infty} \tilde{q}_\omega
-\overset{\tilde{q}_0 = 0}{=}  t\sum_{\omega=2\pi/t}^{\infty} (\tilde{q}_\omega + \tilde{q}_{-\omega}) .
-\end{equation}
-To calculate the mode $\tilde{q}_\omega$, we need to express $J_{ij}$ in $z$ instead of $F$, and the result is
+The energy flux $J_{ij}$ from \eqnname~\eqref{eqnS:flux_Jij} can be expressed as a bilinear function in $z$ and $v$, by writting the linearized force $F$ in terms of $z$,
 \begin{align}
-J_{ij} &= kv^TA^{J}z \\
-\begin{split}
-A^{J} &\equiv \frac{1}{2} (\ket{i}\bra{i} \otimes e_{ij}e_{ij}^T + \ket{i}\bra{j} \otimes e_{ij}e_{ji}^T \\
-&\quad + \ket{j}\bra{i} \otimes (-e_{ji}e_{ij}^T) + \ket{j}\bra{j} \otimes (-e_{ji}e_{ji}^T)) .
-\end{split}
+    J_{ij} &= kv^TA^{J}z \\
+    \begin{split}
+    A^{J} &\equiv \frac{1}{2} (\ket{i}\bra{i} \otimes e_{ij}e_{ij}^T + \ket{i}\bra{j} \otimes e_{ij}e_{ji}^T \\
+    &\quad + \ket{j}\bra{i} \otimes (-e_{ji}e_{ij}^T) + \ket{j}\bra{j} \otimes (-e_{ji}e_{ji}^T)) .
+    \end{split}
 \end{align}
-The Fourier modes of energy $q_\omega$ and its conjugate $q_{-\omega}$ read
+    
+This bilinear form enables us to write the time integral of energy flux $Q = \int_0^t \dd{t'} J(t')$ as a sum of Fourier modes $\tilde{q}_\omega$ using Parseval's theorem,
 \begin{align}
-q_\omega &= k\tilde{v}^T A^{J} \tilde{z}^*
-= i\omega k \tilde{\eta}^TG^{+T}A^{J}G^-\tilde{\eta}^* ,\\
-q_{-\omega} &= -i\omega k \tilde{\eta}^TG^{+T}{A^{J}}^TG^-\tilde{\eta}^* .
+    Q &= t\sum_{\omega=-\infty}^{\infty} \tilde{q}_\omega, \\
+    q_\omega &= k\tilde{v}^T A^{J} \tilde{z}^*
+    = i\omega k \tilde{\eta}^TG^{+T}A^{J}G^-\tilde{\eta}^* ,
 \end{align}
-Adding $q_\omega$ and $q_{-\omega}$ to get $A_\omega^q$,
-\begin{align}
-\tilde{q}_\omega + \tilde{q}_{-\omega} &= \tilde{\eta}(\omega)^T A_\omega^q \tilde{\eta}(\omega)^* \\
-A_\omega^q &= -i\omega k G^{+T}(\omega) A^{as} G^-(\omega), \\
-A^{as} &= -(A^{J} - {A^{J}}^T)
-= -\ket{i}\bra{j} \otimes e_{ij}e_{ji}^T + \ket{j}\bra{i} \otimes e_{ji}e_{ij}^T .
-\end{align}
+where the superscript $*$ denotes the complex conjugate.
+
+Pairing $\tilde{q}_\omega$ and its conjugate $\tilde{q}_{-\omega}$ gives a real function, which would be beneficial for subsequent derivations.
+\begin{gather}
+    Q = t\sum_{\omega=2\pi/t}^{\infty} (\tilde{q}_\omega + \tilde{q}_{-\omega}), \label{eqnS:qmode_sum}\\
+    \tilde{q}_\omega + \tilde{q}_{-\omega} = \tilde{\eta}(\omega)^T A_\omega^q \tilde{\eta}(\omega)^* \\
+    A_\omega^q = -i\omega k G^{+T}(\omega) A^{as} G^-(\omega), \\
+    A^{as} = -(A^{J} - {A^{J}}^T)
+    = -\ket{i}\bra{j} \otimes e_{ij}e_{ji}^T + \ket{j}\bra{i} \otimes e_{ji}e_{ij}^T.
+\end{gather}
 
 Averaging $\tilde{q}_\omega + \tilde{q}_{-\omega}$ over the noise $\tilde{\eta}(\omega)$ using the relationship between $\tilde{\eta}$ and $\tilde{\xi}$ \eqnname~\eqref{eqnS:FT_eta}, and $\expval{\tilde{\xi}(\omega) \tilde{\xi}^T(\omega')} = \frac{1}{t} I \delta(\omega + \omega')$, one gets
 \begin{equation} \label{eqnS:qmode_single}
@@ -203,13 +214,13 @@ In long time limit, the sum can be approximated by an integral
 = \frac{1}{2t} \sum_{\omega=-\infty}^{\infty} \frac{t \Delta\omega}{2\pi}
 \approx \frac{1}{4\pi}\int_{-\infty}^{\infty} \dd{\omega} .
 \end{equation}
-\eqnname~\eqref{eqnS:qmode_sum} and \eqref{eqnS:qmode_single} can then be turned to a raw formula for the flux
+\eqnname~\eqref{eqnS:qmode_sum} and \eqref{eqnS:qmode_single} can then be turned to an integral expression of the flux
 \begin{equation} \label{eqnS:flux_integral_raw}
 \expval{J} = \lim_{t\rightarrow \infty} \frac{\expval{Q}}{t}
 = \frac{\gamma T_a}{2\pi} \int_{-\infty}^{\infty} \dd{\omega} \frac{\tr A_\omega^q}{1+\omega^2\tau^2} .
 \end{equation}
 
-In the final step, we simplify this integral with the help of the property \cite{Kundu2011LargeDeviations}
+In the next steps, we simplify this integral with the help of the property \cite{Kundu2011LargeDeviations}
 \begin{equation} \label{eqnS:response_property}
 G^-(\omega) - G^{+T}(\omega) = 2i\omega\gamma G^-(\omega)G^{+T}(\omega) .
 \end{equation}
@@ -227,7 +238,7 @@ Plugging this trace into \eqnname~\eqref{eqnS:flux_integral_raw}, we get the int
 \expval{J} = -\frac{T_ak}{2\pi} \int_{-\infty}^{\infty} \dd{\omega} \frac{\Re \tr G^+A^{as}}{1+\omega^2\tau^2} .
 \end{equation}
 
-This integral form can be further simplified using residue theorem.
+This integral can be calculated using the residue theorem.
 Since $\Im G^+(-\omega) = -\Im G^+(\omega)$,
 $\frac{\Im \tr G^+A^{as}}{1+\omega^t\tau^2}$ is an odd function of
 $\omega$, and its line integral vanishes.
@@ -258,28 +269,30 @@ Nevertheless, some general properties of the flux can be obtained from \eqnname~
 \section{Kirchoff's law}
 The derivation of the Kirchoff's law is similar to the derivation of the energy flux, except that we use the energy from the bath to the particle $h_i$ in \eqnname~\eqref{eqnS:flux_hi} instead of $J_{ij}$ in \eqnname~\eqref{eqnS:flux_Jij}.
 
-Following the procedure in the last section from \eqnname~\eqref{eqnS:qmode_sum} to \eqref{eqnS:flux_integral_raw}, we arrive at a raw formula for the flux $\expval{h_i} = \frac{\gamma T_a}{2\pi} \int_{-\infty}^{\infty} \dd{\omega} \frac{\tr A_\omega^q}{1+\omega^2\tau^2}$ with a different $A_\omega^q$ for $h_i$
+Following the procedure in the last section from \eqnname~\eqref{eqnS:qmode_sum} to \eqref{eqnS:flux_integral_raw}, we arrive at an integral expression for the $\expval{h_i}$ with a different $A_\omega^q$
 \begin{gather}
-A_\omega^q = i\omega (G^{+T} \rho_i - \rho_iG^-) - 2\gamma\omega^2 G^{+T} \rho_i G^- ,\\
-\rho_i = \ket{i}\bra{i} .
+    \expval{h_i} = \frac{\gamma T_a}{2\pi} \int_{-\infty}^{\infty} \dd{\omega} \frac{\tr A_\omega^q}{1+\omega^2\tau^2}, \label{eqnS:flux_hi_fourier}\\
+    A_\omega^q = i\omega (G^{+T} \rho_i - \rho_iG^-) - 2\gamma\omega^2 G^{+T} \rho_i G^- ,\\
+    \rho_i = \ket{i}\bra{i} .
 \end{gather}
 
-Using the property of $G^\pm$ \eqnname~\eqref{eqnS:response_property}, one gets
+Using the property of $G^\pm$ \eqnname~\eqref{eqnS:response_property}, we get
 \begin{equation}
-\begin{split}
-\tr (G^{+T} \rho_i - \rho_iG^-)
-&= \tr \rho_i(G^{+T} - G^-) \\
-&= -\tr \rho_i 2i\omega \gamma G^- G^{+T} \\
-&= -2i\omega\gamma \tr G^{+T}\rho_i G^- ,
-\end{split}
+    \begin{split}
+        \tr (G^{+T} \rho_i - \rho_iG^-)
+        &= \tr \rho_i(G^{+T} - G^-) \\
+        &= -\tr \rho_i 2i\omega \gamma G^- G^{+T} \\
+        &= -2i\omega\gamma \tr G^{+T}\rho_i G^- ,
+    \end{split}
 \end{equation}
 so the trace of $A_\omega^q$ vanishes
 \begin{equation}
-\tr A_\omega^q
-= i\omega \tr (G^{+T} \rho_i - \rho_iG^-) - \tr 2\gamma\omega^2 G^{+T} \rho_i G^-
-= 0 .
+    \tr A_\omega^q
+    = i\omega \tr (G^{+T} \rho_i - \rho_iG^-) - \tr 2\gamma\omega^2 G^{+T} \rho_i G^-
+    = 0 .
 \end{equation}
-This means that $\expval{h_i}$ is also zero, so on average there is no energy exchange between the particle and the bath. Since the average change of $E_i$ is zero, and $\expval{\dot{E_i}} = -\sum_j\expval{J_{ij}} + \expval{h_i}$, we get the Kirchoff's law
+
+From \eqnname~\eqref{eqnS:flux_hi_fourier}, $\expval{h_i}$ is also zero, so on average there is no energy exchange between the particle and the bath. Because the average change of $E_i$ is zero, and $\expval{\dot{E_i}} = -\sum_j\expval{J_{ij}} + \expval{h_i}$, we obtain the Kirchoff's law
 \begin{equation}
     -\sum_j\expval{J_{ij}} = \sum_j\expval{J_{ji}} = 0 .
 \end{equation}
@@ -300,7 +313,7 @@ This means that $\expval{h_i}$ is also zero, so on average there is no energy ex
 \end{figure}
 
 Since our model is built upon the well-studied isolated system \cite{Nash2015TopologicalMechanics,Susstrunk2016ClassificationTopological,Mitchell2018AmorphousTopological,Lee2018TopologicalDynamics}, we would like to build a connection between our energy flux in the active system and eigenmodes in those studies.
-In this section, we show that the flux formula \eqnname~\eqref{eqn:flux_residue} can be decomposed to a weighted sum over eigenmodes \eqnname~\eqref{eqn:flux_eigen}. Then we apply this result to a honeycomb network as an example.
+In this section, we show that the flux formula \eqnname~\eqref{eqn:flux_residue} can be decomposed to a weighted sum over eigenmodes \eqnname~\eqref{eqnS:flux_eigen}. Then we apply this result to a honeycomb network as an example.
 
 The Fourier analysis from \secname~\ref{sec:fourier} in the main text is not suitable for this connection, because Fourier modes and eigenmodes are related only at small $\gamma$'s (\figurename~\ref{fig:Fourier_modes}a and b), but they become dissimilar at larger $\gamma$'s (\figurename~\ref{fig:Fourier_modes}a and c).
 The underlying discrepancy between Fourier modes and eigenmodes is that, eigenmodes are for the isolated network, whereas Fourier modes have an extra factor of friction or damping.
@@ -313,13 +326,18 @@ Our starting point is \eqnname~\eqref{eqn:flux_residue}. The key bridge for thes
 \end{equation}
 so the extra factors $m,\gamma, \tau$ only add a modification to $k_g$.
 We let the reference isolated system we connect to have a modified on-site spring constant $k_{g,\tau}$, then after some algebra, the flux $\expval{J}$ in active system can be written as a weighted sum of the flux of each eigenmode $J^{\text{eig}}_{\omega_e}$ in the reference system (see the next section for the derivation),
-\begin{equation} \label{eqn:flux_eigen}
+\begin{equation} \label{eqnS:flux_eigen}
     \expval{J} = \sum_{\omega_e} \frac{1}{1+\omega_e^2\tau^2} J^{\text{eig}}_{\omega_e}.
 \end{equation}
 Here $\omega_e$ is the (discrete) eigen-frequency of the reference system, not to be confused with the (continuous) Fourier frequency $\omega$. The amplitude of eigenmode is set such that its energy is $T_a$, and $J^{\text{eig}}_{\omega_e}$ is the time-averaged energy flux.
-A related equation is a ``sum rule", the unweighted sum of all modes is zero, $\sum_{\omega_e} J^{\text{eig}}_{\omega_e} = 0$. This can be shown from direct calculations (next section).
 
-From this eigenmode decomposition, the discussion of time-reversal symmetry in the isolated system \cite{Nash2015TopologicalMechanics} immediately carries over to the active system. For network geometries that satisfy time-reversal symmetries, the energy flux of eigenmodes are zero, thus through \eqnname~\eqref{eqn:flux_eigen}, the flux in active system is also zero. This result can alternatively be obtained from \eqnname~\eqref{eqn:flux_residue} through some linear algebra.
+A related equation is a ``sum rule", the unweighted sum of all modes is zero, 
+\begin{align}
+    \sum_{\omega_e} J^{\text{eig}}_{\omega_e} = 0. \label{eqnS:eigen_sum_rule}
+\end{align}
+This ``sum rule" can be derived from direct calculations (see the next section).
+
+From this eigenmode decomposition, the discussion of time-reversal symmetry in the isolated system \cite{Nash2015TopologicalMechanics} immediately carries over to the active system. For network geometries that satisfy time-reversal symmetries, the energy flux of eigenmodes are zero, thus through \eqnname~\eqref{eqnS:flux_eigen}, the flux in active system is also zero. This result can alternatively be obtained from \eqnname~\eqref{eqn:flux_residue} through some linear algebra.
 
 \begin{figure}[ht]
 	\centering
@@ -333,16 +351,16 @@ From this eigenmode decomposition, the discussion of time-reversal symmetry in t
     \label{fig:eigen_modes}
 \end{figure}
 
-As an application, we will analyze the flux in the honeycomb network using the eigenmode decomposition and the ``sum rule".
+As an application, we will analyze the flux in the honeycomb network using the eigenmode decomposition \eqnname~\eqref{eqnS:flux_eigen} and the ``sum rule" \eqnname~\eqref{eqnS:eigen_sum_rule}.
 The flux pattern in the active honeycomb network displays CCW flux localized on the boundary (\figurename~\ref{fig:model_and_result}b). This localization is reminiscent of the edgemode in \cite{Nash2015TopologicalMechanics} (\figurename~\ref{fig:Fourier_modes}b), however, their directions are opposite.
-From the decomposition \eqnname~\eqref{eqn:flux_eigen}, the edgemodes should contribute a large CW flux in the active system, but somewhat surprisingly, the net flux is CCW.
+From the decomposition \eqnname~\eqref{eqnS:flux_eigen}, the edgemodes should contribute a large CW flux in the active system, but somewhat surprisingly, the net flux is CCW.
 To better analyze the contribution from each eigenmode, we look at a simple honeycomb lattice with only one layer (\figurename~\ref{fig:eigen_modes}a).
 This lattice has four bands (\figurename~\ref{fig:eigen_modes}b), two bulk bands (blue, red) and two edge bands (green, yellow). The weighted flux of each band is plotted in \figurename~\ref{fig:eigen_modes}c. We see that the CW edge band does contribute a large CW flux (green curve in \figurename~\ref{fig:eigen_modes}c), however, due to the ``sum rule", the unweighted sum of other bands has to be CCW. In the honeycomb lattice, it happens that many of this CCW fluxes are contained in the lower bulk band (blue curve in \figurename~\ref{fig:eigen_modes}c and example mode in \figurename~\ref{fig:eigen_modes}f). When the flux gets weighted, the CCW flux from lower bulk band outweighs CW flux from the edgemodes, the other two bands (yellow and red curve in \figurename~\ref{fig:eigen_modes}c) also contribute to CCW flux, although relatively small. As a result, the net flux is CCW, which is opposite to the flux of the edgemode.
 
 
 \section{Derivation of eigenmode decomposition of energy flux}
 
-In deriving the eigenmode decomposition \eqnname~\eqref{eqn:flux_eigen}, we first look at the reference isolated system, write down its eigenmodes \eqnname~\eqref{eqnS:mode_zct} and time-averaged energy flux \eqnname~\eqref{eqnS:mode_J_isolated}. Then we turn to the active system and decompose the flux \eqnname~\eqref{eqnS:flux_residue} using the eigenmodes to get \eqnname~\eqref{eqnS:mode_J_active}. Finally we show that the flux from these two sides are actually related in \eqnname~\eqref{eqnS:mode_J_relation}.
+To derive the eigenmode decomposition \eqnname~\eqref{eqnS:flux_eigen}, we first look at the reference isolated system, write down its eigenmodes \eqnname~\eqref{eqnS:mode_zct} and time-averaged energy flux \eqnname~\eqref{eqnS:mode_J_isolated}. Then we turn to the active system and decompose the flux \eqnname~\eqref{eqnS:flux_residue} using the eigenmodes to get \eqnname~\eqref{eqnS:mode_J_active}. Finally we show that the flux from these two sides are actually related in \eqnname~\eqref{eqnS:mode_J_relation}.
 Lastly we also derive the ``sum rule" \eqnname~\eqref{eqnS:mode_J_sum}.
 
 \subsection{Reference isolated system}
@@ -416,7 +434,7 @@ The averaged flux $\expval{J}$ reads
 \end{equation}
 The second part can be shown to be zero,
 $\tr OAA^{as}O^{-1} (u_{\omega_e} v_{\omega_e}^T - u_{-\omega_e} v_{-\omega_e}^T) = 0$.
-So the mode decomposition in its raw form reads
+So the mode decomposition in its preliminary form reads
 \begin{gather}
 \expval{J} = \sum_{\omega_e} \expval{J}_{\omega_e} ,\\
 \expval{J}_{\omega_e} \equiv \frac{T_ak}{2B}\frac{1}{1 + \omega_e^2 \tau^2} \tr OAA^{as}O^{-1} (u_{\omega_e} v_{\omega_e}^T + u_{-\omega_e} v_{-\omega_e}^T). \label{eqnS:mode_J_active}
@@ -681,12 +699,12 @@ where the order of operations is right-to-left.
 \section{Relationship between swimmer's speed and energy flux}
 To understand the proportionality between $V_s$ and $\expval{J}$, we turn to the path analysis. Different from previous cases, this path sum can be computed exactly, so the result holds beyond small $k$ regime.
 
-First we note that $V_s$ can be rewritten in terms of energy fluxes
+First we rewrite $V_s$ as the following
 \begin{equation}
-    \frac{V_s}{7a/24L^2} = \expval{J_{12}^s} + \expval{J_{23}^s} + \expval{J_{31}^s},
+    \frac{V_s}{7a/24L^2} = \expval{J_{12}^s} + \expval{J_{23}^s} + \expval{J_{31}^s}, \label{eqnS:swimmer_Vs}
 \end{equation}
-where we have defined $\expval{J_{ij}^s} \equiv \expval{(x_i-x_j)(v_i+v_j)}$, and it is proportional to the flux $\expval{J_{ij}} = \frac{k_{ij}}{2}\expval{J_{ij}^s}$ ($k_{12}=k_{23}=k, k_{31}=0$).
-Since both $\expval{J_{12}^s}$ and $\expval{J_{23}^s}$ are equal to the flux $\expval{J}$ apart from a constant factor, the remaining task is to find the relationship between $\expval{J_{31}^s}$ and $\expval{J}$ or $\expval{J_{12}^s}$.
+where we have defined $\expval{J_{ij}^s} \equiv \expval{(x_i-x_j)(v_i+v_j)}$. $\expval{J_{ij}^s}$ is proportional to the energy flux via $\expval{J_{ij}} = \frac{k_{ij}}{2}\expval{J_{ij}^s}$, where $k_{12}=k_{23}=k$, and $k_{31}=0$ (because $\expval{J_{31}} = 0$, there is no energy flux from $3$ to $1$).
+We see that both $\expval{J_{12}^s}$ and $\expval{J_{23}^s}$ are proportional to the flux $\expval{J}$ apart from a factor $k$, so the remaining task is to find the relationship between $\expval{J_{31}^s}$ and $\expval{J}$ or $\expval{J_{12}^s}$.
 
 \begin{figure}[ht]
 	\centering
@@ -697,21 +715,22 @@ Since both $\expval{J_{12}^s}$ and $\expval{J_{23}^s}$ are equal to the flux $\e
     \label{fig:swimmer_path}
 \end{figure}
 
-The path analysis for $\expval{J_{31}^s}$ is a small modification of the previous one: because particle $3$ and $1$ are not bonded, the paths should only contain one $3\rightarrow 1$.
-Comparing paths for $\expval{J_{31}^s}$ and $\expval{J_{12}^s}$, for each $\expval{J_{31}^s}$ path $l$, one can get $n (=0\dots \infty)$ $\expval{J_{12}^s}$ paths by reversing $l$ then replacing $1\rightarrow 3$ by $1\rightarrow 2(\rightarrow 2)^n \rightarrow 3$. An example pair of paths is shown in \figurename~\ref{fig:swimmer_path}.
-On the other hand, this construction exhausts all paths for $\expval{J_{12}^s}$. This correspondence leads to the relationship in path summation:
+We use a path analysis with the modification that the paths should contain only one $3\rightarrow 1$ segment. This modification is a consequence of the fact that particle $3$ and $1$ are not bonded.
+We now illustrate the correspondence between the paths for $\expval{J_{31}^s}$ and for $\expval{J_{12}^s}$. For each path $l$ for $\expval{J_{31}^s}$, we can construct $n$ paths for $\expval{J_{12}^s}$ by reversing $l$ then replacing $1\rightarrow 3$ by $1\rightarrow 2(\rightarrow 2)^n \rightarrow 3$, where $n=0,1,\dots$. An example construction of paths is shown in \figurename~\ref{fig:swimmer_path}.
+For $\expval{J_{12}^s}$, all its paths can be constructed in this way.
+As a result, there is a $1$ to $n$ correspondence between the paths for $\expval{J_{31}^s}$ and for $\expval{J_{12}^s}$, which leads to the relationship
 \begin{equation}
-    \expval{J_{12}^s} = \frac{k}{k_0}\sum_{n=0}^\infty (-2\frac{k}{k_0})^n (-\expval{J_{31}^s}) = \frac{k/k_0}{1-(-2k/k_0)} (-\expval{J_{31}^s}),
+    \expval{J_{12}^s} = \frac{k}{k_0}\sum_{n=0}^\infty (-2\frac{k}{k_0})^n (-\expval{J_{31}^s}) = \frac{k/k_0}{1-(-2k/k_0)} (-\expval{J_{31}^s}), \label{eqnS:swimmer_path_mapping}
 \end{equation}
 where $k_0 = k_g + m/\tau^2$ ($B,\gamma=0$ for the passive part), and the factor $-2\frac{k}{k_0}$ comes from the loop $2\rightarrow 2$.
-Plugging this relation between $\expval{J_{31}^s}$ and $\expval{J_{12}^s}$ to the expression of $V_s$, one gets the proportional relationship
+Plugging \eqnname~\eqref{eqnS:swimmer_path_mapping} to the expression of $V_s$ \eqnname~\eqref{eqnS:swimmer_Vs}, we obtain the proportionality
 \begin{equation}
     \frac{V_s}{7a/24L^2} = -\frac{k_0}{k} \frac{\expval{J}}{k/2},
 \end{equation}
 which is \eqnname~\eqref{eqn:swimmer_propto} in the main text.
+Since we have considered all the paths, this result can be analytically continued to arbitrarily large $k$.
 
-Since we have considered all paths, this result can be analytically continued to arbitrary $k$.
-From this path analysis we also see that, the reason why the proportionality constant is independent of the network geometry is because there is a correspondence between the paths for $\expval{J_{31}^s}$ and $\expval{J_{12}^s}$, and the only difference comes from the passive part.
+From this path analysis we also see that, the proportionality constant is independent of the geometry of the active part of the network. This is because the paths through the active part for $\expval{J_{31}^s}$ and for $\expval{J_{12}^s}$ are identical.
 
 
 \bibliography{reference}
