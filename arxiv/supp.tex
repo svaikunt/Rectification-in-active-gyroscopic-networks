@@ -17,22 +17,22 @@
 \usepackage{hyperref}% add hypertext capabilities
 \usepackage{physics} % package for physics symbols
 
-% for referencing main.tex (c.f. xr-package example)
-\usepackage{xr}
-\makeatletter
-\newcommand*{\addFileDependency}[1]{% argument=file name and extension
-  \typeout{(#1)}
-  \@addtofilelist{#1}
-  \IfFileExists{#1}{}{\typeout{No file #1.}}
-}
-\makeatother
+% % for referencing main.tex (c.f. xr-package example)
+% \usepackage{xr}
+% \makeatletter
+% \newcommand*{\addFileDependency}[1]{% argument=file name and extension
+%   \typeout{(#1)}
+%   \@addtofilelist{#1}
+%   \IfFileExists{#1}{}{\typeout{No file #1.}}
+% }
+% \makeatother
 
-\newcommand*{\myexternaldocument}[1]{%
-    \externaldocument{#1}%
-    \addFileDependency{#1.tex}%
-    \addFileDependency{#1.aux}%
-}
-\myexternaldocument{main}
+% \newcommand*{\myexternaldocument}[1]{%
+%     \externaldocument{#1}%
+%     \addFileDependency{#1.tex}%
+%     \addFileDependency{#1.aux}%
+% }
+% \myexternaldocument{main}
 
 
 \begin{document}
@@ -65,7 +65,7 @@
 % \tableofcontents
 
 \section{The formula for energy flux}
-In this section, we derive the formula for energy flux, \eqnname~\eqref{eqn:flux_def} in the main text.
+In this section, we derive the formula for energy flux, \eqnname~(4) in the main text.
 The force $F$ in this section is a general conservative force, which does not need to be linear.
 We use the following strategy to determine the energy flux. First we define the energy $E_i$ of particle $i$, and then write down an energy balance relation, that expresses the infinitesimal energy change $\dd E_i$ using stochastic calculus. Finally, we collect terms in $\dd E_i$ that couple neighboring particles together and identify this as the energy transfer among particles.
 
@@ -88,7 +88,7 @@ Ito's formula gives the SDE of function $f(X)$
 \end{equation}
 where $\nabla_X$ denotes the gradient with respect to $X$, the superscript $T$ denotes the transpose, and $\tr$ denotes the trace.
 
-We begin by writing the equation of motion of our system \eqnname~\eqref{eqn:GLE_single} in the form of a stochastic differential equation \eqnname~\eqref{eqnS:SDE_general}.
+We begin by writing the equation of motion of our system \eqnname~(1) in the form of a stochastic differential equation \eqnname~\eqref{eqnS:SDE_general}.
 We represent $N$ particles' position by a column vector $z = \sum_{i=1}^N \ket{i}\otimes z_i$, where $\ket{i}$ denotes the 2D subspace of particle $i$. Similar representations are also applied to $v$ and $\eta$. 
 Then we get
 \begin{align}
@@ -148,7 +148,7 @@ Numerical calculations of $\expval{J}$ are performed using Mathematica with cust
 
 
 \section{Energy flux from linear response theory}
-Following \cite{Kundu2011LargeDeviations}, we derive the expression of the energy flux (\eqnname~\eqref{eqn:flux_integral} and \eqref{eqn:flux_residue} in the main text) using a spectral linear response theory.
+Following \cite{Kundu2011LargeDeviations}, we derive the expression of the energy flux (\eqnname~(7) and (10) in the main text) using a spectral linear response theory.
 
 \subsection{Fourier modes for energy flux}
 
@@ -232,7 +232,7 @@ Using this property, the trace of $A_\omega^q$ becomes
 \end{split}
 \end{equation}
 
-Plugging this trace into \eqnname~\eqref{eqnS:flux_integral_raw}, we get the integral form for the flux \eqnname~\eqref{eqn:flux_integral}
+Plugging this trace into \eqnname~\eqref{eqnS:flux_integral_raw}, we get the integral form for the flux \eqnname~(7)
 \begin{equation}
 \expval{J} = -\frac{T_ak}{2\pi} \int_{-\infty}^{\infty} \dd{\omega} \frac{\Re \tr G^+A^{as}}{1+\omega^2\tau^2} .
 \end{equation}
@@ -262,7 +262,7 @@ G^+(-\frac{i}{\tau})
 
 In theory, the equation \eqnname~\eqref{eqnS:flux_residue} provides the analytical solution of the flux, because the inverse matrix \eqnname~\eqref{eqnS:response_at_pole} can be expressed analytically.
 In practice, analytical solutions can be easily calculated for small networks, but are hard for large networks.
-Nevertheless, some general properties of the flux can be obtained from \eqnname~\eqref{eqnS:flux_residue} after some algebra. For network with only horizontal and vertical bonds (\figurename~\ref{fig:model_and_result}b), all fluxes are zero. For two networks whose slanted bonds have opposite angles (\figurename~\ref{fig:model_and_result}b), their fluxes are opposite. Changing $B$ to $-B$ would change the flux $J$ to $-J$.
+Nevertheless, some general properties of the flux can be obtained from \eqnname~\eqref{eqnS:flux_residue} after some algebra. For network with only horizontal and vertical bonds (\figurename~1b), all fluxes are zero. For two networks whose slanted bonds have opposite angles (\figurename~1b), their fluxes are opposite. Changing $B$ to $-B$ would change the flux $J$ to $-J$.
 
 
 \section{Kirchoff's law}
@@ -312,14 +312,14 @@ From \eqnname~\eqref{eqnS:flux_hi_fourier}, $\expval{h_i}$ is also zero, so on a
 \end{figure}
 
 Since our model is built upon the well-studied isolated system in Refs \cite{Nash2015TopologicalMechanics,Susstrunk2016ClassificationTopological,Mitchell2018AmorphousTopological,Lee2018TopologicalDynamics}, we would like to build a connection between our energy flux in the active system and eigenmodes in those studies.
-In this section, we show that the flux formula \eqnname~\eqref{eqn:flux_residue} can be decomposed to a weighted sum over eigenmodes \eqnname~\eqref{eqnS:flux_eigen}. Then we apply this result to a honeycomb network as an example.
+In this section, we show that the flux formula \eqnname~(10) can be decomposed to a weighted sum over eigenmodes \eqnname~\eqref{eqnS:flux_eigen}. Then we apply this result to a honeycomb network as an example.
 
-The Fourier analysis from \secname~\ref{sec:fourier} in the main text is not suitable for this connection, because Fourier modes and eigenmodes are related only at small $\gamma$'s (\figurename~\ref{fig:Fourier_modes}a and b), but they become dissimilar at larger $\gamma$'s (\figurename~\ref{fig:Fourier_modes}a and c).
+The Fourier analysis from \secname~IV in the main text is not suitable for this connection, because Fourier modes and eigenmodes are related only at small $\gamma$'s (\figurename~\ref{fig:Fourier_modes}a and b), but they become dissimilar at larger $\gamma$'s (\figurename~\ref{fig:Fourier_modes}a and c).
 The underlying discrepancy between Fourier modes and eigenmodes comes from the fact that eigenmodes are a natural basis for the isolated network, whereas Fourier modes have an extra factor of friction or damping.
 In addition to this extra factor $\gamma$,
 the active system also has extra factors of $m$ and $\tau$. The factor $m$ comes from the order of dynamics: the active system is second order in time, while the gyroscopic dynamics in \cite{Nash2015TopologicalMechanics} is first order, which corresponds to the $m\rightarrow 0$ limit.
 
-Our starting point is \eqnname~\eqref{eqn:flux_residue}. The key point is that, in the function $G^+(-i/\tau)$ from the equation, $\gamma,m,\tau$ are not independent factors. Rather, they act collectively through 
+Our starting point is \eqnname~(10). The key point is that, in the function $G^+(-i/\tau)$ from the equation, $\gamma,m,\tau$ are not independent factors. Rather, they act collectively through 
 \begin{equation}
     k_{g,\tau} \equiv k_g+\frac{\gamma}{\tau}+\frac{m}{\tau^2}.
 \end{equation}
@@ -336,7 +336,7 @@ A related result is a so called ``sum rule", namely, the unweighted sum of all m
 \end{align}
 This ``sum rule" can be derived from direct calculations (see the next section).
 
-From this eigenmode decomposition, the discussion of time-reversal symmetry in the isolated system \cite{Nash2015TopologicalMechanics} immediately carries over to the active system. For network geometries that satisfy time-reversal symmetries, the energy flux of eigenmodes are zero. Thus through \eqnname~\eqref{eqnS:flux_eigen}, the flux in active system is also zero. This result can alternatively be obtained from \eqnname~\eqref{eqn:flux_residue} through some linear algebra.
+From this eigenmode decomposition, the discussion of time-reversal symmetry in the isolated system \cite{Nash2015TopologicalMechanics} immediately carries over to the active system. For network geometries that satisfy time-reversal symmetries, the energy flux of eigenmodes are zero. Thus through \eqnname~\eqref{eqnS:flux_eigen}, the flux in active system is also zero. This result can alternatively be obtained from \eqnname~(10) through some linear algebra.
 
 \begin{figure}[tbp]
 	\centering
@@ -351,7 +351,7 @@ From this eigenmode decomposition, the discussion of time-reversal symmetry in t
 \end{figure}
 
 As an application, we will analyze the flux in the honeycomb network using the eigenmode decomposition \eqnname~\eqref{eqnS:flux_eigen} and the ``sum rule" \eqnname~\eqref{eqnS:eigen_sum_rule}.
-The flux pattern in the active honeycomb network displays CCW flux localized on the boundary (\figurename~\ref{fig:model_and_result}b). This localization is reminiscent of the edgemode in \cite{Nash2015TopologicalMechanics} (\figurename~\ref{fig:Fourier_modes}b), however, their directions are opposite.
+The flux pattern in the active honeycomb network displays CCW flux localized on the boundary (\figurename~1b). This localization is reminiscent of the edgemode in \cite{Nash2015TopologicalMechanics} (\figurename~\ref{fig:Fourier_modes}b), however, their directions are opposite.
 From the decomposition \eqnname~\eqref{eqnS:flux_eigen}, the edgemodes should contribute a large CW flux in the active system, but somewhat surprisingly, the net flux is CCW.
 To better analyze the contribution from each eigenmode, we look at a simple honeycomb lattice with only one layer (\figurename~\ref{fig:eigen_modes}a).
 This lattice has four bands (\figurename~\ref{fig:eigen_modes}b), two bulk bands (blue, red) and two edge bands (green, yellow). The weighted flux of each band is plotted in \figurename~\ref{fig:eigen_modes}c. We see that the CW edge band does contribute a large CW flux (green curve in \figurename~\ref{fig:eigen_modes}c), however, due to the ``sum rule", the unweighted sum of other bands has to be CCW. In the honeycomb lattice, it happens that many of this CCW fluxes are contained in the lower bulk band (blue curve in \figurename~\ref{fig:eigen_modes}c and example mode in \figurename~\ref{fig:eigen_modes}f). When the flux gets weighted, the CCW flux from lower bulk band outweighs CW flux from the edgemodes, the other two bands (yellow and red curve in \figurename~\ref{fig:eigen_modes}c) also contribute to CCW flux, although relatively small. As a result, the net flux is CCW, which is opposite to the flux of the edgemode.
@@ -470,7 +470,7 @@ Since $UV^T = I$ from orthonormality, this sum vanishes
 
 
 \section{Path summation of energy flux}
-To derive the path summation formula \eqnname~\eqref{eqn:flux_path} and the path rules, we start from \eqnname~\eqref{eqnS:flux_residue}, expand around a noninteracting reference system with $k=0$ to get \eqnname~\eqref{eqnS:smallk_expand}, discuss the convergence radius in \eqnname~\eqref{eqnS:smallk_convergence}, then insert resolution of identity to make each term representable by a path as in \eqnname~\eqref{eqnS:smallk_Sl}, and arrive at the path summation formula in \eqref{eqnS:smallk_path_sum}.
+To derive the path summation formula \eqnname~(11) and the path rules, we start from \eqnname~\eqref{eqnS:flux_residue}, expand around a noninteracting reference system with $k=0$ to get \eqnname~\eqref{eqnS:smallk_expand}, discuss the convergence radius in \eqnname~\eqref{eqnS:smallk_convergence}, then insert resolution of identity to make each term representable by a path as in \eqnname~\eqref{eqnS:smallk_Sl}, and arrive at the path summation formula in \eqref{eqnS:smallk_path_sum}.
 We also provide a convenient way to calculate $S_{-l}$ in \eqnname~\eqref{eqnS:smallk_S-l}, and a heuristic interpretation of $S_l$ in \eqnname~\eqref{eqnS:smallk_path_vector}.
 
 \subsection{Derivation of path summation formula}
@@ -629,7 +629,7 @@ So the flux for this path without loops writes
 
 In some situations, the contribution of polygonal paths vanish, and higher order paths with loops become dominant. Unlike in polygonal paths, paths with loops are affected by side-chains.
 
-One situation is when the polygon path itself vanishes. In \figurename~\ref{fig:path_square_tail}a, the flux of lowest order path, square (\figurename~\ref{fig:path_square_tail}b), is zero, so the main contribution comes from the path with length $5$ (\figurename~\ref{fig:path_square_tail}b). Through the loop in this path, the orientation of the side-chain controls the flux direction in the main square, without changing the geometry of the main cycle (as seen in \figurename~\ref{fig:model_and_result}b).
+One situation is when the polygon path itself vanishes. In \figurename~\ref{fig:path_square_tail}a, the flux of lowest order path, square (\figurename~\ref{fig:path_square_tail}b), is zero, so the main contribution comes from the path with length $5$ (\figurename~\ref{fig:path_square_tail}b). Through the loop in this path, the orientation of the side-chain controls the flux direction in the main square, without changing the geometry of the main cycle (as seen in \figurename~1b).
 
 Another situation is that two polygon paths cancel each other, which happens in honeycomb-like networks away from the boundary (\figurename~\ref{fig:path_decay}a).
 With careful calculations, the fluxes for $n_l\ge 1$ are not zero, they rather appear as an exponential decay (\figurename~\ref{fig:path_decay}b). By changing the geometric angle $\theta$, the decay length varies non-monotonically, and has a cusp at $\theta=\alpha$ (\figurename~\ref{fig:path_decay}c).
@@ -726,7 +726,7 @@ Plugging \eqnname~\eqref{eqnS:swimmer_path_mapping} to the expression of $V_s$ \
 \begin{equation}
     \frac{V_s}{7a/24L^2} = -\frac{k_0}{k} \frac{\expval{J}}{k/2},
 \end{equation}
-which is \eqnname~\eqref{eqn:swimmer_propto} in the main text.
+which is \eqnname~(15) in the main text.
 Since we have considered all the paths, this result can be analytically continued to arbitrarily large $k$.
 
 From this diagrammatic technique we also see that, the proportionality constant is independent of the geometry of the active part of the network. This is because the paths through the active part for $\expval{J_{31}^s}$ and for $\expval{J_{12}^s}$ are identical.
